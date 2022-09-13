@@ -100,7 +100,7 @@ jobs:
 
       - name: Build ${{ matrix.addon }} add-on
         if: steps.check.outputs.build_arch == 'true'
-        uses: lildude/builder@latest
+        uses: lildude/builder
         with:
           args: |
             ${{ env.BUILD_ARGS }} \
