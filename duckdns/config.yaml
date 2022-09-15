@@ -19,6 +19,7 @@ options:
   domains: []
   token: null
   aliases: []
+  provider: letsencrypt
   lets_encrypt:
     accept_terms: false
     algo: secp384r1
@@ -32,6 +33,7 @@ schema:
   aliases:
     - alias: str
       domain: str
+  provider: list(letsencrypt|letsencrypt-test)
   lets_encrypt:
     accept_terms: bool
     algo: list(rsa|prime256v1|secp384r1)

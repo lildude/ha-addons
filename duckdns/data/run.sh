@@ -13,6 +13,7 @@ TOKEN=$(bashio::config 'token')
 DOMAINS=$(bashio::config 'domains | join(",")')
 WAIT_TIME=$(bashio::config 'seconds')
 ALGO=$(bashio::config 'lets_encrypt.algo')
+PROVIDER=$(bashio::config 'provider')
 
 # Function that performs a renew
 function le_renew() {
@@ -84,6 +85,7 @@ if bashio::config.true 'lets_encrypt.accept_terms'; then
     if [ ! -d "${CERT_DIR}/live" ]; then
         # Create empty dehydrated config file so that this dir will be used for storage
         touch "${WORK_DIR}/config"
+        echo "CA=${PROVIDER}" >> "${WORK_DIR}/config"
 
         dehydrated --register --accept-terms --config "${WORK_DIR}/config"
     fi
