@@ -1,10 +1,9 @@
 ---
 configuration:
-  domains:
-    name: Domains
+  domain:
+    name: Domain
     description: >-
-      A list of DuckDNS subdomains registered under your account. An acceptable
-      naming convention is `my-domain.duckdns.org`.
+      The DuckDNS subdomain registered under your account in the form `my-domain.duckdns.org`.
   token:
     name: Token
     description: >-
@@ -12,16 +11,39 @@ configuration:
       landing page. The token is required to make any changes to the subdomains
       registered to your account.
   aliases:
-    name: Alias
-    description: A list aliases of domains configured on the `domains` option.
-  lets_encrypt:
-    name: Let's Encrypt
-    description: Configure Let's Encrypt options
+    name: Aliases
+    description: A list aliases for the domain.
+  provider:
+    name: Certificate Provider
+    description: Select the provider you wish to issue your certificate.
+  accept_terms:
+    name: Accept Terms
+    description: You will need to agree to Let's Encrypt's or ZeroSSL's Subscriber Agreement.
+  email:
+    name: Email address.
+    description: Provide an email address to register an account or reuse an account. This is optional for Let's Encrypt but required for ZeroSSL.
+  algo:
+    name: Public Key Algorithm
+    description: >-
+      Public key algorithm that will be used.
+  certfile:
+    name: Certificate Filename
+    description: >-
+      The name of the certificate file generated. The file is used for SSL by Home Assistant add-ons and is recommended to keep the filename as-is (default is `fullchain.pem`) for compatibility.
+      Note: The file is stored in `/ssl/`, which is the default for Home Assistant.
+  keyfile:
+    name: Private Key Filename
+    description: >-
+      The name of the private key file generated. The private key file is used for SSL by Home Assistant add-ons and is recommended to keep the filename as-is (default is `privkey.pem`) for compatibility.
+      Note: The file is stored in `/ssl/`, which is the default for Home Assistant.
   seconds:
     name: Seconds
     description: >-
       The number of seconds to wait before updating DuckDNS subdomains and
-      renewing Let's Encrypt certificates.
+      renewing the certificates. Default is 300.
+  cleanup:
+    name: Auto Cleanup
+    description: Automatically cleanup old and temporary certificate files. Default is false.
   ipv4:
     name: IPv4
     description: >-

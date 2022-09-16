@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.0.0
+
+Note: These changes are not in the upstream add-in.
+
+This version is NOT backwardly compatible. You will need to reconfigure the plugin and restart it for it to work properly.
+
+- Added ability to select a certificate provider. The choices are Let's Encrypt (default), ZeroSSL, or Let's Encrypt Test for testing purposes.
+- Simplified the configuration to:
+  - only allow a single DuckDNS domain
+  - accept a list of aliases
+  - use a single configuration option for accepting the terms, the certificate and private key filenames
+  - hide the certificate and private key filenames, algorithm and time
+  - use default values for the above of `fullchain.pem`, `privkey.pem`, `secp384r1` and `300` respectively
+- Added an email option for registering with Let's Encrypt (optional) and ZeroSSL (required).
+- Added an option to automatically clean up old and temporary certificate files. Default is no.
+
 ## 1.16.0
 
 - Fix certificate renewals with aliases that would fail with "Incorrect TXT record" - <https://github.com/home-assistant/addons/issues/2505>

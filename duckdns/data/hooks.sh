@@ -5,14 +5,16 @@ set -e
 CONFIG_PATH=/data/options.json
 
 SYS_TOKEN=$(jq --raw-output '.token' $CONFIG_PATH)
-SYS_CERTFILE=$(jq --raw-output '.lets_encrypt.certfile' $CONFIG_PATH)
-SYS_KEYFILE=$(jq --raw-output '.lets_encrypt.keyfile' $CONFIG_PATH)
+SYS_CERTFILE=$(jq --raw-output '.certfile' $CONFIG_PATH)
+SYS_KEYFILE=$(jq --raw-output '.keyfile' $CONFIG_PATH)
+LD_DOMAIN=$(jq --raw-output '.domain' $CONFIG_PATH)
+[ -z "$SYS_CERTFILE" ] && SYS_CERTFILE=fullchain.pem
+[ -z "$SYS_KEYFILE" ] && SYS_KEYFILE=privkey.pem
 
 # https://github.com/lukas2511/dehydrated/blob/master/docs/examples/hook.sh
 
 deploy_challenge() {
-    local DOMAIN="${1}" TOKEN_FILENAME="${2}" TOKEN_VALUE="${3}" ALIAS
-    ALIAS="$(jq --raw-output --exit-status "[.aliases[]|{(.domain):.alias}]|add.\"$DOMAIN\"" $CONFIG_PATH)" || ALIAS="$DOMAIN"
+    local DOMAIN="${1}" TOKEN_FILENAME="${2}" TOKEN_VALUE="${3}"
 
     # This hook is called once for every domain that needs to be
     # validated, including any alternative names you may have listed.
@@ -30,13 +32,18 @@ deploy_challenge() {
     #   validation, this is what you want to put in the _acme-challenge
     #   TXT record. For HTTP validation it is the value that is expected
     #   be found in the $TOKEN_FILENAME file.
-    res=$(curl -s "https://www.duckdns.org/update?domains=$ALIAS&token=$SYS_TOKEN&txt=$TOKEN_VALUE")
+    res=$(curl -s "https://www.duckdns.org/update?domains=$LD_DOMAIN&token=$SYS_TOKEN&txt=$TOKEN_VALUE")
     echo "$res - setting challenge token for $DOMAIN"
+    for i in {1..10}; do
+        if dig +short TXT "_acme-challenge.$DOMAIN" | grep -q "$TOKEN_VALUE"; then
+            return 0
+        fi
+        sleep 1
+    done
 }
 
 clean_challenge() {
-    local DOMAIN="${1}" TOKEN_FILENAME="${2}" TOKEN_VALUE="${3}" ALIAS
-    ALIAS="$(jq --raw-output --exit-status "[.aliases[]|{(.domain):.alias}]|add.\"$DOMAIN\"" $CONFIG_PATH)" || ALIAS="$DOMAIN"
+    local DOMAIN="${1}" TOKEN_FILENAME="${2}" TOKEN_VALUE="${3}"
 
     # This hook is called after attempting to validate each domain,
     # whether or not validation was successful. Here you can delete
@@ -44,7 +51,7 @@ clean_challenge() {
     #
     # The parameters are the same as for deploy_challenge.
 
-    res=$(curl -s "https://www.duckdns.org/update?domains=$ALIAS&token=$SYS_TOKEN&txt=removed&clear=true")
+    res=$(curl -s "https://www.duckdns.org/update?domains=$LD_DOMAIN&token=$SYS_TOKEN&txt=removed&clear=true")
     echo "$res - removing challenge token for $DOMAIN"
 }
 
