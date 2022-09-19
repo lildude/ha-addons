@@ -30,8 +30,8 @@ function le_renew() {
     cert="${CERT_DIR}/${DOMAIN}/cert.pem"
     if [ -f "${cert}" ]; then
         bashio::log.info "Checking existing cert..."
-        certnames="$(openssl x509 -in "${cert}" -text -noout | grep DNS: | sed 's/DNS://g' | tr -d ' ' | tr ',' '\n' | sort -u | tr '\n' ' ' | sed 's/ $//')"
-        givennames="$(echo "${DOMAIN}" "${aliases}"| tr ' ' '\n' | sort -u | tr '\n' ' ' | sed 's/ $//' | sed 's/^ //')"
+        certnames="$(openssl x509 -in "${cert}" -text -noout | grep DNS: | sed 's/DNS://g' | tr -d ' ' | tr ',' '\n' | sort -ur | tr '\n' ' ' | sed 's/ $//')"
+        givennames="$(echo "${DOMAIN}" "${aliases}"| tr ' ' '\n' | sort -ur | tr '\n' ' ' | sed 's/ $//' | sed 's/^ //')"
         if [ "${certnames}" != "${givennames}" ]; then
             bashio::log.info "Certificate names do not match, requesting new certificate."
             issue_cert=1
