@@ -35,7 +35,7 @@ deploy_challenge() {
     res=$(curl -s "https://www.duckdns.org/update?domains=$LD_DOMAIN&token=$SYS_TOKEN&txt=$TOKEN_VALUE")
     echo "$res - setting challenge token for $DOMAIN"
     for i in {1..20}; do
-        if dig +short TXT "_acme-challenge.$DOMAIN" | grep -q "$TOKEN_VALUE"; then
+        if dig +short TXT "_acme-challenge.${DOMAIN//\*.}" | grep -q "$TOKEN_VALUE"; then
             return 0
         fi
         sleep 1
