@@ -15,7 +15,6 @@ startup: once
 boot: manual
 apparmor: true
 init: false
-ingress: false
 stage: experimental
 privileged:
 - SYS_ADMIN
