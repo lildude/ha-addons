@@ -23,6 +23,9 @@ performWork () {
       mkdir -p "/tmp/$partition/CONFIG"
     fi
     echo "$keys" > "/tmp/$partition/CONFIG/authorized_keys"
+    bashio::log.info "---"
+    cat "/tmp/$partition/CONFIG/authorized_keys"
+    bashio::log.info "---"
     umount "/tmp/$partition"
   fi
 }
