@@ -22,6 +22,8 @@ privileged:
 full_access: true
 options:
   ssh_keys: null
+  debug: false
 schema:
   ssh_keys:
   - str
+  debug: bool?

@@ -35,3 +35,8 @@ for disk in vda1 sda1 sdb1 mmcblk0p1 mmcblk1p1 nvme0n1p1; do
 done
 
 bashio::log.info "SSH authorized_keys has been updated. Perform a hard-power-off now. You can remove this addon now."
+
+if bashio::config.true debug; then
+  bashio::log.info "Debug mode is on. I will exit now."
+  sleep 99999
+fi
