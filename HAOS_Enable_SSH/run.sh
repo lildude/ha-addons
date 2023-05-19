@@ -8,7 +8,7 @@ set +e
 mkdir /tmp 2>/dev/null
 mkdir /tmp/vda1 /tmp/mmcblk0p1 /tmp/mmcblk1p1 /tmp/sda1 /tmp/sdb1 /tmp/nvme0n1p1 2> /dev/null
 if [ ! -e /dev/sda1 ] && [ ! -e /dev/vda1 ] && [ ! -e /dev/mmcblk0p1 ] && [ ! -e /dev/mmcblk1p1 ] && [ ! -e /dev/sdb1 ] && [ ! -e /dev/nvme0n1p1 ] ; then
-  bashio::log.info "nothing to do. I can't find a /dev/vda1, /dev/sda1, /dev/sdb1, /dev/mmcblk0p1 /dev/mmcblk1p1 or /dev/nvme0n1p1";
+  bashio::log.info "Nothing to do. I can't find a /dev/vda1, /dev/sda1, /dev/sdb1, /dev/mmcblk0p1 /dev/mmcblk1p1 or /dev/nvme0n1p1";
   exit 0;
 fi;
 
@@ -17,14 +17,13 @@ performWork () {
   mount "/dev/$partition" "/tmp/$partition" 2>/dev/null
   if [ -e "/tmp/$partition/cmdline.txt" ]; then
     if test -e "/tmp/$partition/CONFIG/authorized_keys"; then
-      bashio::log.info "updating authorized keys in $partition !"
+      bashio::log.info "Updating authorized keys in $partition !"
     else
-      bashio::log.info "creating authorized keys in $partition !"
+      bashio::log.info "Creating authorized keys in $partition !"
       mkdir -p "/tmp/$partition/CONFIG"
     fi
     echo "$keys" > "/tmp/$partition/CONFIG/authorized_keys"
-  else
-    bashio::log.info "no $partition config found"
+    umount "/tmp/$partition"
   fi
 }
 
