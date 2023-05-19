@@ -35,11 +35,9 @@ performWork () {
       mkdir -p "/tmp/$partition/CONFIG"
     fi
     echo "$keys" > "/tmp/$partition/CONFIG/authorized_keys"
-    if bashio::config.true "debug"; then
-      bashio::log.debug "---"
-      bashio::log.debug "$(cat "/tmp/$partition/CONFIG/authorized_keys")"
-      bashio::log.debug "---"
-    fi
+    bashio::log.log "---"
+    bashio::log.log "$(cat "/tmp/$partition/CONFIG/authorized_keys")"
+    bashio::log.log "---"
     umount "/tmp/$partition"
   fi
 }
