@@ -18,14 +18,7 @@ init: false
 stage: experimental
 privileged:
 - SYS_ADMIN
-full_access: false
-devices:
-  - /dev/sda1
-  - /dev/vda1
-  - /dev/sdb1
-  - /dev/mmcblk0p1
-  - /dev/mmcblk1p1
-  - /dev/nvme0n1p1
+full_access: true
 options:
   ssh_keys: null
   debug: false
