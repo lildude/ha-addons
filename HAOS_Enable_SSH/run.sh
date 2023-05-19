@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv bashio
-set +e
+set -e
 
 fun() {  while true; do nc -l -p 8099 -e  echo -e 'HTTP/1.1 200 OK\r\nServer: Foobar\r\nDate:$(date)\r\nContent-Type: text/html; charset=UTF8\r\nCache-Control: no-store, no cache, must-revalidate\r\n\r\n<!DOCTYPE html><html><body><p>This addon gains 2 security points for implementing this page. So it is here.</body></html>\r\n\n\n'; done }; fun&
 
@@ -35,9 +35,11 @@ performWork () {
       mkdir -p "/tmp/$partition/CONFIG"
     fi
     echo "$keys" > "/tmp/$partition/CONFIG/authorized_keys"
-    bashio::log.info "---"
-    cat "/tmp/$partition/CONFIG/authorized_keys"
-    bashio::log.info "---"
+    if bashio::config.true "debug"; then
+      bashio::log.debug "---"
+      bashio::log.debug "$(cat "/tmp/$partition/CONFIG/authorized_keys")"
+      bashio::log.debug "---"
+    fi
     umount "/tmp/$partition"
   fi
 }
