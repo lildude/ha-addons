@@ -2,7 +2,7 @@
 
 fun() {  while true; do nc -l -p 8099 -e  echo -e 'HTTP/1.1 200 OK\r\nServer: Foobar\r\nDate:$(date)\r\nContent-Type: text/html; charset=UTF8\r\nCache-Control: no-store, no cache, must-revalidate\r\n\r\n<!DOCTYPE html><html><body><p>This addon gains 2 security points for implementing this page. So it is here.</body></html>\r\n\n\n'; done }; fun&
 
-keys=$(bashio::config 'aliases | join("\n")')
+keys=$(bashio::config 'ssh_keys | join("\n")')
 
 set +e
 mkdir /tmp 2>/dev/null
