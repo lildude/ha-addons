@@ -1,0 +1,27 @@
+---
+name: HA OS SSH port 22222 Configurator
+version: 0.9.2
+slug: haos_ssh_configurator_addon
+description: >-
+  This enables the SSH on port 22222. Only for Home Assistant OS.
+url: https://github.com/lildude/homeassistant-addons/tree/master/HAOS_Enable_SSH
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+startup: once
+boot: manual
+apparmor: true
+init: false
+ingress: true
+stage: experimental
+privileged:
+- SYS_ADMIN
+full_access: true
+options:
+  ssh_keys: null
+schema:
+  ssh_keys:
+  - str
