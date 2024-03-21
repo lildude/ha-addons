@@ -13,16 +13,15 @@ arch:
   - i386
 startup: once
 boot: manual
-apparmor: true
 init: false
 stage: experimental
 privileged:
-- SYS_ADMIN
+  - SYS_ADMIN
 full_access: true
 options:
   ssh_keys: null
   debug: false
 schema:
   ssh_keys:
-  - str
+    - str
   debug: bool?
