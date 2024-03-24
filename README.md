@@ -1,28 +1,18 @@
 # lildude's Home Assistant add-on repository
 
-My collection of Homeassistant addons that I've created or contributed to housed in my own repo so I can take advantage of the changes whilst I wait for the PRs to be merged. 
-
-Add-on documentation: <https://developers.home-assistant.io/docs/add-ons>
+My collection of Home Assistant addons that I've created or contributed to.
 
 [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Flildude%2Fhomeassistant-addons)
 
 ## Add-ons
 
-This repository contains the following add-ons
+This repository contains the following add-ons:
 
-### [DuckDNS add-on](./duckdns)
+### Ghostfolio
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
-![Supports armhf Architecture][armhf-shield]
 ![Supports armv7 Architecture][armv7-shield]
-![Supports i386 Architecture][i386-shield]
-
-This is a fork of the upstream addon with the following fixes and enhancements:
-
-- Fix for <https://github.com/home-assistant/addons/issues/2505> submitted in <https://github.com/home-assistant/addons/pull/2662>
-- Added support for ZeroSSL and Lets Encrypt's sandbox 🔜
-- Updated to use the new format for addons as per the template repo 🔜
 
 <!--
 
