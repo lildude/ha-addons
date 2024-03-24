@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "supervisor_run",
       "group": {
-        "kind": "test",
+        "kind": "build",
         "isDefault": true
       },
       "presentation": {
