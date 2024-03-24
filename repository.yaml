@@ -1,4 +1,3 @@
-# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
 name: lildude's Home Assistant add-on repository
-url: 'https://github.com/lildude/homeassistant-addons'
+url: "https://github.com/lildude/homeassistant-addons"
 maintainer: Colin Seymour <colin@symr.io>
