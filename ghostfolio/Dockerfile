@@ -1,5 +1,5 @@
-ARG GHOSTFOLIO_VERSION
-FROM ghostfolio/ghostfolio:$GHOSTFOLIO_VERSION
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 ARG BUILD_ARCH
 ARG BASHIO_VERSION=0.16.2
@@ -19,9 +19,14 @@ RUN apt-get update && apt-get install -y \
         jq \
         redis \
         xz-utils \
+        nginx \
+        ca-certificates \
+    && S6_ARCH="${BUILD_ARCH}" \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then S6_ARCH="x86_64"; \
+    elif [ "${BUILD_ARCH}" = "armv7" ]; then S6_ARCH="arm"; fi \
     && rm -rf /var/lib/apt/lists/* \
     && curl -Ls "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz" | tar xpJ -C / \
-    && curl -Ls "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${BUILD_ARCH}.tar.xz" | tar xpJ -C / \
+    && curl -Ls "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${S6_ARCH}.tar.xz" | tar xpJ -C / \
     && curl -Ls "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-noarch.tar.xz" | tar Jxp -C /  \
     && curl -Ls "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-arch.tar.xz" | tar Jxp -C / \
     && mkdir -p /etc/fix-attrs.d \
@@ -32,14 +37,8 @@ RUN apt-get update && apt-get install -y \
     && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
     && rm -rf /tmp/bashio
 
-# COPY rootfs /
-COPY run.sh /
-RUN chmod a+x /run.sh
-
-ENV CONFIG_PATH=/data/options.json
-
-WORKDIR /ghostfolio/apps/api
-CMD [ "/run.sh" ]
+COPY rootfs /
+RUN chmod a+x /etc/services.d/*/run /etc/services.d/*/finish
 
 ENTRYPOINT ["/init"]
 
@@ -48,3 +47,8 @@ HEALTHCHECK \
     --retries=5 \
     --timeout=5s \
     CMD curl --fail "http://localhost:3333/api/v1/health" &>/dev/null || exit 1
+
+LABEL \
+  io.hass.version="1.0.0" \
+  io.hass.type="addon" \
+  io.hass.arch="aarch64|amd64|armv7"
