@@ -2,7 +2,7 @@ name: Builder
 
 env:
   BUILD_ARGS: "--test"
-  MONITORED_FILES: "build.yaml config.yaml Dockerfile rootfs"
+  MONITORED_FILES: "build.yaml config.yaml build.json config.json Dockerfile rootfs"
 
 on:
   push:
@@ -64,7 +64,7 @@ jobs:
     strategy:
       matrix:
         addon: ${{ fromJson(needs.init.outputs.changed_addons) }}
-        arch: ["amd64"]
+        arch: ["amd64", "armv7", "aarch64"]
 
     steps:
       - name: Check out repository
@@ -100,7 +100,7 @@ jobs:
 
       - name: Build ${{ matrix.addon }} add-on
         if: steps.check.outputs.build_arch == 'true'
-        uses: lildude/builder@master
+        uses: home-assistant/builder@master
         with:
           args: |
             ${{ env.BUILD_ARGS }} \
