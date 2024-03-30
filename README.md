@@ -9,10 +9,23 @@ My collection of Home Assistant add-ons that I've created, taken over or contrib
 
 ## Add-ons
 
-This repository contains the following add-ons:
+This repository contains the following add-ons which are maintained in separate repos:
 
 ### Ghostfolio
 
-![Ghostfolio Version](https://img.shields.io/badge/dynamic/json?label=Ghostfolio%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addons%2Fmain%2Fghostfolio%2Fbuild.json&query=%24.args.ghostfolio_version)
-![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addons%2Fmain%2Fghostfolio%2Fconfig.json)
-![Supported Architecture](https://img.shields.io/badge/dynamic/json?color=green&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addons%2Fmain%2Fghostfolio%2Fconfig.json)
+[Add-on repository](https://github.com/lildude/ha-addon-ghostfolio/)
+
+
+![Ghostfolio Version](https://img.shields.io/badge/dynamic/json?label=Ghostfolio%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-ghostfolio%2Fmain%2Fbuild.json&query=%24.args.ghostfolio_version)
+![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json)
+![Supported Architectures](https://img.shields.io/badge/dynamic/json?color=green&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-ghostfolio%2Fmain%2Fconfig.json)
+
+### PostgreSQL
+
+Note: I do not maintain this add-on and only include it in this repo for convenience as Ghostfolio needs PostgreSQL.
+
+[Add-on repository](https://github.com/matt-FFFFFF/hassio-addon-postgres)
+
+![PostgreSQL Version](https://img.shields.io/badge/PostgreSQL_Version-12.5-blue)
+![Ingress](https://img.shields.io/badge/Ingress-false-blue)
+![Supported Architectures](https://img.shields.io/badge/dynamic/json?color=green&label=Arch&query=%24.arch&url=https://raw.githubusercontent.com/matt-FFFFFF/hassio-addon-postgres/main/config.json)

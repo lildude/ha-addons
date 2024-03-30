@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ghostfolio
+    url: https://github.com/lildude/ha-addon-ghostfolio
+    about: Please raise issues/discusions for the Ghostfolio add-on here
+  - name: Postgres
+    url: https://github.com/matt-FFFFFF/hassio-addon-postgres
+    about: Please raise issues/discusions for the Postgres add-on here
