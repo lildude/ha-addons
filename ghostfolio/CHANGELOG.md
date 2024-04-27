@@ -1,5 +1,6 @@
 ## What's Changed
-* Update Ghostfolio to 2.75.1 by @dependabot in https://github.com/lildude/ha-addon-ghostfolio/pull/14
+* Add support for running on an exposed port by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/16
+* Update Ghostfolio to 2.76.0 by @dependabot in https://github.com/lildude/ha-addon-ghostfolio/pull/17
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.2.0...v1.3.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.3.0...v1.4.0
