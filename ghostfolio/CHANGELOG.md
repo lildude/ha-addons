@@ -34,4 +34,4 @@
 * Update Ghostfolio to v2.90.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/53
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.15.0...v1.17.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.15.0...v1.16.0
