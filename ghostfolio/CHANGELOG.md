@@ -32,6 +32,7 @@
 ## What's Changed
 * Interpret newlines when generating release notes by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/51
 * Update Ghostfolio to v2.90.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/53
+* Update softprops/action-gh-release action to v2.0.6 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/52
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.15.0...v1.17.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.15.0...v1.16.0
