@@ -1,23 +1,43 @@
 ## Ghostfolio Release Notes
 
-### [`v2.91.0`](https://togithub.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#2910---2024-06-26)
+### [`v2.93.0`](https://togithub.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#2930---2024-07-07)
 
-[Compare Source](https://togithub.com/ghostfolio/ghostfolio/compare/2.90.0...2.91.0)
+[Compare Source](https://togithub.com/ghostfolio/ghostfolio/compare/2.92.0...2.93.0)
 
 ##### Added
 
--   Added a benchmarks preset to the historical market data table of the admin control panel
+-   Added the *Crypto Coins Heatmap* to the resources section
+-   Added the *Stock Heatmap* to the resources section
+-   Extended the content of the *Self-Hosting* section by the platforms concept on the Frequently Asked Questions (FAQ) page
 
 ##### Changed
 
--   Upgraded `angular` from version `18.0.2` to `18.0.4`
+-   Improved the allocations by ETF holding on the allocations page for the impersonation mode (experimental)
+-   Improved the detection of REST APIs (`JSON`) used via the scraper configuration
+-   Improved the usability to delete an asset profile of type currency in the historical market data table and the asset profile details dialog of the admin control
+-   Refreshed the cryptocurrencies list
+-   Refactored the thresholds of the rules in the *X-ray* section
+-   Removed the obsolete `version` from the `docker-compose` files
+-   Upgraded `Nx` from version `19.2.2` to `19.4.0`
+
+### [`v2.92.0`](https://togithub.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#2920---2024-06-30)
+
+[Compare Source](https://togithub.com/ghostfolio/ghostfolio/compare/2.91.0...2.92.0)
+
+##### Added
+
+-   Added support for bulk deletion of asset profiles from the market data table in the admin control panel
+
+##### Changed
+
+-   Added support for derived currencies in the currency validation
+-   Added support for automatic deletion of unused asset profiles when deleting activities
+-   Improved the caching of the benchmarks in the markets overview (only cache if needed)
+-   Upgraded `prisma` from version `5.15.0` to `5.16.1`
 
 ##### Fixed
 
--   Fixed the dialog position (center) on mobile
--   Fixed the horizontal overflow in the historical market data table of the admin control panel
--   Changed the mechanism of the `INTRADAY` data gathering to persist data only if the market state is `OPEN`
--   Fixed the creation of activities with `MANUAL` data source (with no historical market data)
+-   Fixed an issue with the all time high in the benchmarks of the markets overview
 
 ---
 
@@ -27,7 +47,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.91.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/56
+* Update Ghostfolio to v2.93.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/57
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.16.0...v1.17.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.17.0...v1.18.0
