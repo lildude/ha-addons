@@ -1,16 +1,27 @@
 ## Ghostfolio Release Notes
 
-### [`v2.94.0`](https://togithub.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#2940---2024-07-09)
+### [`v2.96.0`](https://togithub.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#2960---2024-07-13)
 
-[Compare Source](https://togithub.com/ghostfolio/ghostfolio/compare/2.93.0...2.94.0)
+[Compare Source](https://togithub.com/ghostfolio/ghostfolio/compare/2.95.0...2.96.0)
 
 ##### Changed
 
--   Improved the language localization for German (`de`)
+-   Improved the chart of the holdings tab on the home page (experimental)
+-   Separated the icon purposes in the `site.webmanifest`
 
 ##### Fixed
 
--   Fixed a pagination issue in the activities endpoint by adding `id` as a secondary sort criterion to `date` to ensure consistent ordering
+-   Fixed an issue in the portfolio summary with the currency conversion of fees
+-   Fixed an issue in the the search for a holding
+-   Removed the show condition of the experimental features setting in the user settings
+
+### [`v2.95.0`](https://togithub.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#2950---2024-07-12)
+
+[Compare Source](https://togithub.com/ghostfolio/ghostfolio/compare/2.94.0...2.95.0)
+
+##### Added
+
+-   Added a chart to the holdings tab of the home page (experimental)
 
 ---
 
@@ -20,7 +31,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.94.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/58
+* Update Ghostfolio to v2.96.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/59
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.18.0...v1.19.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.19.0...v1.20.0
