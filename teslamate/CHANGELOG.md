@@ -151,14 +151,8 @@ The release itself does not upgrade a users instance to PSQL 16. To do so, pleas
 
 
 ## What's Changed
-* Renovate and releaser improvements by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/11
-* Limit Renovate managers by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/12
-* Update Renovate configuration and fix inclusion of TeslaMate release notes in add-on changelog by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/13
-* Clearly differentiate add-on changes by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/16
-* Fix database check and creation by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/23
-* Update actions/checkout action to v4.1.7 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/14
-* Update softprops/action-gh-release action to v2.0.7 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/20
-* Update TeslaMate to v1.30.1 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/17
+* Fix renovate configuration error by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/24
+* Remove default Postgres configuration and add-on suggestion by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/25
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.0.0...v1.1.0
+**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.1.0...v1.1.1
