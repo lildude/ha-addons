@@ -17,7 +17,7 @@ The configuration is self-explanatory, but essentially we need details about acc
 
 - `database_port`: The port your PostgreSQL server is listening on. Default: `5432`.
 
-- `database_host`: The hostname of your PostgreSQL server. Default: `29b65938-postgres` for the [PostgreSQL add-on][postgres].
+- `database_host`: The hostname of your PostgreSQL server.
 
 - `database_name`: The name of the PostgreSQL database to create and use. Default: `ghostfolio`.
 
@@ -32,6 +32,15 @@ The configuration is self-explanatory, but essentially we need details about acc
   This will be auto-generated on first run if not set.
 
 - `silent`: (Optional) Hide all output except errors in the log file. Default: `false`.
+
+- `env_vars`: (Optional) Set additional environment variables for Ghostfolio which aren't currently exposed by the configuration options in this add-on.
+
+  Each entry is made up of a name and value:
+
+  - `name`: The case-sensitive environment variable name.
+  - `value`: The value to be set in the environment variable.
+
+  Note: These will also overwrite any environment variable set using the configuration options above.
 
 Remember to restart the add-on when the configuration is changed.
 
@@ -55,7 +64,6 @@ To destroy this data, you'll need to either uninstall the PostgreSQL add-on or c
 
 [docker]: https://hub.docker.com/r/ghostfolio/ghostfolio
 [ghostfolio]: https://ghostfol.io
-[postgres]: https://github.com/matt-FFFFFF/hassio-addon-postgres
 [releases]: https://github.com/lildude/ha-addon-ghostfolio/releases
 [semver]: https://semver.org/spec/v2.0.0.html
 [rev-proxy]: https://github.com/hassio-addons/addon-nginx-proxy-manager
