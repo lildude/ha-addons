@@ -151,8 +151,9 @@ The release itself does not upgrade a users instance to PSQL 16. To do so, pleas
 
 
 ## What's Changed
-* Fix renovate configuration error by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/24
-* Remove default Postgres configuration and add-on suggestion by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/25
+* Update docker/login-action action to v3.3.0 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/27
+* Fix Postgres link by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/28
+* Add optional env vars config option by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/29
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.1.0...v1.1.1
+**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.1.1...v1.1.2
