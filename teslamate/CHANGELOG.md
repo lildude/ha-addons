@@ -151,9 +151,7 @@ The release itself does not upgrade a users instance to PSQL 16. To do so, pleas
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v2.0.8 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/26
-* Fix image URL by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/33
-* Update home-assistant/builder action to v2024.08.2 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/30
+* Make startup scripts robust by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/37
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.1.2...v1.1.3
+**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.1.3...v1.1.4
