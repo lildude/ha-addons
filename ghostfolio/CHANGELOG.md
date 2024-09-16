@@ -112,11 +112,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/69
-* Use a fixed version for the builder by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/71
-* Update Ghostfolio to v2.103.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/70
-* Update home-assistant/builder action to v2024.08.2 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/72
-* Update Ghostfolio to v2.107.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/73
+* Configure nginx to run as an unprivileged user by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/75
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.22.0...v1.23.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.23.0...v1.23.1
