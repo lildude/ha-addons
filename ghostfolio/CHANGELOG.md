@@ -1,16 +1,29 @@
 ## Ghostfolio Release Notes
 
-### [`v2.110.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21100---2024-09-24)
+### [`v2.111.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21110---2024-09-28)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.109.0...2.110.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.110.0...2.111.0)
+
+##### Added
+
+-   Added read `permissions` to the `Platform` model
+-   Added read `permissions` to the `Tag` model
+-   Added `userId` to the `Tag` database schema
 
 ##### Changed
 
--   Improved the usability of various action menus by introducing horizontal lines to separate the delete action
--   Improved the chart in the account detail dialog (experimental)
--   Aligned the holdings and regions of the public page with the allocations page
--   Considered the user’s language in the link of the access table to share the portfolio
+-   Considered the availability of the date range selector in the assistant per view
+-   Considered the availability of the filters in the assistant per view
+-   Optimized the portfolio calculations with smarter cloning of activities
+-   Integrated the add currency functionality into the market data section of the admin control panel
 -   Improved the language localization for German (`de`)
+-   Upgraded `prisma` from version `5.19.1` to `5.20.0`
+-   Upgraded `webpack-bundle-analyzer` from version `4.10.1` to `4.10.2`
+
+##### Fixed
+
+-   Fixed the content height of the create or update platform dialog in the admin control
+-   Fixed the content height of the create or update tag dialog in the admin control
 
 ---
 
@@ -20,7 +33,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.110.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/83
+* Update actions/checkout action to v4.2.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/84
+* Update Ghostfolio to v2.111.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/85
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.25.0...v1.26.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.26.0...v1.27.0
