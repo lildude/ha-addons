@@ -1,29 +1,43 @@
 ## Ghostfolio Release Notes
 
-### [`v2.111.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21110---2024-09-28)
+### [`v2.113.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21130---2024-10-06)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.110.0...2.111.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.112.0...2.113.0)
 
 ##### Added
 
--   Added read `permissions` to the `Platform` model
--   Added read `permissions` to the `Tag` model
--   Added `userId` to the `Tag` database schema
+-   Set up a git-hook via `husky` to lint and format the changes before a commit
+-   Added the `typescript-eslint/recommended-type-checked` rule to the `eslint` configuration
+-   Added the `typescript-eslint/stylistic-type-checked` rule to the `eslint` configuration
 
 ##### Changed
 
--   Considered the availability of the date range selector in the assistant per view
--   Considered the availability of the filters in the assistant per view
--   Optimized the portfolio calculations with smarter cloning of activities
--   Integrated the add currency functionality into the market data section of the admin control panel
--   Improved the language localization for German (`de`)
--   Upgraded `prisma` from version `5.19.1` to `5.20.0`
--   Upgraded `webpack-bundle-analyzer` from version `4.10.1` to `4.10.2`
+-   Optimized the portfolio calculations by reusing date intervals
+-   Refactored the calculation of the allocations by market on the allocations page
+-   Refactored the calculation of the allocations by market on the public page
 
 ##### Fixed
 
--   Fixed the content height of the create or update platform dialog in the admin control
--   Fixed the content height of the create or update tag dialog in the admin control
+-   Handled an exception in the historical market data gathering of derived currencies
+
+### [`v2.112.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21120---2024-10-03)
+
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.111.0...2.112.0)
+
+##### Added
+
+-   Added a message to the search asset component if no results have been found in the create or update activity dialog
+-   Added support to customize the rule thresholds in the *X-ray* section (experimental)
+
+##### Changed
+
+-   Optimized the portfolio calculations with smarter date interval selection
+-   Improved the language localization for German (`de`)
+
+##### Fixed
+
+-   Fixed an issue in the calculation of allocations by market (*Unknown*)
+-   Fixed the `eslint` configuration
 
 ---
 
@@ -33,8 +47,7 @@
 
 
 ## What's Changed
-* Update actions/checkout action to v4.2.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/84
-* Update Ghostfolio to v2.111.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/85
+* Update Ghostfolio to v2.113.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/86
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.26.0...v1.27.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.27.0...v1.28.0
