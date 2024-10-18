@@ -1,34 +1,26 @@
 ## Ghostfolio Release Notes
 
-### [`v2.115.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21150---2024-10-14)
+### [`v2.116.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21160---2024-10-17)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.114.0...2.115.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.115.0...2.116.0)
 
 ##### Added
 
--   Added the name to the tooltip of the chart of the holdings tab on the home page (experimental)
+-   Extended the content of the *Self-Hosting* section by the benchmarks concept for *Compare with...* on the Frequently Asked Questions (FAQ) page
+-   Extended the content of the *Self-Hosting* section by the benchmarks concept for *Markets* on the Frequently Asked Questions (FAQ) page
+-   Set the permissions (`chmod 0700`) on `entrypoint.sh` in the `Dockerfile`
 
 ##### Changed
 
--   Improved the backgrounds of the chart of the holdings tab on the home page (experimental)
--   Improved the labels of the chart of the holdings tab on the home page (experimental)
--   Improved the usability to customize the rule thresholds in the *X-ray* section by introducing sliders (experimental)
--   Refactored the rule thresholds in the *X-ray* section (experimental)
--   Exposed the timeout of the portfolio snapshot computation as an environment variable (`PROCESSOR_PORTFOLIO_SNAPSHOT_COMPUTATION_TIMEOUT`)
--   Harmonized the processor concurrency environment variables
--   Improved the portfolio unit tests to work with exported activity files
--   Enabled the `noUnusedLocals` compiler option in the `tsconfig`
--   Enabled the `noUnusedParameters` compiler option in the `tsconfig`
+-   Improved the empty state in the benchmarks of the markets overview
+-   Disabled the text hover effect in the chart of the holdings tab on the home page (experimental)
+-   Improved the usability to customize the rule thresholds in the *X-ray* section by introducing units (experimental)
+-   Switched to adjusted market prices (splits and dividends) in the get historical functionality of the *EOD Historical Data* service
+-   Improved the language localization for German (`de`)
 
 ##### Fixed
 
--   Considered the language of the user settings on login with *Security Token*
-
-##### Todo
-
--   Rename the environment variable from `PROCESSOR_CONCURRENCY_GATHER_ASSET_PROFILE` to `PROCESSOR_GATHER_ASSET_PROFILE_CONCURRENCY`
--   Rename the environment variable from `PROCESSOR_CONCURRENCY_GATHER_HISTORICAL_MARKET_DATA` to `PROCESSOR_GATHER_HISTORICAL_MARKET_DATA_CONCURRENCY`
--   Rename the environment variable from `PROCESSOR_CONCURRENCY_PORTFOLIO_SNAPSHOT` to `PROCESSOR_PORTFOLIO_SNAPSHOT_COMPUTATION_CONCURRENCY`
+-   Fixed the usage of the environment variable `PROCESSOR_PORTFOLIO_SNAPSHOT_COMPUTATION_CONCURRENCY`
 
 ---
 
@@ -38,7 +30,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.115.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/89
+* Update Ghostfolio to v2.116.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/90
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.29.0...v1.30.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.30.0...v1.31.0
