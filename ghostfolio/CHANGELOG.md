@@ -1,21 +1,17 @@
 ## Ghostfolio Release Notes
 
-### [`v2.124.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21240---2024-11-24)
+### [`v2.125.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21250---2024-11-30)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.123.0...2.124.0)
-
-##### Added
-
--   Added pagination parameters (`skip`, `take`) to the endpoint `GET api/v1/admin/user`
--   Added pagination response (`count`) to the endpoint `GET api/v1/admin/user`
--   Added `GHOSTFOLIO` as a new data source type
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.124.1...2.125.0)
 
 ##### Changed
 
--   Extended the allocations by ETF holding on the allocations page by the parent ETFs (experimental)
--   Improved the language localization for German (`de`)
--   Upgraded `countries-and-timezones` from version `3.4.1` to `3.7.2`
--   Upgraded `Nx` from version `20.0.6` to `20.1.2`
+-   Improved the style of the symbol search component
+-   Extended the users table in the admin control panel
+-   Refreshed the cryptocurrencies list
+-   Increased the default request timeout (`REQUEST_TIMEOUT`)
+-   Upgraded `cheerio` from version `1.0.0-rc.12` to `1.0.0`
+-   Upgraded `prisma` from version `5.22.0` to `6.0.0`
 
 ---
 
@@ -25,7 +21,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.124.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/102
+* Update Ghostfolio to v2.124.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/103
+* Update Ghostfolio to v2.125.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/104
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.36.0...v1.37.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.37.0...v1.38.0
