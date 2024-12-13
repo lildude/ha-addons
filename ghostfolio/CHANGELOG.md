@@ -1,16 +1,19 @@
 ## Ghostfolio Release Notes
 
-### [`v2.127.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21270---2024-12-08)
+### [`v2.128.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21280---2024-12-12)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.126.1...2.127.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.127.0...2.128.0)
 
-##### Added
+##### Changed
 
--   Extended the *X-ray* page by a summary
+-   Optimized the holding selector in the assistant
+-   Improved the language localization for German (`de`)
+-   Upgraded `@internationalized/number` from version `3.5.2` to `3.6.0`
 
 ##### Fixed
 
 -   Fixed an exception in the caching of the portfolio snapshot in the portfolio calculator
+-   Fixed the import of `jsonpath` to support REST APIs (`JSON`) via the scraper configuration
 
 ---
 
@@ -20,8 +23,7 @@
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v2.2.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/107
-* Update Ghostfolio to v2.127.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/106
+* Update Ghostfolio to v2.128.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/108
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.39.0...v1.40.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.40.0...v1.41.0
