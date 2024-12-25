@@ -1,22 +1,15 @@
 ## Ghostfolio Release Notes
 
-### [`v2.130.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21300---2024-12-21)
+### [`v2.131.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21310---2024-12-25)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.129.0...2.130.0)
-
-##### Added
-
--   Added a new static portfolio analysis rule: *Asset Class Cluster Risk* (Equity)
--   Added a new static portfolio analysis rule: *Asset Class Cluster Risk* (Fixed Income)
--   Set up a notification service for prompt dialogs
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.130.0...2.131.0)
 
 ##### Changed
 
--   Improved the usability to edit the emergency fund
--   Extracted the market data management from the admin control panel endpoint to a dedicated endpoint
--   Improved the language localization for German (`de`)
+-   Improved the search for asset profiles with `MANUAL` data source in the create or update activity dialog
+-   Improved the usability of the link to manage access with a new icon
+-   Improved support to import activities by `isin` in the *Yahoo Finance* service
 -   Improved the language localization for Polish (`pl`)
--   Upgraded `big.js` from version `6.2.1` to `6.2.2`
 
 ---
 
@@ -26,7 +19,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.130.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/110
+* Update Ghostfolio to v2.131.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/111
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.42.0...v1.43.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.43.0...v1.44.0
