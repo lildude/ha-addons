@@ -1,8 +1,8 @@
 ## Ghostfolio Release Notes
 
-### [`v2.133.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21330---2025-01-08)
+### [`v2.133.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21331---2025-01-09)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.132.0...2.133.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.133.0...2.133.1)
 
 ##### Added
 
@@ -35,8 +35,7 @@
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v2.2.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/113
-* Update Ghostfolio to v2.133.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/114
+* Update Ghostfolio to v2.133.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/115
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.45.0...v1.46.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.46.0...v1.47.0
