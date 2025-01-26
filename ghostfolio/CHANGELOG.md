@@ -1,22 +1,26 @@
 ## Ghostfolio Release Notes
 
-### [`v2.135.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21350---2025-01-19)
+### [`v2.136.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21360---2025-01-24)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.134.0...2.135.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.135.0...2.136.0)
+
+##### Added
+
+-   Set up a *GitHub Action* to automatically extract locales when the `main` branch changes
 
 ##### Changed
 
--   Moved the language localization for Polski (`pl`) from experimental to general availability
 -   Extended the *Financial Modeling Prep* service
--   Switched to *ESLint*’s flat config format
--   Upgraded `chart.js` from version `4.2.0` to `4.4.7`
--   Upgraded `chartjs-chart-treemap` from version `2.3.1` to `3.1.0`
--   Upgraded `chartjs-plugin-annotation` from version `2.1.2` to `3.1.0`
--   Upgraded `eslint` dependencies
--   Upgraded `nestjs` from version `10.1.3` to `10.4.15`
--   Upgraded `Nx` from version `20.3.0` to `20.3.2`
--   Upgraded `reflect-metadata` from version `0.1.13` to `0.2.2`
--   Upgraded `uuid` from version `11.0.2` to `11.0.5`
+-   Improved the language localization for Ukrainian (`uk`)
+-   Refreshed the cryptocurrencies list
+-   Upgraded `date-fns` from version `3.6.0` to `4.1.0`
+-   Upgraded `rxjs` from version `7.5.6` to `7.8.1`
+
+##### Fixed
+
+-   Fixed an issue with the detection of the thousand separator by locale
+-   Fixed an issue with holdings and sectors while using symbol profile overrides
+-   Fixed an issue with the MIME type detection in the scraper configuration
 
 ---
 
@@ -26,7 +30,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.135.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/117
+* Update Ghostfolio to v2.136.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/118
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.48.0...v1.49.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.49.0...v1.50.0
