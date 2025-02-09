@@ -1,58 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v2.137.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21371---2025-02-01)
+### [`v2.138.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21380---2025-02-08)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.137.0...2.137.1)
-
-##### Added
-
--   Added a new static portfolio analysis rule: *Regional Market Cluster Risk* (North America)
--   Added support for ETF sector data in the *Yahoo Finance* data enhancer
-
-##### Changed
-
--   Extracted the scraper configuration to a sub form in the asset profile details dialog of the admin control
--   Migrated the database seeding to *TypeScript*
--   Improved the language localization for German (`de`)
--   Upgraded `@trivago/prettier-plugin-sort-imports` from version `4.3.0` to `5.2.1`
--   Upgraded `bull` from version `4.16.4` to `4.16.5`
--   Upgraded `ng-extract-i18n-merge` from version `2.13.1` to `2.14.1`
--   Upgraded `prisma` from version `6.2.1` to `6.3.0`
-
-##### Fixed
-
--   Fixed the dynamic numerical precision for cryptocurrencies in the holding detail dialog
-
-### [`v2.137.0`](https://redirect.github.com/ghostfolio/ghostfolio/releases/tag/2.137.0)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.136.0...2.137.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.137.1...2.138.0)
 
 ##### Added
 
--   Added a new static portfolio analysis rule: *Regional Market Cluster Risk* (North America)
--   Added support for ETF sector data in the *Yahoo Finance* data enhancer
+-   Added a new static portfolio analysis rule: *Regional Market Cluster Risk* (Emerging Markets)
+-   Added a new static portfolio analysis rule: *Regional Market Cluster Risk* (Europe)
+-   Added a link to *Duck.ai* to the *Copy AI prompt to clipboard* action on the analysis page (experimental)
+-   Extracted the tags selector to a reusable component used in the create or update activity dialog and holding detail dialog
+-   Added stories for the tags selector component
 
 ##### Changed
 
--   Extracted the scraper configuration to a sub form in the asset profile details dialog of the admin control
--   Migrated the database seeding to *TypeScript*
+-   Improved the caching of the portfolio snapshot in the portfolio calculator by expiring cache entries when a user changes tags in the holding detail dialog
+-   Improved the error handling in the *CoinGecko* service
 -   Improved the language localization for German (`de`)
--   Upgraded `@trivago/prettier-plugin-sort-imports` from version `4.3.0` to `5.2.1`
--   Upgraded `bull` from version `4.16.4` to `4.16.5`
--   Upgraded `ng-extract-i18n-merge` from version `2.13.1` to `2.14.1`
--   Upgraded `prisma` from version `6.2.1` to `6.3.0`
-
-##### Fixed
-
--   Fixed the dynamic numerical precision for cryptocurrencies in the holding detail dialog
-
-##### Special Thanks
-
--   [@&#8203;amandee27](https://redirect.github.com/amandee27)
--   [@&#8203;dtslvr](https://redirect.github.com/dtslvr)
--   [@&#8203;Kaysera](https://redirect.github.com/Kaysera)
--   [@&#8203;KenTandrian](https://redirect.github.com/KenTandrian)
--   [@&#8203;shaun-ak](https://redirect.github.com/shaun-ak)
+-   Upgraded `svgmap` from version `2.6.0` to `2.12.2`
 
 ---
 
@@ -62,7 +27,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.137.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/119
+* Update Ghostfolio to v2.138.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/120
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.50.0...v1.51.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.51.0...v1.52.0
