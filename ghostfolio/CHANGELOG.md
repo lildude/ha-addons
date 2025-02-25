@@ -1,28 +1,22 @@
 ## Ghostfolio Release Notes
 
-### [`v2.139.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21391---2025-02-15)
+### [`v2.140.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21400---2025-02-20)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.139.0...2.139.1)
-
-##### Added
-
--   Added a new static portfolio analysis rule: *Regional Market Cluster Risk* (Asia-Pacific Markets)
--   Added a new static portfolio analysis rule: *Regional Market Cluster Risk* (Japan)
--   Added support to create custom tags in the holding detail dialog (experimental)
--   Extended the tags selector component by a `readonly` attribute
--   Extended the tags selector component to support creating custom tags
--   Extended the holding detail dialog by the historical market data editor (experimental)
--   Added global styles to the *Storybook* setup
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.139.1...2.140.0)
 
 ##### Changed
 
--   Improved the symbol lookup in the *Trackinsight* data enhancer for asset profile data
+-   Reloaded the available tags after creating a custom tag in the holding detail dialog (experimental)
+-   Improved the validation of the currency management in the admin control panel
+-   Migrated the `@ghostfolio/client` components to control flow
+-   Migrated the `@ghostfolio/ui` components to control flow
 -   Improved the language localization for German (`de`)
--   Upgraded `@trivago/prettier-plugin-sort-imports` from version `5.2.1` to `5.2.2`
 
 ##### Fixed
 
--   Fixed the gaps in the chart of the benchmark comparator
+-   Improved the error handling in the `HttpResponseInterceptor`
+-   Fixed an issue while using symbol profile overrides in the historical market data table of the admin control panel
+-   Added missing assets in *Storybook* setup
 
 ---
 
@@ -32,8 +26,10 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.139.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/121
-* Update Ghostfolio to v2.139.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/122
+* Update Ghostfolio to v2.140.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/123
+* Revert "Update Ghostfolio to v2.140.0" by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/124
+* Update home-assistant/builder action to v2025 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/126
+* Update Ghostfolio to v2.140.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/125
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.52.0...v1.53.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.53.0...v1.54.0
