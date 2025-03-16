@@ -1,8 +1,28 @@
 ## Ghostfolio Release Notes
 
-### [`v2.145.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21450---2025-03-09)
+### [`v2.146.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21460---2025-03-15)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.144.0...2.145.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.145.1...2.146.0)
+
+##### Changed
+
+-   Improved the usability of the user account registration
+-   Improved the usability of the *Copy AI prompt to clipboard* actions on the analysis page (experimental)
+-   Formatted the name in the *Financial Modeling Prep* service
+-   Removed the exchange rates from the overview of the admin control panel
+-   Improved the language localization for German (`de`)
+-   Upgraded `angular` from version `19.0.5` to `19.2.1`
+-   Upgraded `Nx` from version `20.3.2` to `20.5.0`
+-   Upgraded `prettier` from version `3.5.1` to `3.5.3`
+-   Upgraded `prisma` from version `6.4.1` to `6.5.0`
+
+##### Fixed
+
+-   Fixed an issue with serving *Storybook* related to the `contentSecurityPolicy`
+
+### [`v2.145.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21451---2025-03-10)
+
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.145.0...2.145.1)
 
 ##### Added
 
@@ -29,7 +49,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.145.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/131
+* Update docker/login-action action to v3.4.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/133
+* Update Ghostfolio to v2.146.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/132
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.58.0...v1.59.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.59.0...v1.60.0
