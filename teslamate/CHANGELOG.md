@@ -6,9 +6,8 @@
 
 
 ## What's Changed
-* Update home-assistant/builder action to v2025 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/72
-* Update docker/login-action action to v3.4.0 by @renovate in https://github.com/lildude/ha-addon-teslamate/pull/74
-* Use a PostgreSQL version agnostic method of determining if the database exists by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/77
+* Update devcontainer config by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/78
+* Update config to enable hassio_api access and improve TeslaMate settings message by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/79
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.4.2...v1.4.3
+**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v1.4.3...v1.4.4

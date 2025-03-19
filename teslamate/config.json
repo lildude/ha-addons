@@ -1,6 +1,6 @@
 {
   "name": "TeslaMate",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "slug": "teslamate",
   "description": "A self-hosted data logger for your Tesla.",
   "url": "https://github.com/lildude/ha-addon-teslamate",
@@ -9,6 +9,7 @@
     "aarch64",
     "amd64"
   ],
+  "hassio_api": true,
   "ingress": true,
   "init": false,
   "panel_icon": "mdi:car-connected",
