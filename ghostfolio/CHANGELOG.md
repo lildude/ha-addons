@@ -1,20 +1,24 @@
 ## Ghostfolio Release Notes
 
-### [`v2.150.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21500---2025-04-05)
+### [`v2.151.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21510---2025-04-11)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.149.0...2.150.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.150.0...2.151.0)
 
 ##### Added
 
--   Added support to toggle the data gathering for individual asset profiles in the asset profile details dialog of the admin control panel
+-   Added the data gathering status column to the historical market data table of the admin control
 
 ##### Changed
 
--   Improved the check for duplicates in the preview step of the activities import (allow different comments)
--   Improved the language localization for Français (`fr`)
--   Improved the language localization for German (`de`)
--   Improved the language localization for Polish (`pl`)
--   Upgraded `ng-extract-i18n-merge` from version `2.14.1` to `2.14.3`
+-   Set the maximum number of symbols per request in the *Financial Modeling Prep* service
+-   Migrated the get quotes functionality of the *Financial Modeling Prep* service to its stable API version
+-   Improved the language localization for Enlish (`en`)
+-   Upgraded `eslint` dependencies
+-   Upgraded `Nx` from version `20.6.4` to `20.7.1`
+
+##### Fixed
+
+-   Fixed the link to the pricing page in the premium indicator component
 
 ---
 
@@ -24,7 +28,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.150.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/138
+* Update Ghostfolio to v2.151.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/139
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.62.0...v1.63.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.63.0...v1.64.0
