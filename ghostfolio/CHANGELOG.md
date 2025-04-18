@@ -1,8 +1,8 @@
 ## Ghostfolio Release Notes
 
-### [`v2.152.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21520---2025-04-16)
+### [`v2.152.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21521---2025-04-17)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.151.0...2.152.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.152.0...2.152.1)
 
 ##### Changed
 
@@ -21,7 +21,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.152.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/140
+* Update Ghostfolio to v2.152.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/141
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.64.0...v1.65.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.65.0...v1.66.0
