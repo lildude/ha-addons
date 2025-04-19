@@ -1,17 +1,20 @@
 ## Ghostfolio Release Notes
 
-### [`v2.152.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21521---2025-04-17)
+### [`v2.153.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21530---2025-04-18)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.152.0...2.152.1)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.152.1...2.153.0)
 
 ##### Changed
 
--   Deactivated asset profiles automatically on delisting in the *Yahoo Finance* service
--   Optimized the query of the data range functionality (`getRange()`) in the market data service
--   Moved the subscription offer from the info to the user service
--   Upgraded `Nx` from version `20.7.1` to `20.8.0`
--   Upgraded `prisma` from version `6.5.0` to `6.6.0`
--   Upgraded `storybook` from version `8.4.7` to `8.6.12`
+-   Added support for activities in a custom currency
+-   Refreshed the cryptocurrencies list
+-   Upgraded `chart.js` from version `4.4.7` to `4.4.9`
+-   Upgraded `uuid` from version `11.0.5` to `11.1.0`
+
+##### Fixed
+
+-   Fixed the functionality to open an asset profile of a custom currency in the admin control panel
+-   Fixed the asset class parsing in the *Financial Modeling Prep* service for exchange rates
 
 ---
 
@@ -21,7 +24,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.152.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/141
+* Update softprops/action-gh-release action to v2.2.2 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/143
+* Update Ghostfolio to v2.153.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/142
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.65.0...v1.66.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.66.0...v1.67.0
