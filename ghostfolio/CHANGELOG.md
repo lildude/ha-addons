@@ -1,20 +1,26 @@
 ## Ghostfolio Release Notes
 
-### [`v2.153.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21530---2025-04-18)
+### [`v2.154.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21540---2025-04-21)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.152.1...2.153.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.153.0...2.154.0)
+
+##### Added
+
+-   Extended the benchmark detail dialog by the current market price
+-   Added the performance calculation type to the user settings (experimental)
+-   Added `watchlist` to the `User` database schema as a preparation for watching assets
 
 ##### Changed
 
--   Added support for activities in a custom currency
--   Refreshed the cryptocurrencies list
--   Upgraded `chart.js` from version `4.4.7` to `4.4.9`
--   Upgraded `uuid` from version `11.0.5` to `11.1.0`
+-   Made the historical market data editor expandable in the admin control panel
+-   Renamed `Subscription` to `subscriptions` in the `User` database schema
+-   Parallelized the requests in the get quotes functionality of the *Financial Modeling Prep* service
+-   Migrated the lookup functionality by `isin` of the *Financial Modeling Prep* service to its stable API version
+-   Improved the language localization for German (`de`)
 
 ##### Fixed
 
--   Fixed the functionality to open an asset profile of a custom currency in the admin control panel
--   Fixed the asset class parsing in the *Financial Modeling Prep* service for exchange rates
+-   Fixed the word wrap in the menu of the historical market data table in the admin control panel
 
 ---
 
@@ -24,8 +30,7 @@
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v2.2.2 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/143
-* Update Ghostfolio to v2.153.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/142
+* Update Ghostfolio to v2.154.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/144
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.66.0...v1.67.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.67.0...v1.68.0
