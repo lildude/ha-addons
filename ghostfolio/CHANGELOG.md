@@ -1,24 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v2.155.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21550---2025-04-23)
+### [`v2.156.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21560---2025-04-27)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.154.0...2.155.0)
-
-##### Added
-
--   Added the endpoints (`DELETE`, `GET` and `POST`) for the watchlist
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.155.0...2.156.0)
 
 ##### Changed
 
--   Simplified the data source check in the DTO of the activity creation
--   Simplified the data source check in the DTO of the asset profile update
--   Renamed `User` to `user` in the `Subscription` database schema
--   Migrated the `@ghostfolio/ui/assistant` component to control flow
--   Migrated the `@ghostfolio/ui/value` component to control flow
+-   Improved the error message of the currency code validation
+-   Tightened the currency code validation by requiring uppercase letters
+-   Respected the watcher count for the delete asset profiles checkbox in the historical market data table of the admin control panel
+-   Improved the language localization for Français (`fr`)
+-   Upgraded `ngx-skeleton-loader` from version `10.0.0` to `11.0.0`
+-   Upgraded `Nx` from version `20.8.0` to `20.8.1`
 
 ##### Fixed
 
--   Fixed an issue in the settings dialog to customize the rule thresholds of the *X-ray* page (experimental)
+-   Fixed an issue with the investment calculation for activities in a custom currency
+-   Improved the file selector of the activities import functionality to accept case-insensitive file extensions (`.CSV` and `.JSON`)
+-   Fixed the missing localization for "someone" on the public page
 
 ---
 
@@ -28,7 +27,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.155.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/145
+* Update Ghostfolio to v2.156.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/146
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.68.0...v1.69.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.69.0...v1.70.0
