@@ -1,18 +1,21 @@
 ## Ghostfolio Release Notes
 
-### [`v2.157.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21570---2025-04-28)
+### [`v2.158.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21580---2025-04-30)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.156.0...2.157.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.157.1...2.158.0)
 
 ##### Added
 
--   Introduced a watchlist to follow assets (experimental)
+-   Added support to delete an asset from the watchlist (experimental)
 
 ##### Changed
 
--   Changed the column label from *Index* to *Name* in the benchmark component
--   Extended the data providers management of the admin control panel
+-   Renamed `Order` to `activities` in the `Account` database schema
 -   Improved the language localization for German (`de`)
+
+##### Fixed
+
+-   Fixed an issue with the saving of activities with type `INTEREST`, `ITEM` and `LIABILITY`
 
 ---
 
@@ -22,7 +25,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.157.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/147
+* Update Ghostfolio to v2.157.1 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/148
+* Update Ghostfolio to v2.158.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/149
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.70.0...v1.71.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.71.0...v1.72.0
