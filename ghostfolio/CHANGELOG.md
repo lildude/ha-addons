@@ -1,45 +1,22 @@
 ## Ghostfolio Release Notes
 
-### [`v2.168.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21680---2025-06-07)
+### [`v2.169.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21690---2025-06-08)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.167.0...2.168.0)
-
-##### Added
-
--   Added a background gradient to the sidebar navigation
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.168.0...2.169.0)
 
 ##### Changed
 
--   Migrated the `i18n` service to use `@Injectable()`
--   Improved the language localization for German (`de`)
--   Upgraded `nestjs` from version `11.1.0` to `11.1.3`
-
-### [`v2.167.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21670---2025-06-07)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.166.0...2.167.0)
-
-##### Added
-
--   Added support for column sorting to the markets overview
--   Added support for column sorting to the watchlist
--   Set up the language localization for the static portfolio analysis rule: *Emergency Fund* (Setup)
--   Set up the language localization for the static portfolio analysis rule: *Fees* (Fee Ratio)
-
-##### Changed
-
--   Extended the symbol search component by default options
--   Renamed `Tag` to `tags` in the `User` database schema
--   Improved the language localization for German (`de`)
--   Improved the language localization for Spanish (`es`)
--   Improved the language localization for Turkish (`tr`)
--   Upgraded `ng-extract-i18n-merge` from version `2.15.0` to `2.15.1`
--   Upgraded `Nx` from version `20.8.1` to `21.1.2`
+-   Renamed the asset profile icon component to entity logo component and moved to `@ghostfolio/ui`
+-   Renamed `Account` to `accounts` in the `User` database schema
+-   Improved the cache verification in the health check endpoint (experimental)
+-   Improved the language localization for Catalan (`ca`)
+-   Improved the language localization for French (`fr`)
+-   Improved the language localization for Polish (`pl`)
 
 ##### Fixed
 
--   Fixed an issue where the import button was not correctly enabled in the import activities dialog
--   Fixed an issue with empty account balances in the import activities dialog
--   Fixed an issue in the annualized performance calculation
+-   Handled an exception in the get keys function of the *Redis* cache service
+-   Fixed missing `/.well-known/assetlinks.json` for TWA
 
 ---
 
@@ -49,7 +26,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.168.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/155
+* Update Ghostfolio to v2.169.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/156
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.77.0...v1.78.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.78.0...v1.79.0
