@@ -22,7 +22,7 @@ This repository contains the following add-ons which are maintained in separate 
 
 [Add-on repository](https://github.com/lildude/ha-addon-teslamate/)
 
-![TeslaMate Version](https://img.shields.io/badge/dynamic/json?label=Ghostfolio%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-teslamate%2Fmain%2Fbuild.json&query=%24.args.teslamate_version)
+![TeslaMate Version](https://img.shields.io/badge/dynamic/json?label=TeslaMate%20Version&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-teslamate%2Fmain%2Fbuild.json&query=%24.args.teslamate_version)
 ![Ingress](https://img.shields.io/badge/dynamic/json?label=Ingress&query=%24.ingress&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-teslamate%2Fmain%2Fconfig.json)
 ![Supported Architectures](https://img.shields.io/badge/dynamic/json?color=green&label=Arch&query=%24.arch&url=https%3A%2F%2Fraw.githubusercontent.com%2Flildude%2Fha-addon-teslamate%2Fmain%2Fconfig.json)
 
