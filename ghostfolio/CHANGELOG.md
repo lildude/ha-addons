@@ -1,27 +1,37 @@
 ## Ghostfolio Release Notes
 
-### [`v2.170.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21700---2025-06-11)
+### [`v2.171.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21710---2025-06-15)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.169.0...2.170.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.170.0...2.171.0)
 
 ##### Added
 
--   Included quick links in the search results of the assistant
--   Added a skeleton loader to the changelog page
--   Extended the content of the *Self-Hosting* section by information about additional data providers on the Frequently Asked Questions (FAQ) page
+-   Added the current holdings as default options of the symbol search in the create or update activity dialog
 
 ##### Changed
 
--   Renamed `ApiKey` to `apiKeys` in the `User` database schema
+-   Improved the style of the assistant
+-   Reused the value component in the data providers management of the admin control panel
+-   Set the market state of exchange rate symbols to `open` in the *Financial Modeling Prep* service
+-   Restructured the content of the pricing page
+-   Migrated the `@ghostfolio/ui/assistant` component to control flow
+-   Migrated the `@ghostfolio/ui/value` component to control flow
+-   Migrated the `HtmlTemplateMiddleware` to use `@Injectable()`
+-   Renamed `User` to `user` in the database schema
+-   Improved the language localization for Catalan (`ca`)
+-   Improved the language localization for Español (`es`)
 -   Improved the language localization for French (`fr`)
+-   Improved the language localization for German (`de`)
+-   Improved the language localization for Italian (`it`)
+-   Improved the language localization for Polish (`pl`)
 -   Improved the language localization for Portuguese (`pt`)
--   Upgraded `@keyv/redis` from version `4.3.4` to `4.4.0`
--   Upgraded `prisma` from version `6.8.2` to `6.9.0`
--   Upgraded `zone.js` from version `0.15.0` to `0.15.1`
+-   Improved the language localization for Turkish (`tr`)
+-   Upgraded the *Stripe* dependencies
 
 ##### Fixed
 
--   Restricted the date range change permission in the *Zen Mode*
+-   Fixed a date offset issue with account balances
+-   Fixed missing `/.well-known/assetlinks.json` for TWA
 
 ---
 
@@ -31,9 +41,7 @@
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v2.3.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/157
-* Update softprops/action-gh-release action to v2.3.2 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/158
-* Update Ghostfolio to v2.170.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/159
+* Update Ghostfolio to v2.171.0 by @renovate in https://github.com/lildude/ha-addon-ghostfolio/pull/160
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.79.0...v1.80.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.80.0...v1.81.0
