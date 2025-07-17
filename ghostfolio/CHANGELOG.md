@@ -1,25 +1,30 @@
 ## Ghostfolio Release Notes
 
-### [`v2.181.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21810---2025-07-11)
+### [`v2.182.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21820---2025-07-16)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.180.0...2.181.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.181.0...2.182.0)
+
+##### Added
+
+- Added a message to the assistant if no results have been found
+- Added the category title to the settings dialog to customize the rule thresholds of the *X-ray* page (experimental)
 
 ##### Changed
 
-- Improved the portfolio calculations for activities without historical market data
-- Improved the asset profile dialog’s asset sub class selector of the admin control panel to update the options dynamically based on the selected asset class
-- Improved the asset profile dialog’s data gathering checkbox of the admin control panel to reflect the global settings
-- Improved the language localization for Catalan (`ca`)
+- Improved the label for asset profiles with `MANUAL` data source in the chart of the asset profile details dialog in the admin control panel
+- Improved the label for asset profiles with `MANUAL` data source in the chart of the holding detail dialog
+- Skipped errors for the custom asset profiles in the portfolio snapshot calculation
+- Removed the date range query parameter from the search for the holdings in the assistant
 - Improved the language localization for Chinese (`zh`)
+- Improved the language localization for Dutch (`nl`)
+- Improved the language localization for French (`fr`)
 - Improved the language localization for German (`de`)
-- Improved the language localization for Italian (`it`)
 - Improved the language localization for Portuguese (`pt`)
 - Improved the language localization for Spanish (`es`)
-- Improved the language localization for Turkish (`tr`)
 
 ##### Fixed
 
-- Fixed an issue in the biometric authentication related to matching passkeys
+- Fixed an issue with the clone functionality related to a custom asset profile activity
 
 ---
 
@@ -29,7 +34,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.181.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/172
+* Update Ghostfolio to v2.182.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/173
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.86.0...v1.87.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.87.0...v1.88.0
