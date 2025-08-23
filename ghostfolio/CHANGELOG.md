@@ -1,20 +1,18 @@
 ## Ghostfolio Release Notes
 
-### [`v2.192.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21920---2025-08-21)
+### [`v2.193.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#21930---2025-08-22)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.191.1...2.192.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.192.0...2.193.0)
 
 ##### Added
 
-- Included accounts in the search results of the assistant
-- Included the data source in the asset profile search results of the assistant
-- Added the quantity column to the holdings table of the account detail dialog
+- Added a filter by data source for the asset profiles in the admin control panel
+- Extended the data providers management of the admin control panel by every data provider in use
 
 ##### Changed
 
-- Migrated the prompt dialog component from `ngModel` to form control
-- Refreshed the cryptocurrencies list
-- Improved the language localization for German (`de`)
+- Improved the error handling in data providers
+- Upgraded `yahoo-finance2` from version `3.4.1` to `3.6.4`
 
 ---
 
@@ -24,7 +22,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.192.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/182
+* Update Ghostfolio to v2.193.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/183
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.91.0...v1.92.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.92.0...v1.93.0
