@@ -1,6 +1,6 @@
 {
   "name": "TeslaMate",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "slug": "teslamate",
   "description": "A self-hosted data logger for your Tesla.",
   "url": "https://github.com/lildude/ha-addon-teslamate",
