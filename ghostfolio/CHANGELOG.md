@@ -1,17 +1,27 @@
 ## Ghostfolio Release Notes
 
-### [`v2.200.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22000---2025-09-17)
+### [`v2.201.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22010---2025-09-24)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.199.0...2.200.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.200.0...2.201.0)
+
+##### Added
+
+- Added the symbol to the benchmark component
+- Added the latest activities to the public page (experimental)
+- Added pagination to the activities table of the activities import dialog
+- Added an option to configure the account column of the activities table component
 
 ##### Changed
 
-- Refactored the show access token dialog component to standalone
-- Upgraded `prisma` from version `6.15.0` to `6.16.1`
+- Hid the account column from the activities table of the account detail dialog to avoid redundant information
+- Renamed the show access token dialog component to user account registration dialog component
+- Refreshed the cryptocurrencies list
+- Improved the language localization for German (`de`)
+- Upgraded `countup.js` from version `2.8.2` to `2.9.0`
 
 ##### Fixed
 
-- Removed a temporary element from the activities table component
+- Fixed an issue with `unitPriceInAssetProfileCurrency` in the value redaction interceptor for the impersonation mode
 
 ---
 
@@ -21,8 +31,7 @@
 
 
 ## What's Changed
-* Update home-assistant/builder action to v2025.09.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/192
-* Update Ghostfolio to v2.200.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/193
+* Update Ghostfolio to v2.201.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/194
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.97.0...v1.98.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.98.0...v1.99.0
