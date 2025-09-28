@@ -1,22 +1,17 @@
 ## Ghostfolio Release Notes
 
-### [`v2.202.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22020---2025-09-26)
+### [`v2.203.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22030---2025-09-27)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.201.0...2.202.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.202.0...2.203.0)
 
 ##### Added
 
-- Added `settings` to the `Access` model
+- Added support for column sorting to the queue jobs table in the admin control panel
+- Added a blog post: *Hacktoberfest 2025*
 
 ##### Changed
 
-- Extended the tags selector component to support form control
-- Changed the deprecated `ITEM` activity type to `VALUABLE` in the create or update activity dialog
-
-##### Fixed
-
-- Fixed an issue where the save button was not enabled after editing tags in the create or update activity dialog
-- Fixed an issue in the investment calculation when selling all units of a holding
+- Removed the deprecated `ITEM` activity type
 
 ---
 
@@ -26,7 +21,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.202.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/195
+* Update Ghostfolio to v2.203.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/196
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.99.0...v1.100.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.100.0...v1.101.0
