@@ -1,28 +1,34 @@
 ## Ghostfolio Release Notes
 
-### [`v2.208.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22080---2025-10-11)
+### [`v2.209.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22090---2025-10-18)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.207.0...2.208.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.208.0...2.209.0)
 
 ##### Added
 
-- Added support for configuring the safe withdrawal rate in the *FIRE* section (experimental)
+- Extended the glossary of the resources page by *Stealth Wealth*
+- Extended the content of the pricing page
+- Added a *Storybook* story for the holdings table component
 
 ##### Changed
 
-- Changed the *As seen in* section on the landing page to an animated carousel
-- Refactored `transactionCount` to `activitiesCount` in the endpoint `GET api/v1/portfolio/holding/:dataSource/:symbol`
-- Refactored various components to use self-closing tags
-- Removed the deprecated endpoint `GET api/v1/portfolio/position/:dataSource/:symbol`
-- Removed the deprecated endpoint `PUT api/v1/portfolio/position/:dataSource/:symbol/tags`
+- Disabled the zoom functionality in the *Progressive Web App* (PWA)
+- Improved the currency validation in the get asset profiles functionality of the data provider service
+- Improved the currency validation in the search functionality of the data provider service
+- Optimized the get quotes functionality by utilizing the asset profile resolutions in the *Financial Modeling Prep* service
+- Extracted the footer to a component
+- Refactored the blog page component to standalone
+- Improved the portfolio calculator unit tests to load the user currency from the exported file
 - Improved the language localization for German (`de`)
-- Upgraded `prisma` from version `6.16.1` to `6.16.3`
 
 ##### Fixed
 
-- Fixed the server startup message to properly display IPv6 addresses
-- Enabled IPv6 connectivity for *Redis* in the job queue module by setting the address family
-- Fixed an issue where importing custom asset profiles failed due to validation errors
+- Fixed an issue in the `csv` file import where custom asset profiles failed due to validation errors
+- Fixed an issue with the total buy and sell calculation in the summary related to activities in a custom currency
+- Respected the include indices flag in the search functionality of the *Financial Modeling Prep* service
+- Fixed an issue where the scroll position was not restored when changing pages
+- Fixed the word wrap in the menus of the activities table component
+- Fixed the dark mode in the *As seen in* section on the landing page
 
 ---
 
@@ -32,7 +38,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.208.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/203
+* Update softprops/action-gh-release action to v2.4.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/202
+* Update Ghostfolio to v2.209.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/204
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.103.0...v1.104.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.104.0...v1.105.0
