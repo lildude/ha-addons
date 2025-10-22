@@ -1,34 +1,63 @@
 ## Ghostfolio Release Notes
 
-### [`v2.209.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22090---2025-10-18)
+### [`v2.210.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22101---2025-10-22)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.208.0...2.209.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.210.0...2.210.1)
 
 ##### Added
 
-- Extended the glossary of the resources page by *Stealth Wealth*
-- Extended the content of the pricing page
-- Added a *Storybook* story for the holdings table component
+- Added support for data gathering by date range in the asset profile details dialog of the admin control panel
 
 ##### Changed
 
-- Disabled the zoom functionality in the *Progressive Web App* (PWA)
-- Improved the currency validation in the get asset profiles functionality of the data provider service
-- Improved the currency validation in the search functionality of the data provider service
-- Optimized the get quotes functionality by utilizing the asset profile resolutions in the *Financial Modeling Prep* service
-- Extracted the footer to a component
-- Refactored the blog page component to standalone
-- Improved the portfolio calculator unit tests to load the user currency from the exported file
+- Extracted the portfolio filter form of the assistant to a reusable component
+- Formatted the holdings table in the *Copy AI prompt to clipboard for analysis* action on the analysis page (experimental)
+- Formatted the holdings table in the *Copy portfolio data to clipboard for AI prompt* action on the analysis page (experimental)
+- Reverted the explicit configuration of the *Redis* address family in the job queue module
 - Improved the language localization for German (`de`)
+- Upgraded `ioredis` from version `5.6.1` to `5.8.2`
 
 ##### Fixed
 
-- Fixed an issue in the `csv` file import where custom asset profiles failed due to validation errors
-- Fixed an issue with the total buy and sell calculation in the summary related to activities in a custom currency
-- Respected the include indices flag in the search functionality of the *Financial Modeling Prep* service
-- Fixed an issue where the scroll position was not restored when changing pages
-- Fixed the word wrap in the menus of the activities table component
-- Fixed the dark mode in the *As seen in* section on the landing page
+- Fixed the enter key press to submit the form of the login with access token dialog
+- Fixed an issue in the database seeding process caused by unresolved environment variables in `DATABASE_URL`
+
+### [`v2.210.0`](https://redirect.github.com/ghostfolio/ghostfolio/releases/tag/2.210.0)
+
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.209.0...2.210.0)
+
+##### Added
+
+- Added support for data gathering by date range in the asset profile details dialog of the admin control panel
+
+##### Changed
+
+- Extracted the portfolio filter form of the assistant to a reusable component
+- Formatted the holdings table in the *Copy AI prompt to clipboard for analysis* action on the analysis page (experimental)
+- Formatted the holdings table in the *Copy portfolio data to clipboard for AI prompt* action on the analysis page (experimental)
+- Reverted the explicit configuration of the *Redis* address family in the job queue module
+- Improved the language localization for German (`de`)
+- Upgraded `ioredis` from version `5.6.1` to `5.8.2`
+
+##### Fixed
+
+- Fixed the enter key press to submit the form of the login with access token dialog
+- Fixed an issue in the database seeding process caused by unresolved environment variables in `DATABASE_URL`
+
+##### Special Thanks
+
+- [@&#8203;Ani07-05](https://redirect.github.com/Ani07-05)
+- [@&#8203;DavidReque](https://redirect.github.com/DavidReque)
+- [@&#8203;dtslvr](https://redirect.github.com/dtslvr)
+- [@&#8203;F4tal1t](https://redirect.github.com/F4tal1t)
+- [@&#8203;Fullstack-Arshad](https://redirect.github.com/Fullstack-Arshad)
+- [@&#8203;gmag11](https://redirect.github.com/gmag11)
+- [@&#8203;HydrallHarsh](https://redirect.github.com/HydrallHarsh)
+- [@&#8203;jjs2099](https://redirect.github.com/jjs2099)
+- [@&#8203;s-vamshi](https://redirect.github.com/s-vamshi)
+- [@&#8203;slagiewka](https://redirect.github.com/slagiewka)
+- [@&#8203;Vansh-Parate](https://redirect.github.com/Vansh-Parate)
+- [@&#8203;vitalymatyushik](https://redirect.github.com/vitalymatyushik)
 
 ---
 
@@ -38,8 +67,7 @@
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v2.4.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/202
-* Update Ghostfolio to v2.209.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/204
+* Update Ghostfolio to v2.210.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/205
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.104.0...v1.105.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.105.0...v1.106.0
