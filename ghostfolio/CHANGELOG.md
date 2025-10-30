@@ -1,63 +1,49 @@
 ## Ghostfolio Release Notes
 
-### [`v2.210.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22101---2025-10-22)
+### [`v2.212.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22120---2025-10-29)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.210.0...2.210.1)
-
-##### Added
-
-- Added support for data gathering by date range in the asset profile details dialog of the admin control panel
-
-##### Changed
-
-- Extracted the portfolio filter form of the assistant to a reusable component
-- Formatted the holdings table in the *Copy AI prompt to clipboard for analysis* action on the analysis page (experimental)
-- Formatted the holdings table in the *Copy portfolio data to clipboard for AI prompt* action on the analysis page (experimental)
-- Reverted the explicit configuration of the *Redis* address family in the job queue module
-- Improved the language localization for German (`de`)
-- Upgraded `ioredis` from version `5.6.1` to `5.8.2`
-
-##### Fixed
-
-- Fixed the enter key press to submit the form of the login with access token dialog
-- Fixed an issue in the database seeding process caused by unresolved environment variables in `DATABASE_URL`
-
-### [`v2.210.0`](https://redirect.github.com/ghostfolio/ghostfolio/releases/tag/2.210.0)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.209.0...2.210.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.211.0...2.212.0)
 
 ##### Added
 
-- Added support for data gathering by date range in the asset profile details dialog of the admin control panel
+- Added a close holding button to the holding detail dialog
+- Added the *Sponsors* section to the about page
+- Extended the user detail dialog in the users section of the admin control panel
 
 ##### Changed
 
-- Extracted the portfolio filter form of the assistant to a reusable component
-- Formatted the holdings table in the *Copy AI prompt to clipboard for analysis* action on the analysis page (experimental)
-- Formatted the holdings table in the *Copy portfolio data to clipboard for AI prompt* action on the analysis page (experimental)
-- Reverted the explicit configuration of the *Redis* address family in the job queue module
+- Refactored the generation of the holdings table in the *Copy AI prompt to clipboard for analysis* action on the analysis page (experimental)
+- Refactored the generation of the holdings table in the *Copy portfolio data to clipboard for AI prompt* action on the analysis page (experimental)
+- Improved the usability of the user detail dialog in the users section of the admin control panel
 - Improved the language localization for German (`de`)
-- Upgraded `ioredis` from version `5.6.1` to `5.8.2`
 
 ##### Fixed
 
-- Fixed the enter key press to submit the form of the login with access token dialog
-- Fixed an issue in the database seeding process caused by unresolved environment variables in `DATABASE_URL`
+- Ensured the locale is available in the settings dialog to customize the rule thresholds of the *X-ray* page
 
-##### Special Thanks
+### [`v2.211.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22110---2025-10-25)
 
-- [@&#8203;Ani07-05](https://redirect.github.com/Ani07-05)
-- [@&#8203;DavidReque](https://redirect.github.com/DavidReque)
-- [@&#8203;dtslvr](https://redirect.github.com/dtslvr)
-- [@&#8203;F4tal1t](https://redirect.github.com/F4tal1t)
-- [@&#8203;Fullstack-Arshad](https://redirect.github.com/Fullstack-Arshad)
-- [@&#8203;gmag11](https://redirect.github.com/gmag11)
-- [@&#8203;HydrallHarsh](https://redirect.github.com/HydrallHarsh)
-- [@&#8203;jjs2099](https://redirect.github.com/jjs2099)
-- [@&#8203;s-vamshi](https://redirect.github.com/s-vamshi)
-- [@&#8203;slagiewka](https://redirect.github.com/slagiewka)
-- [@&#8203;Vansh-Parate](https://redirect.github.com/Vansh-Parate)
-- [@&#8203;vitalymatyushik](https://redirect.github.com/vitalymatyushik)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.210.1...2.211.0)
+
+##### Added
+
+- Extended the export functionality by the user account’s performance calculation type
+- Added the *SelfhostedHub* logo to the logo carousel on the landing page
+- Added a user detail dialog to the users section of the admin control panel
+
+##### Changed
+
+- Localized the number formatting in the static portfolio analysis rule: *Liquidity* (Buying Power)
+- Moved the *Prisma Configuration File* from `prisma.config.ts` to `.config/prisma.ts`
+- Improved the language localization for German (`de`)
+- Upgraded `prisma` from version `6.17.1` to `6.18.0`
+- Upgraded `tablemark` from version `3.1.0` to `4.1.0`
+
+##### Fixed
+
+- Fixed the style in the footer row of the accounts table
+- Fixed the rendering of names and symbols for custom assets in the import activities dialog
+- Fixed an issue with the market price in base currency during the portfolio snapshot calculation
 
 ---
 
@@ -67,7 +53,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.210.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/205
+* Update Ghostfolio to v2.212.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/206
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.105.0...v1.106.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.106.0...v1.107.0
