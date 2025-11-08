@@ -1,11 +1,10 @@
 {
   "name": "Ghostfolio",
-  "version": "1.108.0",
+  "version": "1.109.0",
   "slug": "ghostfolio",
   "description": "Privacy-first, open source dashboard for your personal finances.",
   "url": "https://github.com/lildude/ha-addon-ghostfolio",
   "arch": [
-    "armv7",
     "aarch64",
     "amd64"
   ],
@@ -44,6 +43,5 @@
       }
     ]
   },
-  "codenotary": "colin@symr.io",
   "image": "ghcr.io/lildude/ha-addon-ghostfolio-{arch}"
 }
