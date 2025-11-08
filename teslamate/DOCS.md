@@ -77,7 +77,6 @@ custom_plugins:
   - name: panodata-map-panel
     url: https://github.com/panodata/panodata-map-panel/releases/download/0.16.0/panodata-map-panel-0.16.0.zip
     unsigned: true
-custom_plugins: []
 env_vars:
   - name: GF_SECURITY_ADMIN_USER
     value: <youruser>
@@ -150,6 +149,8 @@ For example, if you access your Home Assistant instance at `https://ha.example.c
 - Dashboards: `https://ha.example.com/api/hassio_ingress/G9ocwA44wt9Bcba8LvP8tDhlfFiFnnPftOZBwp-Pgzs`
 
 Do _not_ use these values. Use the values from your log output.
+
+**Note:** If you do not see the links in your add-on logs, clear the values in the TeslaMate configuration and restart the add-on.
 
 ## Migrate TeslaMate to a Different PostgreSQL Server
 

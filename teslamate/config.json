@@ -1,11 +1,10 @@
 {
   "name": "TeslaMate",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "slug": "teslamate",
   "description": "A self-hosted data logger for your Tesla.",
   "url": "https://github.com/lildude/ha-addon-teslamate",
   "arch": [
-    "armv7",
     "aarch64",
     "amd64"
   ],
@@ -74,6 +73,5 @@
   "map": [
     "share:rw"
   ],
-  "codenotary": "colin@symr.io",
   "image": "ghcr.io/lildude/ha-addon-teslamate-{arch}"
 }
