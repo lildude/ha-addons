@@ -1,28 +1,55 @@
 ## Ghostfolio Release Notes
 
-### [`v2.215.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22150---2025-11-06)
+### [`v2.217.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22171---2025-11-16)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.214.0...2.215.0-beta.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.217.0...2.217.1)
 
 ##### Added
 
-- Added the endpoint `GET /api/v1/admin/user/:id`
+- Introduced support for automatically gathering required exchange rates, exposed as an environment variable (`ENABLE_FEATURE_GATHER_NEW_EXCHANGE_RATES`)
+- Added a blog post: *Black Weeks 2025*
 
 ##### Changed
 
-- Improved the *Self-Hosting* section content for the *Compare with...* concept on the Frequently Asked Questions (FAQ) page
-- Improved the *Self-Hosting* section content for the *Markets* concept on the Frequently Asked Questions (FAQ) page
-- Changed the build executor of the client from `@nx/angular:webpack-browser` to `@nx/angular:browser-esbuild`
-- Refactored the app component to standalone
+- Refactored the get holding functionality in the portfolio service
+- Changed the user data loading in the user detail dialog of the admin control panel’s users section to fetch data on demand
+- Exposed the authentication with access token as an environment variable (`ENABLE_FEATURE_AUTH_TOKEN`)
+- Improved the search functionality of the *Financial Modeling Prep* service
 - Improved the language localization for German (`de`)
-- Upgraded `@ionic/angular` from version `8.7.3` to `8.7.8`
+- Upgraded `prisma` from version `6.18.0` to `6.19.0`
 
-##### Fixed
+##### Todo
 
-- Fixed the style of the safe withdrawal rate selector in the *FIRE* section (experimental)
-- Assigned the `ADMIN` role to the first user signing up via a social login provider if no administrator existed
-- Improved the table headers’ alignment in the platform management of the admin control panel
-- Improved the table headers’ alignment in the tag management of the admin control panel
+- Rename the environment variable from `ENABLE_FEATURE_SOCIAL_LOGIN` to `ENABLE_FEATURE_AUTH_GOOGLE`
+
+### [`v2.217.0`](https://redirect.github.com/ghostfolio/ghostfolio/releases/tag/2.217.0)
+
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.216.0...2.217.0)
+
+##### Added
+
+- Introduced support for automatically gathering required exchange rates, exposed as an environment variable (`ENABLE_FEATURE_GATHER_NEW_EXCHANGE_RATES`)
+- Added a blog post: *Black Weeks 2025*
+
+##### Changed
+
+- Refactored the get holding functionality in the portfolio service
+- Changed the user data loading in the user detail dialog of the admin control panel’s users section to fetch data on demand
+- Exposed the authentication with access token as an environment variable (`ENABLE_FEATURE_AUTH_TOKEN`)
+- Improved the language localization for German (`de`)
+- Upgraded `prisma` from version `6.18.0` to `6.19.0`
+
+##### Todo
+
+- Rename the environment variable from `ENABLE_FEATURE_SOCIAL_LOGIN` to `ENABLE_FEATURE_AUTH_GOOGLE`
+
+##### Special Thanks
+
+- [@&#8203;DavidReque](https://redirect.github.com/DavidReque)
+- [@&#8203;dtslvr](https://redirect.github.com/dtslvr)
+- [@&#8203;gmag11](https://redirect.github.com/gmag11)
+- [@&#8203;inevs](https://redirect.github.com/inevs)
+- [@&#8203;KenTandrian](https://redirect.github.com/KenTandrian)
 
 ---
 
@@ -32,9 +59,10 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.214.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/208
-* Update Ghostfolio to v2.215.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/209
-* Drop support for armv7 by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/210
+* Update Ghostfolio to v2.216.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/212
+* Update softprops/action-gh-release action to v2.4.2 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/211
+* Update actions/checkout action to v5.0.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/214
+* Update Ghostfolio to v2.217.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/213
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.108.0...v1.109.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.109.0...v1.110.0
