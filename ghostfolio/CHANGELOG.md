@@ -1,42 +1,20 @@
 ## Ghostfolio Release Notes
 
-### [`v2.219.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22190---2025-11-23)
+### [`v2.220.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22200---2025-11-29)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.218.0...2.219.0)
-
-##### Added
-
-- Extended the user detail dialog of the admin control panel’s users section by the authentication method
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.219.0...2.220.0)
 
 ##### Changed
 
-- Disabled the action to delete activities if the activities table is empty
-- Improved the validation of the currency management in the admin control panel
-- Improved the content of the pricing page
-- Resolved the data source of the `GHOSTFOLIO` data provider in the export functionality
-- Resolved the data source of the `GHOSTFOLIO` data provider in the import functionality
-- Refreshed the cryptocurrencies list
-- Improved the language localization for German (`de`)
-- Upgraded `yahoo-finance2` from version `3.10.1` to `3.10.2`
+- Restricted the asset profile data gathering on Sundays to only process outdated asset profiles
+- Removed the *Cypress* testing setup
+- Eliminated `uuid` in favor of using `randomUUID` from `node:crypto`
+- Upgraded `color` from version `5.0.0` to `5.0.3`
+- Upgraded `prettier` from version `3.6.2` to `3.7.2`
 
 ##### Fixed
 
-- Fixed an issue with the edit of future activities (drafts)
-
-### [`v2.218.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22180---2025-11-20)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.217.1...2.218.0)
-
-##### Added
-
-- Extended the accounts table menu with a *View Details* item
-- Extended the portfolio summary tab on the home page by percentage values (experimental)
-- Added the *OSS Gallery* logo to the logo carousel on the landing page
-
-##### Changed
-
-- Improved the dynamic numerical precision for various values in the portfolio summary tab on the home page
-- Upgraded `yahoo-finance2` from version `3.10.0` to `3.10.1`
+- Fixed an issue with the exchange rate calculation when converting between derived currencies and their root currencies
 
 ---
 
@@ -46,8 +24,8 @@
 
 
 ## What's Changed
-* Update actions/checkout action to v6 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/215
-* Update Ghostfolio to v2.219.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/216
+* Update home-assistant/builder action to v2025.11.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/217
+* Update Ghostfolio to v2.220.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/218
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.110.0...v1.111.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.111.0...v1.112.0
