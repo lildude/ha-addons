@@ -1,31 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v2.227.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22270---2026-01-02)
+### [`v2.228.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22280---2026-01-03)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.226.0...2.227.0)
-
-##### Changed
-
-- Initialized the input properties in the *FIRE* calculator
-- Removed the deprecated public *Stripe* key
-- Upgraded `stripe` from version `18.5.0` to `20.1.0`
-
-##### Fixed
-
-- Fixed the import of `jsonpath` to support REST APIs (`JSON`) via the scraper configuration
-
-### [`v2.226.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22260---2026-01-01)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.225.0...2.226.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.227.0...2.228.0)
 
 ##### Added
 
-- Extended the content of the *Self-Hosting* section by information about additional data providers on the Frequently Asked Questions (FAQ) page
+- Extended the portfolio holdings to include performance with currency effects for cash positions
 
 ##### Changed
 
-- Upgraded `class-validator` from version `0.14.2` to `0.14.3`
-- Upgraded `yahoo-finance2` from version `3.10.2` to `3.11.2`
+- Integrated the endpoint to get all platforms (`GET api/v1/platforms`) into the create or update account dialog
+- Extracted the scraper configuration to a dedicated tab in the asset profile details dialog of the admin control panel
+- Improved the language localization for German (`de`)
+- Upgraded `@date-fns/utc` from version `2.1.0` to `2.1.1`
+
+##### Fixed
+
+- Improved the table headers’ alignment of the accounts table on mobile
 
 ---
 
@@ -35,7 +27,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.227.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/227
+* Update Ghostfolio to v2.228.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/229
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.116.0...v1.117.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.117.0...v1.118.0
