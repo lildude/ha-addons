@@ -1,5 +1,5 @@
 ## What's Changed
-* Urlencode the database username and password and fix Postgres addon links by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/230
+* Fix authentication issue by URL encoding only the databse password by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/232
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.118.0...v1.118.1
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.118.1...v1.118.2
