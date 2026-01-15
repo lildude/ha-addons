@@ -1,25 +1,21 @@
 ## Ghostfolio Release Notes
 
-### [`v2.229.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22290---2026-01-11)
+### [`v2.230.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22300---2026-01-14)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.228.0...2.229.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.229.0...2.230.0)
+
+##### Added
+
+- Set up the language localization for Korean (`ko`)
 
 ##### Changed
 
-- Set the active sort column in the accounts table component
-- Deprecated `activities` in the endpoint `GET api/v1/portfolio/holding/:dataSource/:symbol`
-- Moved the admin service to `@ghostfolio/ui/services`
-- Moved the data service to `@ghostfolio/ui/services`
-- Refactored the dividend import
-- Refreshed the cryptocurrencies list
+- Restored the support for specific calendar year date ranges (`2024`, `2023`, `2022`, etc.) in the holdings table (experimental)
 
 ##### Fixed
 
-- Fixed the net worth calculation to prevent the double counting of cash positions
-- Fixed the filtering by asset class in the endpoint `GET api/v1/portfolio/holdings`
-- Fixed the case-insensitive sorting in the accounts table component
-- Fixed the case-insensitive sorting in the benchmark component
-- Fixed the case-insensitive sorting in the holdings table component
+- Fixed the total fee calculation in the holding detail dialog related to activities in a custom currency
+- Fixed the total fee calculation in the summary related to activities in a custom currency
 
 ---
 
@@ -29,7 +25,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.229.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/233
+* Update Ghostfolio to v2.230.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/234
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.118.2...v1.119.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.119.0...v1.120.0
