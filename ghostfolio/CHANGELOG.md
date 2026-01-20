@@ -1,21 +1,18 @@
 ## Ghostfolio Release Notes
 
-### [`v2.230.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22300---2026-01-14)
+### [`v2.232.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22320---2026-01-19)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.229.0...2.230.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.231.0...2.232.0)
 
 ##### Added
 
-- Set up the language localization for Korean (`ko`)
+- Extended the analysis page to include the total amount, change and performance with currency effects (experimental)
 
 ##### Changed
 
-- Restored the support for specific calendar year date ranges (`2024`, `2023`, `2022`, etc.) in the holdings table (experimental)
-
-##### Fixed
-
-- Fixed the total fee calculation in the holding detail dialog related to activities in a custom currency
-- Fixed the total fee calculation in the summary related to activities in a custom currency
+- Deprecated `firstBuyDate` in favor of `dateOfFirstActivity` in the endpoint `GET api/v1/portfolio/holding/:dataSource/:symbol`
+- Improved the language localization for German (`de`)
+- Upgraded `countries-list` from version `3.2.0` to `3.2.2`
 
 ---
 
@@ -25,7 +22,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v2.230.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/234
+* Update Ghostfolio to v2.231.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/235
+* Update Ghostfolio to v2.232.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/236
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.119.0...v1.120.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.120.0...v1.121.0
