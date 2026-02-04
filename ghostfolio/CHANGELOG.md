@@ -1,19 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v2.234.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22340---2026-01-30)
+### [`v2.235.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22350---2026-02-03)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.233.0...2.234.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.234.0...2.235.0)
+
+##### Added
+
+- Added the ability to fetch top holdings for ETF and mutual fund assets from *Yahoo Finance*
+- Added support for the impersonation mode in the endpoint `GET api/v1/account/:id/balances`
+- Added an action menu to the user detail dialog in the users section of the admin control panel
 
 ##### Changed
 
-- Improved the usability of the create asset profile dialog in the market data section of the admin control panel
-- Improved the language localization for Chinese (`zh`)
-- Improved the language localization for German (`de`)
-- Improved the language localization for Spanish (`es`)
-- Upgraded `angular` from version `21.0.6` to `21.1.1`
-- Upgraded `lodash` from version `4.17.21` to `4.17.23`
-- Upgraded `Nx` from version `22.3.3` to `22.4.1`
-- Upgraded `prettier` from version `3.8.0` to `3.8.1`
+- Optimized the value redaction interceptor for the impersonation mode by introducing `fast-redact`
+- Refactored `showTransactions` in favor of `showActivitiesCount` in the accounts table component
+- Refactored `transactionCount` in favor of `activitiesCount` in the accounts table component
+- Deprecated `transactionCount` in favor of `activitiesCount` in the endpoint `GET api/v1/admin`
+- Removed the deprecated `firstBuyDate` in the portfolio calculator
+- Upgraded `yahoo-finance2` from version `3.11.2` to `3.13.0`
 
 ---
 
@@ -23,9 +27,7 @@
 
 
 ## What's Changed
-* Update actions/checkout action to v6.0.2 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/237
-* Update docker/login-action action to v3.7.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/239
-* Update Ghostfolio to v2.234.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/240
+* Update Ghostfolio to v2.235.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/241
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.122.0...v1.123.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.123.0...v1.124.0
