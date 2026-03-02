@@ -1,18 +1,21 @@
 ## Ghostfolio Release Notes
 
-### [`v2.244.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22440---2026-02-28)
+### [`v2.245.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#22450---2026-03-01)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.243.0...2.244.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/2.244.0...2.245.0)
 
 ##### Changed
 
-- Improved the usability of the asset profile details dialog in the admin control panel for currencies
-- Removed the deprecated static portfolio analysis rule: *Fees* (Fee Ratio)
-- Refactored queries in the data provider service to use Prisma’s safe query methods
+- Excluded the scraper configuration from the import and export functionality
+- Excluded the symbol mapping from the import and export functionality
+- Improved the language localization for Dutch (`nl`)
+- Improved the language localization for Italian (`it`)
+- Improved the language localization for Spanish (`es`)
 
 ##### Fixed
 
-- Fixed an exception by adding a fallback for missing market price values on the *X-ray* page
+- Resolved the data source transformation in the errors of the performance endpoint
+- Resolved the data source transformation in the export functionality
 
 ---
 
@@ -22,9 +25,7 @@
 
 
 ## What's Changed
-* Update home-assistant/builder action to v2026 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/251
-* Update home-assistant/builder action to v2026.02.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/252
-* Update Ghostfolio to v2.244.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/253
+* Update Ghostfolio to v2.245.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/254
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.131.0...v1.132.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.132.0...v1.133.0
