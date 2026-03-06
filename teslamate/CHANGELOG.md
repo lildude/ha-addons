@@ -1,72 +1,104 @@
 ## TeslaMate Release Notes
 
-### [`v2.2.0`](https://redirect.github.com/teslamate-org/teslamate/blob/HEAD/CHANGELOG.md#100---2019-07-25)
+### [`v3.0.0`](https://github.com/teslamate-org/teslamate/blob/HEAD/CHANGELOG.md#300---2026-02-28)
 
-[Compare Source](https://redirect.github.com/teslamate-org/teslamate/compare/v2.1.1...v2.2.0)
+[Compare Source](https://redirect.github.com/teslamate-org/teslamate/compare/v2.2.0...v3.0.0)
 
-As always, there have been many improvements. We now support a proxy for the OpenStreetMap API. If you live in a geo-blocked location, this could simplify your setup. Your tokens are now more secure.
-We use the latest dependencies and support PostgreSQL 18 (To update, back up your data and follow [the guide](https://docs.teslamate.org/docs/maintenance/upgrading_postgres). **Please note: Volume mounts have changed in PostgreSQL18, see point 4 of the guide.**).
-We also avoid memory bloat on misconfigured Docker hosts. If your host has limited hardware, this will greatly improve your experience.
-The dashboards have been improved in terms of performance, and all dashboards now function as expected when set to miles.
+Let's start with a quote: "Why do programmers like dark mode? Because light attracts bugs.". Yes, you read that right. TeslaMate Webview now has a dark mode.
 
-Enjoy it.
+As always, lots of improvements have been made. Memory usage has been reduced, while performance has been increased — it sounds too good to be true, but it's the reality.
+Battery heating is now also shown on the overview dashboard, and the drives dashboard now always shows the consumption.
+To make your TeslaMate experience even better, we have also made more than 52 other improvements.
+
+Enjoy!
+
+### 📄 License Change Notice
+
+As of PR [#&#8203;5131](https://redirect.github.com/teslamate-org/teslamate/issues/5131), TeslaMate has transitioned from the MIT License to the GNU Affero General Public License v3.0 (AGPLv3).
+
+What does this mean for you?
+
+- For Private Users: Nothing changes. You can continue to use, host, and modify TeslaMate for your personal use for free, just as before.
+- For the Community: This change ensures that TeslaMate remains open and free. It prevents companies from taking the community's hard work and turning it into a closed-source commercial service without giving back.
+- For Developers: If you modify or use TeslaMate, you must now share your source code modifications under the same license.
+
+We believe this step is necessary to protect the project from exploitation and to ensure its long-term sustainability.
 
 ### New features
 
-- feat: support proxy for openstreet API ([#4970](https://redirect.github.com/teslamate-org/teslamate/issues/4970) - [@jaypark0006](https://redirect.github.com/jaypark0006))
+- feat: add optional dark mode feature ([#&#8203;5065](https://redirect.github.com/teslamate-org/teslamate/issues/5065) - [@&#8203;wooter](https://redirect.github.com/wooter))
+- legal: relicense under AGPLv3 ([#&#8203;5131](https://redirect.github.com/teslamate-org/teslamate/issues/5131) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- legal: add Trademark notice ([#&#8203;5131](https://redirect.github.com/teslamate-org/teslamate/issues/5131) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- feat: use Bulma 1 for dark theme and revised it ([#&#8203;5112](https://redirect.github.com/teslamate-org/teslamate/issues/5112) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
 
 ### Improvements and bug fixes
 
-- sec: set tokens to private schema ([#4968](https://redirect.github.com/teslamate-org/teslamate/issues/4968) -[@brianmay](https://redirect.github.com/brianmay))
-- build(deps): use elixir 1.18.4, node 22 & debian trixie ([#4889](https://redirect.github.com/teslamate-org/teslamate/issues/4889) - [@swiffer](https://redirect.github.com/swiffer))
-- fix: allow using different PostgreSQL port than default when using socket_dir connection ([#4979](https://redirect.github.com/teslamate-org/teslamate/issues/4979) - [@jaypark0006](https://redirect.github.com/jaypark0006))
-- perf: use anti join for short-circuit evaluation when getting non streamed drives ([#4990](https://redirect.github.com/teslamate-org/teslamate/issues/4990) - [@swiffer](https://redirect.github.com/swiffer))
-- feat: Add ulimit cap to prevent memory bloat in some misconfigured versions of Docker/containerd Hosts (e.g. on Debian 13) ([#5025](https://redirect.github.com/teslamate-org/teslamate/issues/5025) - [@JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- feat: officially support PostgreSQL 18 ([#4890](https://redirect.github.com/teslamate-org/teslamate/issues/4890) - [@swiffer](https://redirect.github.com/swiffer))
+- feat: use Logger instead of IO.puts in DB check ([#&#8203;5050](https://redirect.github.com/teslamate-org/teslamate/issues/5050) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- feat: Increase max_header_value_length to support oauth2-proxy ([#&#8203;5031](https://redirect.github.com/teslamate-org/teslamate/issues/5031) - [@&#8203;ultravail](https://redirect.github.com/ultravail))
+- perf: Replace positions indexes from BTREE to BRIN to reduce memory usage ([#&#8203;5075](https://redirect.github.com/teslamate-org/teslamate/issues/5075) - [@&#8203;ilya-y-synth](https://redirect.github.com/ilya-y-synth))
+- feat(grafana): disable update checks as version is handled via docker image ([#&#8203;5115](https://redirect.github.com/teslamate-org/teslamate/issues/5115) - [@&#8203;fatbasstard](https://redirect.github.com/fatbasstard))
+- perf: use static asset compression via brotli and zstandard to enhance HTTP Compression ([#&#8203;5113](https://redirect.github.com/teslamate-org/teslamate/issues/5113) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- feat: use Grafana 12.4.0 ([#&#8203;4965](https://redirect.github.com/teslamate-org/teslamate/issues/4965) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- fix(vehicle): update state transition to handle offline scenario after a drive end with no network ([#&#8203;5152](https://redirect.github.com/teslamate-org/teslamate/issues/5152) - [@&#8203;jlestel](https://redirect.github.com/jlestel))
 
 #### Build, CI, internal
 
-- build(deps): update flake.lock ([#4911](https://redirect.github.com/teslamate-org/teslamate/issues/4911))
-- build(deps): bump @docusaurus/core from 3.8.1 to 3.9.1, @docusaurus/preset-classic from 3.8.1 to 3.9.1, bump dependencies in /website ([#4977](https://redirect.github.com/teslamate-org/teslamate/issues/4977) - [@JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(deps): bump actions/checkout from 4.2.2 to 5.0.0 ([#4933](https://redirect.github.com/teslamate-org/teslamate/issues/4933))
-- build(deps): bump actions/cache from 4.2.3 to 4.3.0 ([#4972](https://redirect.github.com/teslamate-org/teslamate/issues/4972))
-- build(deps): bump nixbuild/nix-quick-install-action from 32 to 34 ([#4974](https://redirect.github.com/teslamate-org/teslamate/issues/4974))
-- build(deps): bump docker/login-action from 3.4.0 to 3.6.0 ([#4975](https://redirect.github.com/teslamate-org/teslamate/issues/4975))
-- build(deps): bump crate-ci/typos from 1.34.0 to 1.37.0 ([#4976](https://redirect.github.com/teslamate-org/teslamate/issues/4976))
-- build(deps): bump finch from 0.19.0 to 0.20.0 ([#4929](https://redirect.github.com/teslamate-org/teslamate/issues/4929))
-- build(deps): update flake.lock ([#4991](https://redirect.github.com/teslamate-org/teslamate/issues/4991))
-- build(deps): update flake.lock ([#4997](https://redirect.github.com/teslamate-org/teslamate/issues/4997))
-- build(deps): bump actions/stale from 9.1.0 to 10.1.0 ([#5019](https://redirect.github.com/teslamate-org/teslamate/issues/5019))
-- build(deps): bump @docusaurus/core from 3.9.1 to 3.9.2, @docusaurus/preset-classic from 3.9.1 to 3.9.2 and dependencies in /website ([#5020](https://redirect.github.com/teslamate-org/teslamate/issues/5020))
+- build(deps): bump mdast-util-to-hast from 13.2.0 to 13.2.1 in /website ([#&#8203;5059](https://redirect.github.com/teslamate-org/teslamate/issues/5059))
+- build(deps): bump js-yaml from 3.14.1 to 3.14.2 in /website ([#&#8203;5043](https://redirect.github.com/teslamate-org/teslamate/issues/5043))
+- build(deps): bump crate-ci/typos from 1.39.0 to 1.40.0 ([#&#8203;5055](https://redirect.github.com/teslamate-org/teslamate/issues/5055))
+- build(deps): bump DeterminateSystems/update-flake-lock from 27 to 28 ([#&#8203;5056](https://redirect.github.com/teslamate-org/teslamate/issues/5056))
+- build(deps): bump express from 4.21.2 to 4.22.1 in /website ([#&#8203;5060](https://redirect.github.com/teslamate-org/teslamate/issues/5060))
+- build(deps): update flake.lock ([#&#8203;5027](https://redirect.github.com/teslamate-org/teslamate/issues/5027))
+- fix(website): Bump node-forge to 1.3.3 to resolve CVE-2025-12816, CVE-2025-66030 and CVE-2025-66031 ([#&#8203;5071](https://redirect.github.com/teslamate-org/teslamate/issues/5071) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- chore(website): bump qs to fix CVE-2025-15284 ([#&#8203;5091](https://redirect.github.com/teslamate-org/teslamate/issues/5091) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): bump react and react-dom from 19.2.0 to 19.2.3 in /website ([#&#8203;5084](https://redirect.github.com/teslamate-org/teslamate/issues/5084))
+- build(deps): bump nix-community/cache-nix-action from 6.1.3 to 7.0.0 ([#&#8203;5082](https://redirect.github.com/teslamate-org/teslamate/issues/5082))
+- build(deps): bump actions/cache from 4.3.0 to 5.0.1 ([#&#8203;5077](https://redirect.github.com/teslamate-org/teslamate/issues/5077))
+- build(deps): bump crate-ci/typos from 1.40.0 to 1.41.0 ([#&#8203;5079](https://redirect.github.com/teslamate-org/teslamate/issues/5079))
+- build(deps): bump actions/stale from 10.1.0 to 10.1.1 ([#&#8203;5080](https://redirect.github.com/teslamate-org/teslamate/issues/5080))
+- build(deps): bump lodash from 4.17.21 to 4.17.23 in /website ([#&#8203;5109](https://redirect.github.com/teslamate-org/teslamate/issues/5109))
+- build(deps): bump lodash and geoman-io/leaflet-geoman-free in /assets ([#&#8203;5126](https://redirect.github.com/teslamate-org/teslamate/issues/5126))
+- build(deps): bump react and react-dom from 19.2.3 to 19.2.4 in /website ([#&#8203;5124](https://redirect.github.com/teslamate-org/teslamate/issues/5124))
+- build(deps): bump crate-ci/typos from 1.41.0 to 1.42.3 ([#&#8203;5123](https://redirect.github.com/teslamate-org/teslamate/issues/5123))
+- build(deps): bump docker/login-action from 3.6.0 to 3.7.0 ([#&#8203;5119](https://redirect.github.com/teslamate-org/teslamate/issues/5119))
+- build(deps): bump nix-community/cache-nix-action from 7.0.0 to 7.0.2 ([#&#8203;5122](https://redirect.github.com/teslamate-org/teslamate/issues/5122))
+- build(deps): bump actions/cache from 5.0.1 to 5.0.3 ([#&#8203;5120](https://redirect.github.com/teslamate-org/teslamate/issues/5120))
+- build(deps): bump webpack from 5.102.0 to 5.105.0 in /website ([#&#8203;5135](https://redirect.github.com/teslamate-org/teslamate/issues/5135))
+- feat(nix): use nixos-25.11 ([#&#8203;5062](https://redirect.github.com/teslamate-org/teslamate/issues/5062) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- chore(nix): update flake.lock with new dependency revisions ([#&#8203;5062](https://redirect.github.com/teslamate-org/teslamate/issues/5062) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(nix): use elixir 1.19 to align with dockerfile ([#&#8203;5062](https://redirect.github.com/teslamate-org/teslamate/issues/5062) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- chore: reorganize CLI definition to avoid elixir 1.19 warning ([#&#8203;5062](https://redirect.github.com/teslamate-org/teslamate/issues/5062) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build: update db_connection to version 2.9.0 ([#&#8203;5062](https://redirect.github.com/teslamate-org/teslamate/issues/5062) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build: use Elixir 1.19.5 OTP 26 ([#&#8203;5130](https://redirect.github.com/teslamate-org/teslamate/issues/5130) - [@&#8203;swiffer,](https://redirect.github.com/swiffer,) [@&#8203;brianmay](https://redirect.github.com/brianmay) and [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): bump qs from 6.14.1 to 6.14.2 in /website ([#&#8203;5140](https://redirect.github.com/teslamate-org/teslamate/issues/5140))
+- build(deps): update & bump mix deps ([#&#8203;5139](https://redirect.github.com/teslamate-org/teslamate/issues/5139) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- build(deps): bump ex_cldr from 2.42.0 to 2.46.0 ([#&#8203;5053](https://redirect.github.com/teslamate-org/teslamate/issues/5053) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): bump floki & gettext, remove override on ranch, require elixir 1.19 ([#&#8203;5142](https://redirect.github.com/teslamate-org/teslamate/issues/5142) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- feat(grafana-home-dashboard): change cors proxy ([#&#8203;5143](https://redirect.github.com/teslamate-org/teslamate/issues/5143) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- build(deps): update flake.lock ([#&#8203;5141](https://redirect.github.com/teslamate-org/teslamate/issues/5141))
+- build(deps): relax requirement for elixir to allow 1.17+ and clarify what is supported ([#&#8203;5145](https://redirect.github.com/teslamate-org/teslamate/issues/5145) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- build(deps): update flake.lock ([#&#8203;5148](https://redirect.github.com/teslamate-org/teslamate/issues/5148))
+- build(deps): update flake.lock ([#&#8203;5154](https://redirect.github.com/teslamate-org/teslamate/issues/5154))
+- build(deps): bump ajv in /website ([#&#8203;5149](https://redirect.github.com/teslamate-org/teslamate/issues/5149))
+- chore(website): bump mimimatch to version 3.1.5 to solve CVE-2026-26996, CVE-2026-27903 and CVE-2026-27904 ([#&#8203;5155](https://redirect.github.com/teslamate-org/teslamate/issues/5155) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- chore(website): bump serialize-javascript to version 7.0.3 to solve CWE-96 ([#&#8203;5156](https://redirect.github.com/teslamate-org/teslamate/issues/5156) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
 
 #### Dashboards
 
-- fix: charging stats now correctly calculate cost when set to miles ([#4983](https://redirect.github.com/teslamate-org/teslamate/issues/4983) - [@DrMichael](https://redirect.github.com/DrMichael))
-- perf: Optimize Grafana query for trip view to leverage indexes more effectively ([#4964](https://redirect.github.com/teslamate-org/teslamate/issues/4964) - [@jaypark0006](https://redirect.github.com/jaypark0006))
-- feat: add shared buffers size to db info dashboard ([#4989](https://redirect.github.com/teslamate-org/teslamate/issues/4989) - [@swiffer](https://redirect.github.com/swiffer))
-- fix: cast to numeric instead of integer when converting from km to miles to avoid rounding issues in all dashboards ([#4986](https://redirect.github.com/teslamate-org/teslamate/issues/4986) - [@swiffer](https://redirect.github.com/swiffer))
-- fix: correctly determine charging phases in charge detail dashboard ([#4988](https://redirect.github.com/teslamate-org/teslamate/issues/4988) - [@swiffer](https://redirect.github.com/swiffer))
+- feat(overview): show battery heating on overview dashboard as well ([#&#8203;5090](https://redirect.github.com/teslamate-org/teslamate/issues/5090) - [@&#8203;kaistian](https://redirect.github.com/kaistian))
+- feat: optimize reduced_range query and always show consumption kwh in drives dashboard ([#&#8203;5089](https://redirect.github.com/teslamate-org/teslamate/issues/5089) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
 
 #### Translations
 
-- i18n: add spanish car location translation ([#4892](https://redirect.github.com/teslamate-org/teslamate/issues/4892) - [@jpizquierdo](https://redirect.github.com/jpizquierdo))
-- i18n: add missing italian translations, correct the gender of some words and use more uniform translations ([#4920](https://redirect.github.com/teslamate-org/teslamate/issues/4920) - [@giovaorama](https://redirect.github.com/giovaorama))
-- i18n: add thai car location translation ([#4956](https://redirect.github.com/teslamate-org/teslamate/issues/4956) - [@tomzt](https://redirect.github.com/tomzt))
-- i18n: update Traditional Chinese translations with missing translations and to avoid PRC terms and ensure consistency across UI strings ([#4995](https://redirect.github.com/teslamate-org/teslamate/issues/4995) - [@occultsound](https://redirect.github.com/occultsound))
-
 #### Documentation
 
-- docs: for new installs, pin postgres container to debian trixie to avoid collation version mismatch ([#4901](https://redirect.github.com/teslamate-org/teslamate/issues/4901) - [@swiffer](https://redirect.github.com/swiffer))
-- docs: Update FreeBSD and Debian instructions to use GRAFANA_API_TOKEN for the dashboard writes ([#4942](https://redirect.github.com/teslamate-org/teslamate/issues/4942) - [@uqs](https://redirect.github.com/uqs))
-- docs: rename Home Assistant object_id to default_entity_id to be compliant with latest HA ([#4980](https://redirect.github.com/teslamate-org/teslamate/issues/4980) - [@MrPaulAR](https://redirect.github.com/MrPaulAR))
-- docs: explain MQTT in Readme via link to Wikipedia ([#4985](https://redirect.github.com/teslamate-org/teslamate/issues/4985) - [@DanCard](https://redirect.github.com/DanCard))
-- docs(dev): provide guidelines for checking dependency updates before merging ([#4969](https://redirect.github.com/teslamate-org/teslamate/issues/4969) - [@JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- docs: add domain prefix to Home Assistant default_entity_id ([#5014](https://redirect.github.com/teslamate-org/teslamate/issues/5014) - [@gym22](https://redirect.github.com/gym22))
-- docs: add star history ([#5024](https://redirect.github.com/teslamate-org/teslamate/issues/5024) - [@JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- docs: bump Traefik to v3.5 and enable http3 in advanced guide ([#5023](https://redirect.github.com/teslamate-org/teslamate/issues/5023) - [@swiffer](https://redirect.github.com/swiffer))
-- docs: add docs for volume mount change with PostgreSQL 18 ([#4890](https://redirect.github.com/teslamate-org/teslamate/issues/4890) - [@swiffer](https://redirect.github.com/swiffer))
+- docs(traefik): update to v3.6 as 3.6.1 solves issues with docker 29.0 ([#&#8203;5034](https://redirect.github.com/teslamate-org/teslamate/issues/5034) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- docs: fix the formatting of the `DATABASE_SOCKET_DIR` description ([#&#8203;5026](https://redirect.github.com/teslamate-org/teslamate/issues/5026) - [@&#8203;IngmarStein](https://redirect.github.com/IngmarStein))
+- docs: fix external image rendering with Traefik SSL ([#&#8203;5074](https://redirect.github.com/teslamate-org/teslamate/issues/5074) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- docs(home_assistant): default tesla_active_route_distance_to_arrival sensor to kilometers ([#&#8203;5086](https://redirect.github.com/teslamate-org/teslamate/issues/5086) - [@&#8203;kenni](https://redirect.github.com/kenni))
+- docs: Remove hints to now deprecated Grafana VS Code Extension in contribution guide ([#&#8203;5110](https://redirect.github.com/teslamate-org/teslamate/issues/5110) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- docs: Add reference to TeslaMate Achievements ([#&#8203;5134](https://redirect.github.com/teslamate-org/teslamate/issues/5134) - [@&#8203;crstian19](https://redirect.github.com/crstian19))
 
-[complete changelog](https://github.com/teslamate-org/teslamate/compare/v2.1.1...v2.2.0)
 
 ---
 
@@ -76,18 +108,17 @@ Enjoy it.
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v2.3.3 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/103
-* Update home-assistant/builder action to v2025.09.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/104
-* Update softprops/action-gh-release action to v2.3.4 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/107
-* Update docker/login-action action to v3.6.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/106
-* Update softprops/action-gh-release action to v2.4.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/108
-* Update softprops/action-gh-release action to v2.4.1 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/109
-* Remove duplicated custom_plugins: [] by @bruvv in https://github.com/lildude/ha-addon-teslamate/pull/110
-* Add note for clearing TeslaMate config to re-show config links by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/113
-* Drop armv7 support and codenotary by @lildude in https://github.com/lildude/ha-addon-teslamate/pull/115
-* Update TeslaMate to v2.2.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/114
+* Update actions/checkout action to v5.0.1 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/118
+* Update actions/checkout action to v6 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/119
+* Update home-assistant/builder action to v2025.11.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/120
+* Update softprops/action-gh-release action to v2.5.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/116
+* Update actions/checkout action to v6.0.1 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/121
+* Update docker/login-action action to v3.7.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/126
+* Update home-assistant/builder action to v2026 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/127
+* Update home-assistant/builder action to v2026.02.1 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/128
+* Update docker/login-action action to v4 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/130
+* Update TeslaMate to v3 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/129
+* Update actions/checkout action to v6.0.2 - autoclosed by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/125
 
-## New Contributors
-* @bruvv made their first contribution in https://github.com/lildude/ha-addon-teslamate/pull/110
 
-**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v2.2.0...v2.3.0
+**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v2.3.0...v2.4.0
