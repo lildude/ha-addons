@@ -1,24 +1,22 @@
 ## Ghostfolio Release Notes
 
-### [`v3.1.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#310---2026-04-29)
+### [`v3.2.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#320---2026-05-03)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.0.1...3.1.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.1.0...3.2.0)
 
 ##### Added
 
-- Added the *EuroAlternative* logo to the logo carousel on the landing page
-- Integrated a theme switcher into *Storybook* to support toggling between the light and dark mode
+- Added `angular-developer` skills
 
 ##### Changed
 
-- Modernized the layout of the overview tab in the admin control panel
-- Improved the styling of the paginator across various table components
-- Improved the language localization for German (`de`)
+- Harmonized the unit styling in the value component
+- Upgraded `stripe` from version `20.4.1` to `21.0.1`
 
 ##### Fixed
 
-- Optimized the spacing of the logo in the header
-- Fixed the *Storybook* setup by resolving missing `@angular/material` styles
+- Resolved a validation error with an empty URL in the asset profile details dialog of the admin control panel
+- Resolved an issue where charts and components defaulted to *Roboto* instead of the preconfigured *Inter* font family
 
 ---
 
@@ -28,7 +26,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.1.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/280
+* Add a script for easy dev setup and use it for an integration test by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/279
+* Update Ghostfolio to v3.2.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/281
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.143.0...v1.144.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.144.0...v1.145.0
