@@ -1,23 +1,19 @@
 ## Ghostfolio Release Notes
 
-### [`v3.5.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#350---2026-05-24)
+### [`v3.6.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#360---2026-05-28)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.4.0...3.5.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.5.0...3.6.0)
 
 ##### Added
 
-- Configured the `min-release-age` in `.npmrc`
+- Added `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variable support to outbound HTTP requests
+- Added the `FetchService` to centralize outbound HTTP requests
 
 ##### Changed
 
-- Removed the deprecated attributes (`assetClass`, `countries`, `currency`, `dataSource`, `name`, `sectors`, `symbol` and `url`) from the holdings of the public portfolio endpoint response
-- Removed the deprecated `api/v1/order` endpoints
-- Upgraded `@keyv/redis` from version `4.4.0` to `5.1.6`
-
-##### Fixed
-
-- Fixed a layout regression that caused a double scrollbar on pages without tabs
-- Resolved an issue with missing cash positions caused by an incorrect data source
+- Extracted the floating action buttons (FAB) to a reusable component
+- Upgraded `nestjs` from version `11.1.19` to `11.1.21`
+- Upgraded `yahoo-finance2` from version `3.14.0` to `3.14.2`
 
 ---
 
@@ -27,7 +23,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.5.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/285
+* Update Ghostfolio to v3.6.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/286
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.147.0...v1.148.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.148.0...v1.149.0
