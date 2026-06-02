@@ -1,19 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v3.6.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#360---2026-05-28)
+### [`v3.7.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#370---2026-06-02)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.5.0...3.6.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.6.0...3.7.0)
 
 ##### Added
 
-- Added `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variable support to outbound HTTP requests
-- Added the `FetchService` to centralize outbound HTTP requests
+- Added support for routing selected requests through the *OpenRouter* `web_fetch` tool in the `FetchService`
 
 ##### Changed
 
-- Extracted the floating action buttons (FAB) to a reusable component
-- Upgraded `nestjs` from version `11.1.19` to `11.1.21`
-- Upgraded `yahoo-finance2` from version `3.14.0` to `3.14.2`
+- Extended the countries mapping in the data enhancer for asset profile data via *Trackinsight*
+- Removed the deprecated attributes (`assetClass`, `assetClassLabel`, `assetSubClass`, `assetSubClassLabel`, `countries`, `currency`, `dataSource`, `holdings`, `name`, `sectors`, `symbol` and `url`) from the holdings of the portfolio details endpoint response
+- Upgraded `Nx` from version `22.7.2` to `22.7.5`
+
+##### Fixed
+
+- Resolved an issue in the impersonation mode where the values did not match the owner’s currency
+- Fixed the environment variable expansion in the `.env` file when debugging via *Visual Studio Code*
 
 ---
 
@@ -23,7 +27,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.6.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/286
+* Update Ghostfolio to v3.7.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/288
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.148.0...v1.149.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.149.0...v1.150.0
