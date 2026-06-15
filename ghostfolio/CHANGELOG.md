@@ -1,21 +1,26 @@
 ## Ghostfolio Release Notes
 
-### [`v3.10.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3100---2026-06-13)
+### [`v3.11.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3110---2026-06-14)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.9.0...3.10.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.10.0...3.11.0)
+
+##### Added
+
+- Added support for a click handler in the page tabs component
 
 ##### Changed
 
-- Improved the dynamic numerical precision for various values in the account detail dialog on mobile
-- Improved the dynamic numerical precision for various values in the holding detail dialog on mobile
-- Improved the account name display in the activities table
-- Optimized the endpoint `GET api/v1/portfolio/holding/:dataSource/:symbol` by improving the processing of the historical market data
+- Improved the styling of the tabs across various dialogs
+- Improved the styling of the page tabs component on desktop
+- Enabled the *Bull Dashboard* tab in the admin control panel (experimental)
+- Migrated the settings dialog to customize the rule thresholds of the *X-ray* page from `ngModel` to form control
+- Improved the language localization for Spanish (`es`)
+- Upgraded `bull-board` from version `7.1.5` to `7.2.1`
+- Upgraded `date-fns` from version `4.1.0` to `4.4.0`
 
 ##### Fixed
 
-- Fixed an issue in the import dividends dialog
-- Fixed an issue where certain symbols were incorrectly identified as currencies in various data providers
-- Fixed the last request date in the users table of the admin control panel
+- Improved the loading state when customizing the rule thresholds on the *X-ray* page
 
 ---
 
@@ -25,7 +30,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.10.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/291
+* Update Ghostfolio to v3.11.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/292
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.152.0...v1.153.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.153.0...v1.154.0
