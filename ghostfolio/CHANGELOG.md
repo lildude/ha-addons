@@ -1,25 +1,43 @@
 ## Ghostfolio Release Notes
 
-### [`v3.14.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3140---2026-06-22)
+### [`v3.15.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3151---2026-06-23)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.13.0...3.14.0)
-
-##### Added
-
-- Exposed the `ENABLE_FEATURE_CRON` environment variable to control scheduled cron job execution
-- Exposed the `PROCESSOR_GATHER_STATISTICS_CONCURRENCY` environment variable to control the concurrency of the statistics gathering queue processor
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.15.0...3.15.1)
 
 ##### Changed
 
-- Consolidated the exchange rates to be gathered with hourly market data
-- Improved the language localization for German (`de`)
-- Upgraded `@openrouter/ai-sdk-provider` from version `2.9.0` to `2.9.1`
-- Upgraded `undici` from version `7.24.4` to `8.5.0`
+- Improved the dynamic numerical precision for various values in the account detail dialog on mobile
+- Improved the dynamic numerical precision for various values in the holding detail dialog on mobile
+- Upgraded `@internationalized/number` from version `3.6.6` to `3.6.7`
 
 ##### Fixed
 
-- Fixed an issue in the data provider service where asset profiles and historical data could be missing for symbols that exist in multiple data sources by keying the responses by the asset profile identifier
-- Resolved an exception in the benchmarks service when the current market price is unavailable
+- Fixed an issue where symbols with special characters caused API request failures by URL encoding the symbol
+- Fixed the disabled state of the delete action in the asset profiles actions menu of the historical market data table in the admin control panel
+- Fixed the persistence of an empty `locale` string in the scraper configuration
+- Fixed a transaction timeout that prevented gathering historical market data for symbols with a long history
+- Fixed an exception in various portfolio endpoints when historical exchange rate data is missing
+
+### [`v3.15.0`](https://redirect.github.com/ghostfolio/ghostfolio/releases/tag/3.15.0)
+
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.14.0...3.15.0)
+
+##### Changed
+
+- Improved the dynamic numerical precision for various values in the account detail dialog on mobile
+- Improved the dynamic numerical precision for various values in the holding detail dialog on mobile
+- Upgraded `@internationalized/number` from version `3.6.6` to `3.6.7`
+
+##### Fixed
+
+- Fixed an issue where symbols with special characters caused API request failures by URL encoding the symbol
+- Fixed the disabled state of the delete action in the asset profiles actions menu of the historical market data table in the admin control panel
+- Fixed the persistence of an empty `locale` string in the scraper configuration
+
+##### Special Thanks
+
+- [@&#8203;dtslvr](https://redirect.github.com/dtslvr)
+- [@&#8203;KenTandrian](https://redirect.github.com/KenTandrian)
 
 ---
 
@@ -29,9 +47,7 @@
 
 
 ## What's Changed
-* Move away from the legacy build.json build config by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/298
-* Pin GitHub Actions to the tag's SHA by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/299
-* Update Ghostfolio to v3.14.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/300
+* Update Ghostfolio to v3.15.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/301
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.156.0...v1.157.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.157.0...v1.158.0
