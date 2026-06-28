@@ -1,25 +1,25 @@
 ## Ghostfolio Release Notes
 
-### [`v3.17.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3170---2026-06-26)
+### [`v3.18.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3180---2026-06-28)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.16.0...3.17.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.17.0...3.18.0)
 
 ##### Added
 
-- Added `zod` as a root dependency to resolve peer dependency warnings
+- Added support for filtering in the public access for portfolio sharing (experimental)
+- Set up the language localization for Japanese (`ja`)
 
 ##### Changed
 
-- Improved the error message styling in the import activities dialog
-- Improved the grantee display in the access table to share the portfolio
-- Improved the country mapping for data providers
-- Upgraded `bull-board` from version `7.2.1` to `8.0.1`
-- Upgraded `Nx` from version `22.7.5` to `23.0.1`
-- Upgraded `prettier` from version `3.8.3` to `3.8.4`
+- Improved the alias display in the access table to share the portfolio
+- Improved the language localization for German (`de`)
 
 ##### Fixed
 
-- Improved the table headers’ alignment in the queue jobs table of the admin control panel
+- Fixed a phantom `UNKNOWN` slice in the portfolio proportion chart component caused by floating-point rounding
+- Fixed the base currency for the total value calculation in the public access for portfolio sharing
+- Fixed an issue in the public access for portfolio sharing that exposed absolute values of the top holdings of ETFs
+- Fixed the time zone handling in the `api` test suite for deterministic execution in `UTC`
 
 ---
 
@@ -29,7 +29,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.17.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/303
+* Update Ghostfolio to v3.18.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/304
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.159.0...v1.160.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.160.0...v1.161.0
