@@ -1,25 +1,28 @@
 ## Ghostfolio Release Notes
 
-### [`v3.18.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3180---2026-06-28)
+### [`v3.19.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3190---2026-07-02)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.17.0...3.18.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.18.0...3.19.0)
 
 ##### Added
 
-- Added support for filtering in the public access for portfolio sharing (experimental)
-- Set up the language localization for Japanese (`ja`)
+- Added support for routing outgoing requests through a per-domain proxy via the `PROXY_ROUTES` setting in the `FetchService`
+- Added `@prisma/config` as a development dependency used by the *Prisma Configuration File*
 
 ##### Changed
 
-- Improved the alias display in the access table to share the portfolio
+- Updated the *Privacy Policy*
+- Updated the *Terms of Service*
+- Improved the parsing of integer query parameters (`skip` and `take`) in the `GET api/v1/activities` endpoint
 - Improved the language localization for German (`de`)
+- Improved the language localization for Japanese (`ja`)
+- Upgraded `@ionic/angular` from version `8.8.5` to `8.8.12`
+- Upgraded `nestjs` from version `11.1.21` to `11.1.27`
 
 ##### Fixed
 
-- Fixed a phantom `UNKNOWN` slice in the portfolio proportion chart component caused by floating-point rounding
-- Fixed the base currency for the total value calculation in the public access for portfolio sharing
-- Fixed an issue in the public access for portfolio sharing that exposed absolute values of the top holdings of ETFs
-- Fixed the time zone handling in the `api` test suite for deterministic execution in `UTC`
+- Fixed the validation of the data source field of an asset profile with market data
+- Fixed a recurring issue where single-value fields were incorrectly validated as arrays in various endpoints
 
 ---
 
@@ -29,7 +32,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.18.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/304
+* Update Ghostfolio to v3.19.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/305
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.160.0...v1.161.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.161.0...v1.162.0
