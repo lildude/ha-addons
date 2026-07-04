@@ -1,8 +1,8 @@
 ## Ghostfolio Release Notes
 
-### [`v3.19.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3190---2026-07-02)
+### [`v3.19.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3191---2026-07-03)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.18.0...3.19.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.19.0...3.19.1)
 
 ##### Added
 
@@ -11,6 +11,7 @@
 
 ##### Changed
 
+- Harmonized the date picker styling across various components
 - Updated the *Privacy Policy*
 - Updated the *Terms of Service*
 - Improved the parsing of integer query parameters (`skip` and `take`) in the `GET api/v1/activities` endpoint
@@ -21,6 +22,9 @@
 
 ##### Fixed
 
+- Fixed an issue where values incorrectly rounded to negative zero in the value component
+- Fixed the colorization of the change from all time high in the benchmark component when values round to zero
+- Fixed the market condition of the benchmarks when values round to zero
 - Fixed the validation of the data source field of an asset profile with market data
 - Fixed a recurring issue where single-value fields were incorrectly validated as arrays in various endpoints
 
@@ -32,7 +36,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.19.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/305
+* Update Ghostfolio to v3.19.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/306
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.161.0...v1.162.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.162.0...v1.163.0
