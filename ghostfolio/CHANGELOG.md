@@ -1,32 +1,31 @@
 ## Ghostfolio Release Notes
 
-### [`v3.19.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3191---2026-07-03)
+### [`v3.20.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3200---2026-07-04)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.19.0...3.19.1)
-
-##### Added
-
-- Added support for routing outgoing requests through a per-domain proxy via the `PROXY_ROUTES` setting in the `FetchService`
-- Added `@prisma/config` as a development dependency used by the *Prisma Configuration File*
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.19.1...3.20.0)
 
 ##### Changed
 
-- Harmonized the date picker styling across various components
-- Updated the *Privacy Policy*
-- Updated the *Terms of Service*
-- Improved the parsing of integer query parameters (`skip` and `take`) in the `GET api/v1/activities` endpoint
+- Refactored the rounding logic in the holding detail dialog
+- Refactored the rounding logic in the treemap chart component
+- Restricted the modification of activity tags in the impersonation mode
+- Hardened the endpoint of the public access for portfolio sharing by restricting it to public accesses
+- Improved the parsing of integer query parameters (`skip` and `take`) in the `GET api/v1/admin/user` endpoint
+- Improved the parsing of integer query parameters (`skip` and `take`) in the `GET api/v1/asset-profiles` endpoint
+- Improved the parsing of the integer query parameter (`includeHistoricalData`) in the `GET api/v1/market-data/markets` endpoint
+- Improved the parsing of the integer query parameter (`includeHistoricalData`) in the `GET api/v1/symbol/:dataSource/:symbol` endpoint
+- Harmonized the filter parsing using `groupBy` across various services
+- Improved the language localization by translating various tooltips across the application
 - Improved the language localization for German (`de`)
-- Improved the language localization for Japanese (`ja`)
-- Upgraded `@ionic/angular` from version `8.8.5` to `8.8.12`
-- Upgraded `nestjs` from version `11.1.21` to `11.1.27`
+- Improved the language localization for Ukrainian (`uk`)
+- Upgraded `yahoo-finance2` from version `3.14.3` to `3.15.4`
 
 ##### Fixed
 
-- Fixed an issue where values incorrectly rounded to negative zero in the value component
-- Fixed the colorization of the change from all time high in the benchmark component when values round to zero
-- Fixed the market condition of the benchmarks when values round to zero
-- Fixed the validation of the data source field of an asset profile with market data
-- Fixed a recurring issue where single-value fields were incorrectly validated as arrays in various endpoints
+- Resolved an issue in the treemap chart component when the holdings list is empty
+- Fixed the handling of cash positions in the portfolio calculations when filtering by holding or tag
+- Fixed the handling of cash positions in the portfolio details when filtering
+- Fixed the market condition of the benchmarks in the twitter bot service when values round to zero
 
 ---
 
@@ -36,7 +35,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.19.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/306
+* Update Ghostfolio to v3.20.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/307
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.162.0...v1.163.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.163.0...v1.164.0
