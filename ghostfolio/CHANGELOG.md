@@ -1,32 +1,29 @@
 ## Ghostfolio Release Notes
 
-### [`v3.21.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3210---2026-07-05)
+### [`v3.22.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3220---2026-07-08)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.20.0...3.21.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.21.0...3.22.0)
 
 ##### Added
 
-- Added support for tags in the account (experimental)
-- Exposed the `PROCESSOR_PORTFOLIO_SNAPSHOT_COMPUTATION_REMOVE_ON_FAIL` environment variable to control the removal of failed jobs in the portfolio snapshot computation queue
+- Added support for a copy-to-clipboard action in the alert dialog component
 
 ##### Changed
 
-- Set the change detection strategy to `OnPush` in the alert dialog component
-- Set the change detection strategy to `OnPush` in the confirmation dialog component
-- Set the change detection strategy to `OnPush` in the prompt dialog component
-- Set the change detection strategy to `OnPush` in the overview of the admin control panel
-- Set the change detection strategy to `OnPush` in the portfolio page
-- Deprecated the `isExcluded` attribute of the account in favor of the *Exclude from Analysis* tag
-- Improved the language localization in the users table of the admin control panel
+- Improved the user account deletion flow in the user settings of the user account page
+- Improved the date formatting of the first activity in the historical market data table of the admin control panel
+- Set the change detection strategy to `OnPush` in the activities page
+- Set the change detection strategy to `OnPush` in the allocations page
+- Set the change detection strategy to `OnPush` in the analysis page
+- Set the change detection strategy to `OnPush` in the portfolio holdings page
+- Set the change detection strategy to `OnPush` in the activities page
+- Set the change detection strategy to `OnPush` in the *FIRE* page
+- Set the change detection strategy to `OnPush` in the users section of the admin control panel
+- Hardened the endpoint to update a property of the admin control panel by validating the `key` path parameter
+- Renamed the `SymbolProfileOverrides` *Prisma* data model to `AssetProfileOverrides` while keeping the database table name
+- Improved the language localization for Dutch (`nl`)
+- Improved the language localization for French (`fr`)
 - Improved the language localization for German (`de`)
-- Upgraded `envalid` from version `8.1.1` to `8.2.0`
-- Upgraded `stripe` from version `21.0.1` to `22.2.3`
-
-##### Fixed
-
-- Fixed an issue with the custom tags of the user in the import functionality
-- Fixed the creation of the *Stripe* checkout session for languages not supported by *Stripe* (`ca` and `uk`)
-- Fixed the error handling in the endpoint to create a *Stripe* checkout session
 
 ---
 
@@ -36,7 +33,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.21.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/308
+* Update Ghostfolio to v3.22.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/309
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.164.0...v1.165.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.165.0...v1.166.0
