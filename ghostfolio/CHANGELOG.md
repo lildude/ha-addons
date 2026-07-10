@@ -1,28 +1,22 @@
 ## Ghostfolio Release Notes
 
-### [`v3.22.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3220---2026-07-08)
+### [`v3.23.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3230---2026-07-10)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.21.0...3.22.0)
-
-##### Added
-
-- Added support for a copy-to-clipboard action in the alert dialog component
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.22.0...3.23.0)
 
 ##### Changed
 
-- Improved the user account deletion flow in the user settings of the user account page
-- Improved the date formatting of the first activity in the historical market data table of the admin control panel
-- Set the change detection strategy to `OnPush` in the activities page
-- Set the change detection strategy to `OnPush` in the allocations page
-- Set the change detection strategy to `OnPush` in the analysis page
-- Set the change detection strategy to `OnPush` in the portfolio holdings page
-- Set the change detection strategy to `OnPush` in the activities page
-- Set the change detection strategy to `OnPush` in the *FIRE* page
-- Set the change detection strategy to `OnPush` in the users section of the admin control panel
-- Hardened the endpoint to update a property of the admin control panel by validating the `key` path parameter
-- Renamed the `SymbolProfileOverrides` *Prisma* data model to `AssetProfileOverrides` while keeping the database table name
-- Improved the language localization for Dutch (`nl`)
-- Improved the language localization for French (`fr`)
+- Migrated the deprecated `@nx/webpack:webpack` executor to `@nx/webpack/plugin`
+- Set the change detection strategy to `OnPush` in the about page
+- Set the change detection strategy to `OnPush` in the admin control panel
+- Set the change detection strategy to `OnPush` in the blog page components
+- Set the change detection strategy to `OnPush` in the Frequently Asked Questions (FAQ) page
+- Set the change detection strategy to `OnPush` in the home page
+- Set the change detection strategy to `OnPush` in the markets overview
+- Set the change detection strategy to `OnPush` in the resources page
+- Set the change detection strategy to `OnPush` in the user account page
+- Set the change detection strategy to `OnPush` in the *Zen Mode*
+- Improved the language localization for Chinese (`zh`)
 - Improved the language localization for German (`de`)
 
 ---
@@ -33,7 +27,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.22.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/309
+* Don't use GitHub Actions cache for image publishing by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/312
+* Update Ghostfolio to v3.23.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/311
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.165.0...v1.166.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.166.0...v1.167.0
