@@ -1,23 +1,19 @@
 ## Ghostfolio Release Notes
 
-### [`v3.23.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3230---2026-07-10)
+### [`v3.24.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3240---2026-07-11)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.22.0...3.23.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.23.0...3.24.0)
+
+##### Added
+
+- Exposed the `DATA_SOURCE_FEAR_AND_GREED_INDEX_STOCKS` environment variable to set the data source of the *Fear & Greed Index* (market mood)
+- Exposed the `ENABLE_FEATURE_RATE_LIMITING` environment variable to control rate limiting for authentication and sign-up endpoints
+- Exposed the `TRUST_PROXY` environment variable to determine the client IP address when running behind a reverse proxy
 
 ##### Changed
 
-- Migrated the deprecated `@nx/webpack:webpack` executor to `@nx/webpack/plugin`
-- Set the change detection strategy to `OnPush` in the about page
-- Set the change detection strategy to `OnPush` in the admin control panel
-- Set the change detection strategy to `OnPush` in the blog page components
-- Set the change detection strategy to `OnPush` in the Frequently Asked Questions (FAQ) page
-- Set the change detection strategy to `OnPush` in the home page
-- Set the change detection strategy to `OnPush` in the markets overview
-- Set the change detection strategy to `OnPush` in the resources page
-- Set the change detection strategy to `OnPush` in the user account page
-- Set the change detection strategy to `OnPush` in the *Zen Mode*
-- Improved the language localization for Chinese (`zh`)
-- Improved the language localization for German (`de`)
+- Rounded the value of the *Fear & Greed Index* (market mood)
+- Improved the language localization for Korean (`ko`)
 
 ---
 
@@ -27,8 +23,7 @@
 
 
 ## What's Changed
-* Don't use GitHub Actions cache for image publishing by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/312
-* Update Ghostfolio to v3.23.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/311
+* Update Ghostfolio to v3.24.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/313
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.166.0...v1.167.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.167.0...v1.168.0
