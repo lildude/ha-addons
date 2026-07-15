@@ -1,24 +1,31 @@
 ## Ghostfolio Release Notes
 
-### [`v3.26.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3260---2026-07-14)
+### [`v3.27.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3270---2026-07-15)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.25.0...3.26.0)
-
-##### Added
-
-- Added the markets endpoint for the *Fear & Greed Index* (market mood) to the `GHOSTFOLIO` data provider
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.26.0...3.27.0)
 
 ##### Changed
 
-- Hardened the validation of the countries in the asset profile endpoints
-- Hardened the validation of the holdings in the asset profile endpoints
-- Hardened the validation of the scraper configuration in the asset profile endpoint
-- Hardened the validation of the sectors in the asset profile endpoints
-- Rounded the value of the *Fear & Greed Index* (market mood) in the twitter bot service
-- Set the change detection strategy to `OnPush` in the *X-ray* page
-- Deprecated `SymbolProfile` in favor of `assetProfile` in the activity interface
-- Upgraded `countries-list` from version `3.3.0` to `3.4.0`
-- Upgraded `Nx` from version `23.0.1` to `23.0.2`
+- Hardened the validation of the URL in the logo endpoint
+- Set the change detection strategy to `OnPush` in the about pages
+- Set the change detection strategy to `OnPush` in the accounts page
+- Set the change detection strategy to `OnPush` in the demo page
+- Set the change detection strategy to `OnPush` in the features page
+- Set the change detection strategy to `OnPush` in the Frequently Asked Questions (FAQ) pages
+- Set the change detection strategy to `OnPush` in the landing page
+- Set the change detection strategy to `OnPush` in the markets page
+- Set the change detection strategy to `OnPush` in the *Open Startup* (`/open`) page
+- Set the change detection strategy to `OnPush` in the pricing page
+- Set the change detection strategy to `OnPush` in the public page
+- Set the change detection strategy to `OnPush` in the registration page
+- Set the change detection strategy to `OnPush` in the resources pages
+
+##### Fixed
+
+- Fixed an issue where the symbol was not selected when cloning an activity
+- Resolved a startup error in data gathering caused by uninitialized data provider mappings
+- Improved the error handling in the `HtmlTemplateMiddleware`
+- Improved the error handling in the get quotes functionality of the *Financial Modeling Prep* service
 
 ---
 
@@ -28,8 +35,7 @@
 
 
 ## What's Changed
-* Update softprops/action-gh-release action to v3.0.2 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/315
-* Update Ghostfolio to v3.26.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/316
+* Update Ghostfolio to v3.27.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/317
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.169.0...v1.170.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.170.0...v1.171.0
