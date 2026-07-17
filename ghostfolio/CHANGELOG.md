@@ -1,31 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v3.27.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3270---2026-07-15)
+### [`v3.28.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3280---2026-07-17)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.26.0...3.27.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.27.0...3.28.0)
 
 ##### Changed
 
-- Hardened the validation of the URL in the logo endpoint
-- Set the change detection strategy to `OnPush` in the about pages
-- Set the change detection strategy to `OnPush` in the accounts page
-- Set the change detection strategy to `OnPush` in the demo page
-- Set the change detection strategy to `OnPush` in the features page
-- Set the change detection strategy to `OnPush` in the Frequently Asked Questions (FAQ) pages
-- Set the change detection strategy to `OnPush` in the landing page
-- Set the change detection strategy to `OnPush` in the markets page
-- Set the change detection strategy to `OnPush` in the *Open Startup* (`/open`) page
-- Set the change detection strategy to `OnPush` in the pricing page
-- Set the change detection strategy to `OnPush` in the public page
-- Set the change detection strategy to `OnPush` in the registration page
-- Set the change detection strategy to `OnPush` in the resources pages
+- Migrated the clone, create and edit activity dialogs to dedicated routes
+- Improved the language localization in the historical market data table of the admin control panel
+- Improved the language localization in the tag management of the admin control panel
 
 ##### Fixed
 
-- Fixed an issue where the symbol was not selected when cloning an activity
-- Resolved a startup error in data gathering caused by uninitialized data provider mappings
-- Improved the error handling in the `HtmlTemplateMiddleware`
-- Improved the error handling in the get quotes functionality of the *Financial Modeling Prep* service
+- Fixed the missing validation of the tags when creating or updating an activity
+- Fixed the missing validation of the tags when updating the tags of a holding
+- Fixed an issue where the tags of an activity were lost if updating the activity failed
+- Fixed an issue where the dividends, the interest and the liabilities of asset profiles without market data have been valued at zero in the portfolio calculation
+- Fixed an issue where an error has been reported for asset profiles without market data which do not hold any units
+- Fixed an issue with removing a linked account from a buy, sell or dividend activity
 
 ---
 
@@ -35,7 +27,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.27.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/317
+* Update Ghostfolio to v3.28.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/318
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.170.0...v1.171.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.171.0...v1.172.0
