@@ -1,23 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v3.28.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3280---2026-07-17)
+### [`v3.29.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3290---2026-07-18)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.27.0...3.28.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.28.0...3.29.0)
+
+##### Added
+
+- Added support for the *Fear & Greed Index* (market mood) via the `GHOSTFOLIO` data provider in self-hosted environments
+- Added a *Storybook* story for the copy-to-clipboard functionality in the value component
 
 ##### Changed
 
-- Migrated the clone, create and edit activity dialogs to dedicated routes
-- Improved the language localization in the historical market data table of the admin control panel
-- Improved the language localization in the tag management of the admin control panel
+- Improved the copy-to-clipboard functionality in the value component by providing a visual confirmation
+- Improved the language localization for German (`de`)
+- Upgraded `stripe` from version `22.2.3` to `22.3.2`
 
 ##### Fixed
 
-- Fixed the missing validation of the tags when creating or updating an activity
-- Fixed the missing validation of the tags when updating the tags of a holding
-- Fixed an issue where the tags of an activity were lost if updating the activity failed
-- Fixed an issue where the dividends, the interest and the liabilities of asset profiles without market data have been valued at zero in the portfolio calculation
-- Fixed an issue where an error has been reported for asset profiles without market data which do not hold any units
-- Fixed an issue with removing a linked account from a buy, sell or dividend activity
+- Fixed an issue with the delete button in the tags selector component
 
 ---
 
@@ -27,7 +27,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.28.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/318
+* Update Ghostfolio to v3.29.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/319
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.171.0...v1.172.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.172.0...v1.173.0
