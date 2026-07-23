@@ -1,19 +1,18 @@
 ## Ghostfolio Release Notes
 
-### [`v3.31.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3310---2026-07-20)
+### [`v3.32.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3320---2026-07-22)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.30.0...3.31.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.31.0...3.32.0)
 
 ##### Changed
 
-- Removed the deprecated `SymbolProfile` field from the activity interface
-- Refactored the language redirect of the root path from the static file serving configuration to a dedicated middleware
-- Upgraded `yahoo-finance2` from version `3.15.4` to `4.0.0`
+- Upgraded `chartjs-chart-treemap` from version `3.1.0` to `4.2.0`
 
 ##### Fixed
 
-- Fixed the `RangeNotSatisfiableError` for requests with a `Range` header to the root path caused by the empty `index.html` placeholder
-- Fixed the unresolved template literal in the page title while the app is loading from the service worker cache
+- Skipped opening the holding detail dialog for cash positions on the allocations page, the analysis page and the portfolio holdings page
+- Resolved an exception in the `GET api/v1/portfolio/holding/:dataSource/:symbol` endpoint for cash positions
+- Improved the error handling in the access endpoints (`POST` and `PUT`) to return `400 Bad Request` when granting access to a non-existent user
 
 ---
 
@@ -23,8 +22,7 @@
 
 
 ## What's Changed
-* Update actions/checkout action to v7.0.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/321
-* Update Ghostfolio to v3.31.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/322
+* Update Ghostfolio to v3.32.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/323
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.174.0...v1.175.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.175.0...v1.176.0
