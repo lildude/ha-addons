@@ -1,18 +1,26 @@
 ## Ghostfolio Release Notes
 
-### [`v3.32.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3320---2026-07-22)
+### [`v3.33.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3330---2026-07-25)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.31.0...3.32.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.32.0...3.33.0)
+
+##### Added
+
+- Added the stack trace logging for `MaxListenersExceededWarning` occurrences
 
 ##### Changed
 
-- Upgraded `chartjs-chart-treemap` from version `3.1.0` to `4.2.0`
+- Moved the support to create custom tags from experimental to general availability
+- Recomputed the portfolio snapshot calculation in the background on a portfolio change
+- Improved the deduplication of the portfolio snapshot calculation jobs by considering the filters
+- Refactored the deprecated animation providers (`provideAnimations()` and `provideNoopAnimations()`)
+- Improved the language localization for German (`de`)
+- Improved the language localization for Polish (`pl`)
 
 ##### Fixed
 
-- Skipped opening the holding detail dialog for cash positions on the allocations page, the analysis page and the portfolio holdings page
-- Resolved an exception in the `GET api/v1/portfolio/holding/:dataSource/:symbol` endpoint for cash positions
-- Improved the error handling in the access endpoints (`POST` and `PUT`) to return `400 Bad Request` when granting access to a non-existent user
+- Fixed an issue with the localization in the *FIRE* page
+- Improved the spacing in the testimonial section on the landing page
 
 ---
 
@@ -22,7 +30,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.32.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/323
+* Update Ghostfolio to v3.33.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/324
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.175.0...v1.176.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.176.0...v1.177.0
