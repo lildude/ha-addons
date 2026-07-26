@@ -1,26 +1,24 @@
 ## Ghostfolio Release Notes
 
-### [`v3.33.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3330---2026-07-25)
+### [`v3.34.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3340---2026-07-25)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.32.0...3.33.0)
-
-##### Added
-
-- Added the stack trace logging for `MaxListenersExceededWarning` occurrences
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.33.0...3.34.0)
 
 ##### Changed
 
-- Moved the support to create custom tags from experimental to general availability
-- Recomputed the portfolio snapshot calculation in the background on a portfolio change
-- Improved the deduplication of the portfolio snapshot calculation jobs by considering the filters
-- Refactored the deprecated animation providers (`provideAnimations()` and `provideNoopAnimations()`)
-- Improved the language localization for German (`de`)
-- Improved the language localization for Polish (`pl`)
+- Included cash in the performance calculation of the portfolio
+- Moved the support for tags in the account from experimental to general availability
+- Improved the user experience of the users table in the admin control panel by eliminating the reload when opening and closing the user detail dialog
+- Upgraded `countup.js` from version `2.10.0` to `2.10.1`
+- Upgraded `dotenv` from version `17.2.3` to `17.4.2`
+- Upgraded `dotenv-expand` from version `12.0.3` to `13.0.0`
+- Upgraded `fuse.js` from version `7.3.0` to `7.5.0`
 
 ##### Fixed
 
-- Fixed an issue with the localization in the *FIRE* page
-- Improved the spacing in the testimonial section on the landing page
+- Fixed the *Add activity* link of the onboarding on the overview tab of the home page to open the create activity dialog
+- Fixed the link of the no activities info component to open the create activity dialog
+- Resolved an exception in the `POST api/v1/activities` endpoint when creating an activity with the update account balance option but without an account
 
 ---
 
@@ -30,7 +28,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.33.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/324
+* Update Ghostfolio to v3.34.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/325
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.176.0...v1.177.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.177.0...v1.178.0
