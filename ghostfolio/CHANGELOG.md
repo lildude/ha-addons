@@ -1,24 +1,28 @@
 ## Ghostfolio Release Notes
 
-### [`v3.34.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3340---2026-07-25)
+### [`v3.35.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3350---2026-07-27)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.33.0...3.34.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.34.0...3.35.0)
+
+##### Added
+
+- Added a loading indicator to the access table to share the portfolio
 
 ##### Changed
 
-- Included cash in the performance calculation of the portfolio
-- Moved the support for tags in the account from experimental to general availability
-- Improved the user experience of the users table in the admin control panel by eliminating the reload when opening and closing the user detail dialog
-- Upgraded `countup.js` from version `2.10.0` to `2.10.1`
-- Upgraded `dotenv` from version `17.2.3` to `17.4.2`
-- Upgraded `dotenv-expand` from version `12.0.3` to `13.0.0`
-- Upgraded `fuse.js` from version `7.3.0` to `7.5.0`
+- Improved the portfolio summary by presenting the cash and the holdings as a breakdown of the total assets
+- Improved the *FIRE* calculator by including the cash which is not part of the emergency fund
+- Improved the performance calculation and the value of the portfolio by excluding cash denominated in the base currency
+- Extended the portfolio details endpoint to include the total assets and the total cash in the portfolio summary
+- Deprecated `firstOrderDate` in favor of `dateOfFirstActivity` in the `GET api/v2/portfolio/performance` endpoint
+- Improved the log output in the get asset profile functionality of the *Financial Modeling Prep* service for delisted asset profiles
+- Refreshed the cryptocurrencies list
+- Upgraded `prettier` from version `3.8.4` to `3.9.6`
 
 ##### Fixed
 
-- Fixed the *Add activity* link of the onboarding on the overview tab of the home page to open the create activity dialog
-- Fixed the link of the no activities info component to open the create activity dialog
-- Resolved an exception in the `POST api/v1/activities` endpoint when creating an activity with the update account balance option but without an account
+- Resolved an exception in the user service when getting a non-existent user
+- Fixed the missing currency in the get quotes functionality of the *Financial Modeling Prep* service for cryptocurrencies without an asset profile
 
 ---
 
@@ -28,7 +32,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.34.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/325
+* Update Ghostfolio to v3.35.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/326
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.177.0...v1.178.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.178.0...v1.179.0
