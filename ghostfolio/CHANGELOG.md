@@ -1,29 +1,28 @@
 ## Ghostfolio Release Notes
 
-### [`v3.44.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3440---2026-08-07)
+### [`v3.45.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3450---2026-08-08)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.43.0...3.44.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.44.0...3.45.0)
 
 ##### Added
 
-- Added a live preview of the date and number format to the user settings
-- Added the country flag to the currency selector
-- Added a *Storybook* story for the currency selector component
-- Added the platform logo to the account selectors in the transfer cash balance dialog
-- Extended the entity logo component by a `hasPlaceholder` attribute to reserve the space of a missing logo
-- Warmed up the portfolio snapshot calculation in the background during the biometric authentication
+- Added a *Coverage* rule to the *Emergency Fund* section on the *X-ray* page
 
 ##### Changed
 
-- Improved the usability of the create watchlist item dialog by setting the initial focus to the search field
-- Migrated the abstract *Material* form field from a component to a directive
-- Removed the redundant `balance` attribute of the account in favor of the account balances
+- Aligned the x-axis of the dividend and investment timeline charts on the analysis page
+- Improved the check for duplicates in the preview step of the activities import (regardless of the account)
+- Improved the check for duplicates in the preview step of the import dividends dialog (regardless of the account)
+- Extended the activities import to reuse an existing account of the user by name and currency
+- Extended the activities import to resolve an ISIN to the symbol of the data provider
+- Improved the style of the placeholder in the entity logo component
+- Migrated the create, detail and edit account dialogs to dedicated routes
+- Improved the language localization for German (`de`)
 
 ##### Fixed
 
-- Fixed the values of the charts and tables in impersonation mode with an unrestricted access to show absolute values instead of percentages
-- Fixed the savings rate of the investment timeline chart and the streaks on the analysis page in impersonation mode to be based on the impersonated user
-- Fixed the savings rate of the *FIRE* calculator in impersonation mode to not be based on the impersonating user
+- Fixed the check for duplicates in the preview step of the activities import for activities without a comment
+- Fixed the holdings mock data in the *Storybook* story of the portfolio filter form component
 
 ---
 
@@ -33,8 +32,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.43.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/331
-* Update Ghostfolio to v3.44.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/332
+* Update Ghostfolio to v3.45.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/333
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.180.0...v1.181.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.181.0...v1.182.0
