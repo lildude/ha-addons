@@ -1,28 +1,26 @@
 ## Ghostfolio Release Notes
 
-### [`v3.45.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3450---2026-08-08)
+### [`v3.46.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3460---2026-08-09)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.44.0...3.45.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.45.0...3.46.0)
 
 ##### Added
 
-- Added a *Coverage* rule to the *Emergency Fund* section on the *X-ray* page
+- Added the *Draft* tag, assigned automatically to activities dated in the future
 
 ##### Changed
 
-- Aligned the x-axis of the dividend and investment timeline charts on the analysis page
-- Improved the check for duplicates in the preview step of the activities import (regardless of the account)
-- Improved the check for duplicates in the preview step of the import dividends dialog (regardless of the account)
-- Extended the activities import to reuse an existing account of the user by name and currency
-- Extended the activities import to resolve an ISIN to the symbol of the data provider
-- Improved the style of the placeholder in the entity logo component
-- Migrated the create, detail and edit account dialogs to dedicated routes
+- Deprecated the `isDraft` attribute of the activity in favor of the *Draft* tag
+- Changed the activities count of an account to include draft activities
+- Extended the *Draft* tag to activities with a custom asset profile of type `BUY`
 - Improved the language localization for German (`de`)
+- Upgraded `bull-board` from version `8.1.2` to `8.6.0`
 
 ##### Fixed
 
-- Fixed the check for duplicates in the preview step of the activities import for activities without a comment
-- Fixed the holdings mock data in the *Storybook* story of the portfolio filter form component
+- Fixed the dividend and interest of an account by excluding draft activities
+- Resolved an issue with unknown country names in the country weightings of the *Financial Modeling Prep* service
+- Resolved an issue with unknown country names in the data enhancer for asset profile data via *Trackinsight*
 
 ---
 
@@ -32,7 +30,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.45.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/333
+* Update Ghostfolio to v3.46.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/334
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.181.0...v1.182.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.182.0...v1.183.0
