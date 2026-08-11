@@ -1,26 +1,20 @@
 ## Ghostfolio Release Notes
 
-### [`v3.46.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3460---2026-08-09)
+### [`v3.47.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3470---2026-08-10)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.45.0...3.46.0)
-
-##### Added
-
-- Added the *Draft* tag, assigned automatically to activities dated in the future
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.46.0...3.47.0)
 
 ##### Changed
 
-- Deprecated the `isDraft` attribute of the activity in favor of the *Draft* tag
-- Changed the activities count of an account to include draft activities
-- Extended the *Draft* tag to activities with a custom asset profile of type `BUY`
-- Improved the language localization for German (`de`)
-- Upgraded `bull-board` from version `8.1.2` to `8.6.0`
+- Extended the toggle component to support a disabled state
+- Extended the toggle component to support icons
+- Reused the toggle component on the portfolio holdings page
+- Reused the currency selector component in the user account settings
 
 ##### Fixed
 
-- Fixed the dividend and interest of an account by excluding draft activities
-- Resolved an issue with unknown country names in the country weightings of the *Financial Modeling Prep* service
-- Resolved an issue with unknown country names in the data enhancer for asset profile data via *Trackinsight*
+- Fixed the handling of the disabled state in the currency selector and symbol autocomplete components
+- Fixed the restoration of the current selection in the currency selector component when leaving the field without picking an option
 
 ---
 
@@ -30,7 +24,8 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.46.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/334
+* Update ghcr.io/home-assistant/devcontainer Docker tag to v6 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/330
+* Update Ghostfolio to v3.47.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/335
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.182.0...v1.183.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.183.0...v1.184.0
