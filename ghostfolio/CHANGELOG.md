@@ -1,21 +1,30 @@
 ## Ghostfolio Release Notes
 
-### [`v3.51.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3510---2026-08-14)
+### [`v3.52.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3520---2026-08-15)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.50.0...3.51.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.51.0...3.52.0)
+
+##### Added
+
+- Added the business logic and tests for stock splits of an asset profile (experimental)
+- Added the scopes to the access
+- Added an index for `symbolProfileId` to the order database table
 
 ##### Changed
 
-- Simplified the error log output of the data provider and queue services by omitting the stack trace
-- Improved the language localization for German (`de`)
+- Restricted the creation of tags to unique names in the tags selector component
+- Changed the redaction of the monetary values in impersonation mode to be based on the scopes of the access
+- Deprecated the `permissions` attribute of the access in favor of the scopes
+- Extended the `GET api/v1/access` endpoint by the scopes
+- Extended the `GET api/v1/user` endpoint by the scopes
+- Improved the performance of deleting activities by loading only the required data
 
 ##### Fixed
 
-- Fixed the cash balance update related to activities in a custom currency
-- Fixed the empty historical market data of the asset profile dialog of the admin control panel for asset profiles without activities
-- Fixed the missing mapping for Czech Republic in the country weightings of the *Financial Modeling Prep* service
-- Fixed the missing mapping for Macau in the data enhancer for asset profile data via *Yahoo Finance*
-- Fixed the outdated exchange rates of currency pairs which are calculated indirectly via the base currency
+- Fixed the missing currency conversion of the dividends on the analysis page
+- Fixed the missing error state in the watchlist
+- Fixed the missing loading indicator in the benchmarks of the markets overview
+- Fixed the incorrect error log output when deleting activities
 
 ---
 
@@ -25,7 +34,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.51.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/338
+* Update Ghostfolio to v3.52.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/339
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.186.0...v1.187.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.187.0...v1.188.0
