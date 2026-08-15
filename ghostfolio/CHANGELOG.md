@@ -1,35 +1,21 @@
 ## Ghostfolio Release Notes
 
-### [`v3.50.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3500---2026-08-13)
+### [`v3.51.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3510---2026-08-14)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.49.0...3.50.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.50.0...3.51.0)
 
 ##### Changed
 
-- Refreshed the cryptocurrencies list
-- Upgraded `countries-list` from version `3.4.0` to `3.4.1`
+- Simplified the error log output of the data provider and queue services by omitting the stack trace
+- Improved the language localization for German (`de`)
 
 ##### Fixed
 
-- Fixed the performance of closed positions in the portfolio calculator caused by a rounding remainder in the investment
-- Fixed the missing mapping for Turkey in the country weightings of the *Financial Modeling Prep* service
-- Fixed the missing mapping for Czech Republic and Turkey in the data enhancer for asset profile data via *Yahoo Finance*
-- Resolved an error when fetching dividends from *Yahoo Finance* for date ranges without events
-
-### [`v3.49.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3490---2026-08-12)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.48.1...3.49.0)
-
-##### Changed
-
-- Improved the wording of the *X-ray* page to use a neutral form
-- Improved the style of the disabled base currency in the user account settings
-- Moved the support to clone an activity in the account detail dialog from experimental to general availability
-- Moved the support to clone an activity in the holding detail dialog from experimental to general availability
-- Moved the support to edit an activity in the account detail dialog from experimental to general availability
-- Moved the support to edit an activity in the holding detail dialog from experimental to general availability
-- Removed the deprecated `isDraft` attribute of the activity in favor of the *Draft* tag
-- Improved the language localization for German (`de`)
+- Fixed the cash balance update related to activities in a custom currency
+- Fixed the empty historical market data of the asset profile dialog of the admin control panel for asset profiles without activities
+- Fixed the missing mapping for Czech Republic in the country weightings of the *Financial Modeling Prep* service
+- Fixed the missing mapping for Macau in the data enhancer for asset profile data via *Yahoo Finance*
+- Fixed the outdated exchange rates of currency pairs which are calculated indirectly via the base currency
 
 ---
 
@@ -39,7 +25,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.50.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/337
+* Update Ghostfolio to v3.51.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/338
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.185.0...v1.186.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.186.0...v1.187.0
