@@ -1,6 +1,6 @@
 {
   "name": "TeslaMate",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "slug": "teslamate",
   "description": "A self-hosted data logger for your Tesla.",
   "url": "https://github.com/lildude/ha-addon-teslamate",
@@ -13,6 +13,12 @@
   "init": false,
   "panel_icon": "mdi:car-connected",
   "panel_title": "TeslaMate",
+  "ports": {
+    "4000/tcp": null
+  },
+  "ports_description": {
+    "4000/tcp": "Web interface (not required for Home Assistant ingress)"
+  },
   "options": {
     "database_user": null,
     "database_pass": null,
