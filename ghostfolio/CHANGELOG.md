@@ -1,19 +1,24 @@
 ## Ghostfolio Release Notes
 
-### [`v3.54.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3540---2026-08-18)
+### [`v3.55.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3550---2026-08-19)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.53.0...3.54.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.54.0...3.55.0)
+
+##### Added
+
+- Added the write scopes to the access
+- Added support to merge an asset profile into an existing asset profile in the asset profile dialog of the admin control panel (experimental)
 
 ##### Changed
 
-- Improved the style of the toggle component
-- Moved the improved symbol lookup results by removing the currency from the name of cryptocurrencies from experimental to general availability
-- Extracted the account selector to a reusable component
-- Upgraded `ng-extract-i18n-merge` from `3.3.0` to `3.4.0`
-
-##### Fixed
-
-- Fixed the missing mapping for Macau in the data enhancer for asset profile data via *Trackinsight*
+- Improved the usability of the account selectors in the transfer cash balance dialog
+- Improved the performance of the portfolio snapshot calculation by indexing the activities
+- Improved the language localization for German (`de`)
+- Improved the language localization for Spanish (`es`)
+- Updated `angular-developer` skills
+- Upgraded `angular` from version `21.2.19` to `22.1.2`
+- Upgraded `ngx-device-detector` from version `11.0.0` to `12.0.0`
+- Upgraded `ngx-markdown` from version `21.2.0` to `22.0.0`
 
 ---
 
@@ -23,8 +28,8 @@
 
 
 ## What's Changed
-* Update frenck/action-addon-linter action to v2.21.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/341
-* Update Ghostfolio to v3.54.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/342
+* Improve integration tests by @lildude in https://github.com/lildude/ha-addon-ghostfolio/pull/343
+* Update Ghostfolio to v3.55.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/344
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.189.0...v1.190.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.190.0...v1.191.0
