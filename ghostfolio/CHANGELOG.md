@@ -1,8 +1,8 @@
 ## Ghostfolio Release Notes
 
-### [`v3.67.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3670---2026-09-05)
+### [`v3.67.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3671---2026-09-05)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.66.0...3.67.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.67.0...3.67.1)
 
 ##### Added
 
@@ -34,7 +34,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.67.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/356
+* Update Ghostfolio to v3.67.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/357
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.201.0...v1.202.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.202.0...v1.203.0
