@@ -1,30 +1,17 @@
 ## Ghostfolio Release Notes
 
-### [`v3.67.1`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3671---2026-09-05)
+### [`v3.68.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3680---2026-09-06)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.67.0...3.67.1)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.67.1...3.68.0)
 
 ##### Added
 
-- Introduced a DTO for the query parameters of the asset profiles endpoint
-- Introduced a DTO for the query parameters of the symbol lookup endpoints
+- Added a simplified mode to the holdings table component
 
 ##### Changed
 
-- Improved the server of the Model Context Protocol (MCP) (experimental)
-- Introduced a maximum length for the comment in the API endpoints
-- Introduced a maximum length for the search query and the symbol in the API endpoints
-- Hardened the validation of the query parameters (`accounts`, `assetClasses`, `dataSource` and `tags`) in the API endpoints with filters
-- Upgraded `nestjs` from version `11.1.28` to `11.2.3`
-- Upgraded `ngx-skeleton-loader` from version `12.0.0` to `13.0.0`
-
-##### Fixed
-
-- Fixed the missing icon of the expiration date picker in the create or update access dialog
-- Fixed the data provider information in the holding detail dialog
-- Fixed the storage of the market data in the data provider service to only include the newly fetched quotes
-- Fixed the immediate expiration of a portfolio snapshot with errors
-- Fixed the missing country mapping of *Congo (Dem. Rep. of the)* and *Congo (Rep. of)* in the *Financial Modeling Prep* service
+- Made the details of holdings excluded from analysis accessible via the activities table
+- Migrated the asset profile dialogs of the market data management in the admin control panel to dedicated routes
 
 ---
 
@@ -34,7 +21,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.67.1 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/357
+* Update Ghostfolio to v3.68.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/358
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.202.0...v1.203.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.203.0...v1.204.0
