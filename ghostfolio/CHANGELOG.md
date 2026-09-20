@@ -1,29 +1,22 @@
 ## Ghostfolio Release Notes
 
-### [`v3.71.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3710---2026-09-19)
+### [`v3.72.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3720---2026-09-20)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.70.1...3.71.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.71.0...3.72.0)
 
 ##### Added
 
-- Added a hint for the performance calculation type to the analysis page
-- Added support for country codes to the entity logo component and used it for cash holdings and currency selectors
+- Added a tool to get the watchlist to the server of the Model Context Protocol (MCP) (experimental)
 
 ##### Changed
 
-- Localized the default account name created during user registration
-- Improved the performance of the watchlist by removing an unnecessary index from the market data table
-- Improved the performance of deleting a watchlist item
-- Extended the `POST api/v1/user` endpoint by the language code
-- Improved the language localization for German (`de`)
-- Upgraded `@internationalized/number` from version `3.6.7` to `3.6.8`
-- Upgraded `bull-board` from version `9.8.0` to `9.9.0`
-- Upgraded `marked` from version `17.0.2` to `18.0.12`
-- Upgraded `ngx-markdown` from version `22.0.0` to `22.0.2`
+- Extended the cache key of the portfolio snapshot by the performance calculation type
+- Hardened the validation of the device id in the biometric authentication
+- Upgraded `stripe` from version `22.5.0` to `22.6.2`
 
 ##### Fixed
 
-- Fixed the missing account balance of the current day for users in a time zone ahead of the instance
+- Fixed the net performance percentage of date ranges in the portfolio performance calculation by including the gross performance at the start date
 
 ---
 
@@ -33,7 +26,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.71.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/361
+* Update Ghostfolio to v3.72.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/362
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.206.0...v1.207.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.207.0...v1.208.0
