@@ -1,30 +1,31 @@
 ## Ghostfolio Release Notes
 
-### [`v3.78.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3780---2026-10-03)
+### [`v3.79.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3790---2026-10-04)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.77.0...3.78.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.78.0...3.79.0)
 
 ##### Added
 
-- Added the server of the Model Context Protocol (MCP) to the features page (experimental)
+- Extended the *Public API* with the liveness probe endpoint (`GET api/v1/health/liveness`) (experimental)
+- Added the graceful shutdown of the server on `SIGINT` and `SIGTERM`
+- Added `stop_grace_period` to the *Ghostfolio* service in the `docker-compose` file (`docker-compose.yml`)
 
 ##### Changed
 
-- Improved the label of the cash positions in the holdings charts and table
-- Excluded the cash position in the base currency from the holdings table on the overview tab of the home page (experimental)
-- Extended the tools to get the activities, the portfolio and the watchlist in the server of the Model Context Protocol (MCP) to include the data source (experimental)
-- Removed the deprecated `SymbolProfile` field from the endpoints `GET api/v1/activities`, `GET api/v1/activities/:id` and `POST api/v1/import`
-- Improved the language localization for German (`de`)
-- Upgraded `@openrouter/ai-sdk-provider` from version `3.0.0` to `3.1.0`
-- Upgraded `ai` from version `7.0.37` to `7.0.114`
-- Upgraded `dotenv` from version `17.4.2` to `18.0.3`
+- Localized the number formatting in the chart of the holdings tab on the home page
+- Moved the dividend and the dividend yield in the holding detail dialog from experimental to general availability
+- Changed the installation of the dependencies from `npm install` to `npm ci` in the `Dockerfile`
+- Upgraded `@simplewebauthn/browser` and `@simplewebauthn/server` from version `13.3` to `14.0`
+- Upgraded `nestjs` from version `11.2.3` to `11.2.6`
 
 ##### Fixed
 
-- Fixed the calculation of the interest in the account detail dialog for activities with a quantity other than one
-- Fixed the positive performance from the all time high in the watchlist
-- Fixed the portfolio calculation for holdings with historical market prices between the chart dates
-- Fixed the asset profile identifier in the historical market data gathering of the `POST api/v1/activities` endpoint
+- Fixed an issue with the algebraic sign in the tooltip of the chart of the holdings tab on the home page
+- Fixed the asset profile of the activities after a fee, an interest or a liability with the same symbol in the activities import
+
+##### Todo
+
+- Add `stop_grace_period: 1m` to the *Ghostfolio* service in your `docker-compose` file (see `docker-compose.yml`)
 
 ---
 
@@ -34,7 +35,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.78.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/369
+* Update Ghostfolio to v3.79.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/370
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.213.0...v1.214.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.214.0...v1.215.0
