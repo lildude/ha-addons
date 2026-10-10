@@ -1,22 +1,27 @@
 ## Ghostfolio Release Notes
 
-### [`v3.81.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3810---2026-10-07)
+### [`v3.82.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3820---2026-10-09)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.80.2...3.81.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.81.0...3.82.0)
+
+##### Added
+
+- Extended the content of the *General* section by information about the import of activities from *Interactive Brokers* on the Frequently Asked Questions (FAQ) page
 
 ##### Changed
 
-- Moved the performance calculation including dividends (total return) from experimental to general availability
-- Improved the language localization for German (`de`)
-- Improved the language localization for Turkish (`tr`)
+- Extended the user account deletion flow in the user settings of the user account page to users without a *Security Token* within 14 days after the registration
+- Improved the *Storybook* stories of the account selector, accounts table, activities table and holdings table components
+- Removed an unnecessary index from the market data database table
+- Refreshed the cryptocurrencies list
+- Improved the language localization for Spanish (`es`)
 
 ##### Fixed
 
-- Fixed the visibility of the asset class, asset sub class, fee and quantity fields of a valuable in the create activity dialog
-- Fixed the missing mapping for Aland Islands in the country weightings of the *Financial Modeling Prep* service
-- Fixed the net performance percentage of date ranges in the portfolio performance calculation by weighting the average investment by the number of days between the chart dates
-- Fixed the start date of calendar year date ranges in the portfolio performance calculation
-- Fixed an issue where the Content Security Policy in HTTP security headers blocked the status check of the Ghostfolio data provider when `ENABLE_FEATURE_SECURITY_HEADERS` was enabled (experimental)
+- Fixed the missing list numbers in the top and bottom holdings on the analysis page in Safari
+- Fixed the missing first data point in the portfolio evolution chart on the analysis page
+- Fixed the end date of calendar year date ranges in the portfolio performance calculation for instances in time zones with a negative UTC offset
+- Fixed the missing mapping for Korea in the country weightings of the *Financial Modeling Prep* service
 
 ---
 
@@ -26,7 +31,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.81.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/372
+* Update Ghostfolio to v3.82.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/373
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.216.0...v1.217.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.217.0...v1.218.0
