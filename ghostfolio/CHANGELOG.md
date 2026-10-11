@@ -1,27 +1,25 @@
 ## Ghostfolio Release Notes
 
-### [`v3.82.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3820---2026-10-09)
+### [`v3.83.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3830---2026-10-10)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.81.0...3.82.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.82.0...3.83.0)
 
 ##### Added
 
-- Extended the content of the *General* section by information about the import of activities from *Interactive Brokers* on the Frequently Asked Questions (FAQ) page
+- Added the performance timeline grouped by year to the analysis page (experimental)
+- Extended the `GET api/v2/portfolio/performance` endpoint by the `groupBy` query parameter (`year`)
 
 ##### Changed
 
-- Extended the user account deletion flow in the user settings of the user account page to users without a *Security Token* within 14 days after the registration
-- Improved the *Storybook* stories of the account selector, accounts table, activities table and holdings table components
-- Removed an unnecessary index from the market data database table
-- Refreshed the cryptocurrencies list
-- Improved the language localization for Spanish (`es`)
+- Extended the benchmark comparator to support benchmarks whose market data starts later than the portfolio
+- Harmonized the colors in the investment chart component
+- Improved the performance of getting the historical market data by loading only the requested asset profiles
+- Improved the language localization for Chinese (`zh`)
 
 ##### Fixed
 
-- Fixed the missing list numbers in the top and bottom holdings on the analysis page in Safari
-- Fixed the missing first data point in the portfolio evolution chart on the analysis page
-- Fixed the end date of calendar year date ranges in the portfolio performance calculation for instances in time zones with a negative UTC offset
-- Fixed the missing mapping for Korea in the country weightings of the *Financial Modeling Prep* service
+- Fixed an issue where a user could create a custom asset profile with a symbol of the prefix `GF_`
+- Fixed the horizontal overflow on the overview tab of the home page on mobile
 
 ---
 
@@ -31,7 +29,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.82.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/373
+* Update Ghostfolio to v3.83.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/374
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.217.0...v1.218.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.218.0...v1.219.0
