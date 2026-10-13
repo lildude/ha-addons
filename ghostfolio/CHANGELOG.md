@@ -1,95 +1,25 @@
 ## Ghostfolio Release Notes
 
-### [`v3.84.2`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3842---2026-10-11)
+### [`v3.85.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3850---2026-10-12)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.84.1...3.84.2)
-
-##### Added
-
-- Added the endpoint to read the activities of a CSV, JPEG, PDF or PNG file with *Ghostfolio AI* (`POST api/v1/ai/activities`) (experimental)
-
-##### Changed
-
-- Simplified the portfolio performance on the overview tab of the home page by hiding the currency on mobile
-- Extended the user detail dialog in the users section of the admin control panel to include the client of the last request
-- Updated the *Privacy Policy*
-- Extended the import of activities to support CSV files of other brokers, images and PDF files with *Ghostfolio AI* (experimental)
-- Extended the access to share the portfolio with the Model Context Protocol (MCP) to support the *View* and the *View and manage* permissions (experimental)
-- Improved the performance of getting the historical market data by selecting only the required columns
-- Improved the language localization for German (`de`)
-
-##### Fixed
-
-- Fixed the *Copy AI prompt to clipboard* actions on the analysis page in impersonation mode to be based on the impersonated user (experimental)
-- Fixed the start date of the date ranges for instances in time zones with a negative UTC offset
-- Fixed the dates of the benchmark in the benchmark comparator on the analysis page for instances in time zones with a negative UTC offset
-- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity on the accounts page and the allocations page
-- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity in the server of the Model Context Protocol (MCP) (experimental)
-- Fixed the missing check of the inactive role and of the daily request limit in the server of the Model Context Protocol (MCP) (experimental)
-
-### [`v3.84.1`](https://redirect.github.com/ghostfolio/ghostfolio/releases/tag/3.84.1)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.84.0...3.84.1)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.84.2...3.85.0)
 
 ##### Added
 
-- Added the endpoint to read the activities of a CSV, JPEG, PDF or PNG file with *Ghostfolio AI* (`POST api/v1/ai/activities`) (experimental)
+- Added an option to enable *Ghostfolio AI* in the user settings of the user account page (experimental)
+- Added an icon to indicate the client of the last request in the users table of the admin control panel
 
 ##### Changed
 
-- Simplified the portfolio performance on the overview tab of the home page by hiding the currency on mobile
-- Extended the user detail dialog in the users section of the admin control panel to include the client of the last request
-- Updated the *Privacy Policy*
-- Extended the import of activities to support CSV files of other brokers, images and PDF files with *Ghostfolio AI* (experimental)
-- Extended the access to share the portfolio with the Model Context Protocol (MCP) to support the *View* and the *View and manage* permissions (experimental)
-- Improved the performance of getting the historical market data by selecting only the required columns
-- Improved the language localization for German (`de`)
+- Removed the deprecated `SymbolProfile` field from the endpoint `POST api/v1/activities`
+- Upgraded `ai` from version `7.0.114` to `7.0.127`
 
 ##### Fixed
 
-- Fixed the *Copy AI prompt to clipboard* actions on the analysis page in impersonation mode to be based on the impersonated user (experimental)
-- Fixed the start date of the date ranges for instances in time zones with a negative UTC offset
-- Fixed the dates of the benchmark in the benchmark comparator on the analysis page for instances in time zones with a negative UTC offset
-- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity on the accounts page and the allocations page
-- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity in the server of the Model Context Protocol (MCP) (experimental)
-- Fixed the missing check of the inactive role and of the daily request limit in the server of the Model Context Protocol (MCP) (experimental)
-
-##### Special Thanks
-
-- [@&#8203;dtslvr](https://redirect.github.com/dtslvr)
-- [@&#8203;KenTandrian](https://redirect.github.com/KenTandrian)
-
-### [`v3.84.0`](https://redirect.github.com/ghostfolio/ghostfolio/releases/tag/3.84.0)
-
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.83.0...3.84.0)
-
-##### Added
-
-- Added the endpoint to read the activities of a CSV, JPEG, PDF or PNG file with *Ghostfolio AI* (`POST api/v1/ai/activities`) (experimental)
-
-##### Changed
-
-- Simplified the portfolio performance on the overview tab of the home page by hiding the currency on mobile
-- Extended the user detail dialog in the users section of the admin control panel to include the client of the last request
-- Updated the *Privacy Policy*
-- Extended the import of activities to support CSV files of other brokers, images and PDF files with *Ghostfolio AI* (experimental)
-- Extended the access to share the portfolio with the Model Context Protocol (MCP) to support the *View* and the *View and manage* permissions (experimental)
-- Improved the performance of getting the historical market data by selecting only the required columns
-- Improved the language localization for German (`de`)
-
-##### Fixed
-
-- Fixed the *Copy AI prompt to clipboard* actions on the analysis page in impersonation mode to be based on the impersonated user (experimental)
-- Fixed the start date of the date ranges for instances in time zones with a negative UTC offset
-- Fixed the dates of the benchmark in the benchmark comparator on the analysis page for instances in time zones with a negative UTC offset
-- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity on the accounts page and the allocations page
-- Fixed the value of the accounts by excluding the cash balance when filtering by an asset class other than liquidity in the server of the Model Context Protocol (MCP) (experimental)
-- Fixed the missing check of the inactive role and of the daily request limit in the server of the Model Context Protocol (MCP) (experimental)
-
-##### Special Thanks
-
-- [@&#8203;dtslvr](https://redirect.github.com/dtslvr)
-- [@&#8203;KenTandrian](https://redirect.github.com/KenTandrian)
+- Fixed the border color of the drop area in the import activities dialog (dark mode)
+- Fixed the start date of the investment timeline chart on the analysis page
+- Fixed the matching of assets and accounts in the import of activities with *Ghostfolio AI* (experimental)
+- Fixed an issue where the update of an activity could change the asset class and asset sub class of an asset profile which does not belong to the user
 
 ---
 
@@ -99,7 +29,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.84.2 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/375
+* Update Ghostfolio to v3.85.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/376
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.219.0...v1.220.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.220.0...v1.221.0
