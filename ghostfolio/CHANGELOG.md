@@ -1,26 +1,30 @@
 ## Ghostfolio Release Notes
 
-### [`v3.88.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3880---2026-10-17)
+### [`v3.89.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3890---2026-10-20)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.87.0...3.88.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.88.0...3.89.0)
 
 ##### Added
 
-- Added the *Return on Investment* (ROI) performance calculation type (experimental)
-- Added a tool to update the cash balance of an account to the server of the Model Context Protocol (MCP) (experimental)
-- Exposed the `REDIS_TLS` environment variable to enable the TLS connection to *Redis*
+- Added a *Storybook* story for the file drop area component
 
 ##### Changed
 
-- Improved the accessibility of the *Google* icon in the login with access token dialog
-- Improved the accessibility of the *Google* icon on the registration page
-- Improved the search by ISIN number in the *Financial Modeling Prep* service
-- Upgraded `bull-board` from version `9.10.1` to `9.10.4`
+- Improved the layout of the user account settings on mobile
+- Improved the usability of the activities page by eliminating the reload on canceling the import activities dialog
+- Improved the loading state of the file drop area component
+- Improved the accessibility of the *Buy me a coffee* button on the about page
+- Improved the accessibility of the entity logo component
+- Extracted the file drop area of the import activities dialog to a reusable component
+- Improved the performance of the historical market data table of the admin control panel by loading only the latest market price per asset profile
+- Introduced a cooldown of 12 hours for the asset profile and exchange rate gathering on activity creation by retaining the completed jobs
+- Deprecated the `api/v1/platform` endpoints in favor of the `api/v1/platforms` endpoints
 
 ##### Fixed
 
-- Fixed the alignment of the bars in the investment chart component
-- Fixed the data source mapping in the data provider service to apply only to the mapped data source
+- Fixed the missing localization of the date picker in the *FIRE* calculator
+- Fixed the missing localization of the date picker in the asset profile details dialog of the admin control panel
+- Fixed the missing tooltip of the client of the last request in the users table of the admin control panel
 
 ---
 
@@ -30,7 +34,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.88.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/379
+* Update Ghostfolio to v3.89.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/380
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.223.0...v1.224.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.224.0...v1.225.0
