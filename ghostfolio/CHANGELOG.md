@@ -1,28 +1,23 @@
 ## Ghostfolio Release Notes
 
-### [`v3.91.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3910---2026-10-23)
+### [`v3.92.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3920---2026-10-24)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.90.0...3.91.0)
-
-##### Added
-
-- Added a link to the holdings tab in the holdings table on the overview tab of the home page (experimental)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.91.0...3.92.0)
 
 ##### Changed
 
-- Extended the account detail dialog to include the change and the performance (experimental)
-- Improved the market price in the benchmark detail dialog by adding the currency and reducing the precision on mobile
-- Improved the style of the close button in the dialog footer component
-- Improved the style of the close button in the dialog header component
-- Restricted the asset endpoint (`GET api/v1/asset/:dataSource/:symbol`) to authenticated users
-- Refined the MCP server instructions based on the user’s subscription (experimental)
-- Improved the language localization for German (`de`)
-- Upgraded `prettier` from version `3.9.9` to `3.9.10`
+- Extended the creation and the import of activities to support the asset profiles of a premium data provider which the user already has
+- Improved the performance of the historical market data table of the admin control panel by counting the market data per asset profile
+- Improved the performance of the historical market data table of the admin control panel by querying subscription usage in a single database query
+- Improved the matching of assets in the import of activities with *Ghostfolio AI* to include closed positions and excluded accounts (experimental)
+- Hardened the `POST api/v1/import` endpoint by hiding internal error messages
+- Upgraded `Nx` from version `23.2.1` to `23.3.1`
+- Upgraded `zod` from version `4.6.5` to `4.6.7`
 
 ##### Fixed
 
-- Fixed a transaction timeout for presets in the historical market data table of the admin control panel
-- Added the missing permission check in the `GET api/v1/import/dividends/:dataSource/:symbol` endpoint
+- Fixed the width of the content in the overview tab of the account detail dialog, the asset profile details dialog of the admin control panel and the holding detail dialog
+- Fixed the state of the market data in the historical market data gathering endpoint for a specific date
 
 ---
 
@@ -32,7 +27,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.91.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/382
+* Update Ghostfolio to v3.92.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/383
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.226.0...v1.227.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.227.0...v1.228.0
