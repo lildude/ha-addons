@@ -1,162 +1,107 @@
 ## TeslaMate Release Notes
 
-### [`v4.3.0`](https://redirect.github.com/teslamate-org/teslamate/releases/tag/v4.3.0)
+### [`v4.4.0`](https://redirect.github.com/teslamate-org/teslamate/releases/tag/v4.4.0)
 
-[Compare Source](https://redirect.github.com/teslamate-org/teslamate/compare/v4.2.0...v4.3.0)
+[Compare Source](https://redirect.github.com/teslamate-org/teslamate/compare/v4.3.0...v4.4.0)
 
-The vehicle display order can now be edited on the settings page, a new dashboard shows historical temperatures, and we use the latest Grafana (13.2.2).
-When a car is assigned to the Tesla account while TeslaMate is running, you no longer need to restart TeslaMate: a reload button starts logging the car.
-The geo-fence links in the Grafana dashboards now open in the same tab, so the Back button returns to the dashboard and the Grafana URL is detected automatically again.
+The certificate authority eMudhra generated the private keys of eight of its intermediate CAs incorrectly, so anyone can recover them from the certificates ([incident report](https://bugzilla.mozilla.org/show_bug.cgi?id=2083449)). TeslaMate no longer trusts these CAs, so they cannot be used to impersonate the Tesla streaming API or your MQTT broker ([#&#8203;5882](https://redirect.github.com/teslamate-org/teslamate/issues/5882)).
+The Docker image now ships the CA certificates, so time zone updates download again ([#&#8203;5808](https://redirect.github.com/teslamate-org/teslamate/issues/5808)), and we use the latest Grafana (13.2.4) with its security fixes.
 
-Under the hood, this release adds a self-verifying black-box characterization suite: recorded API sequences replay through the real vehicle state machine, and everything that leaves the system — database rows, MQTT messages, and the vehicle's interactions with the streaming API and its supervisor — is compared against known-good results with 93.9 % coverage.
-It is the basis for the upcoming rework of the state machine and the Rust rewrite, and writing it already uncovered three bugs, all fixed in this release ([#&#8203;5656](https://redirect.github.com/teslamate-org/teslamate/issues/5656), [#&#8203;5684](https://redirect.github.com/teslamate-org/teslamate/issues/5684), [#&#8203;5693](https://redirect.github.com/teslamate-org/teslamate/issues/5693)). Five more findings ([#&#8203;5699](https://redirect.github.com/teslamate-org/teslamate/issues/5699), [#&#8203;5714](https://redirect.github.com/teslamate-org/teslamate/issues/5714), [#&#8203;5716](https://redirect.github.com/teslamate-org/teslamate/issues/5716), [#&#8203;5718](https://redirect.github.com/teslamate-org/teslamate/issues/5718), [#&#8203;5742](https://redirect.github.com/teslamate-org/teslamate/issues/5742)) sit in code the rework replaces, so they are fixed there instead of patched twice.
+While driving, the car summary and MQTT now show the newest value of stream and poll, so values such as the odometer no longer step back and Home Assistant no longer logs "state is not strictly increasing".
+The Visited dashboard lists the countries and cities each car stopped or charged in, with a day-by-day view per city, and the Temperatures dashboard shows averages over the selected range instead of empty tiles. The charging dashboards label the charger values as AC input and hide them during DC fast charging, and the SuC Charging Cost panel classifies each session by all of its charges, not only the last one.
+Creating, changing or deleting a geofence now re-assigns drives and charges by their actual distance from it, and changing only a geofence's name or costs no longer re-assigns them at all, so saving no longer times out on large databases.
+Maps appear sooner and on phones the footer stays clear of the system gesture area.
 
-**Note for Home Assistant MQTT discovery users:** TeslaMate no longer re-runs the discovery migration on every restart, which briefly removed and recreated entities. Instead it clears the former per-entity topics and republishes the device config; Home Assistant logs one harmless "conflicting MQTT discovery message" warning per legacy topic after each restart, entities are untouched.
-Upgrading directly from 4.1.x no longer preserves entity registry customizations — see the [docs](https://docs.teslamate.org/docs/integrations/home_assistant#mqtt-discovery-automatic-configuration).
+**Note for MQTT users:** A value the car reports as missing is now published as an empty [MQTT topic](https://docs.teslamate.org/docs/integrations/mqtt#mqtt-topics), e.g. `speed` and `shift_state` once the car is switched off; before, the last value stayed. The car summary in the web UI shows it empty as well. A topic the car has not reported since TeslaMate started is no longer cleared, so its retained value stays. While TeslaMate runs, the `odometer` never decreases and is never published empty.
 
-To make your TeslaMate experience even better, we have made 120 improvements.
+To make your TeslaMate experience even better, we have made 68 improvements.
 
 Enjoy!
 
-##### New features
-
-- feat(webview): make the vehicle display order editable on the settings page ([#&#8203;5741](https://redirect.github.com/teslamate-org/teslamate/issues/5741) - [@&#8203;wooter](https://redirect.github.com/wooter))
-- feat(web): explain why no vehicle is logged and offer a reload button that starts loggers for vehicles added to the Tesla account, instead of requiring a restart ([#&#8203;5710](https://redirect.github.com/teslamate-org/teslamate/issues/5710) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- feat(web): show the copyright, license and no-warranty notice in the footer, with the NOTICE and LICENSE of the running version ([#&#8203;5779](https://redirect.github.com/teslamate-org/teslamate/issues/5779) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-
 ##### Improvements and bug fixes
 
-- fix(vehicle): cancel an update with the logged update row instead of the API payload, which crashed the vehicle process and left the update open forever ([#&#8203;5664](https://redirect.github.com/teslamate-org/teslamate/issues/5664) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(web): remove stray brace from the direction arrow SVG path, which made Safari log a parse error on every position update ([#&#8203;5665](https://redirect.github.com/teslamate-org/teslamate/issues/5665) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- refactor(vehicle): route the vehicle's view of time through a clock seam ([#&#8203;5688](https://redirect.github.com/teslamate-org/teslamate/issues/5688) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- refactor(vehicle): date timestamp-less state rows through the clock seam ([#&#8203;5689](https://redirect.github.com/teslamate-org/teslamate/issues/5689) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(vehicle): keep logging when the car reports an outdated timestamp after being offline or asleep — previously the vehicle process crashed on every poll and the state stayed stuck ([#&#8203;5692](https://redirect.github.com/teslamate-org/teslamate/issues/5692) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- feat: use Grafana 13.2.1 ([#&#8203;5694](https://redirect.github.com/teslamate-org/teslamate/issues/5694) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
-- fix(mqtt): stop re-running the Home Assistant discovery migration on every restart ([#&#8203;5685](https://redirect.github.com/teslamate-org/teslamate/issues/5685) - [@&#8203;nebhale](https://redirect.github.com/nebhale))
-- fix(vehicle): keep the published state start time from jumping backwards after charging, updating or driving ([#&#8203;5706](https://redirect.github.com/teslamate-org/teslamate/issues/5706) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(web): pin the size of Leaflet's SVG overlay so the vehicle arrow and geofence circle stay on the map at any Safari page zoom ([#&#8203;5666](https://redirect.github.com/teslamate-org/teslamate/issues/5666) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(grafana): open the TeslaMate header link in a new tab so it works when Grafana and TeslaMate share an origin ([#&#8203;5626](https://redirect.github.com/teslamate-org/teslamate/issues/5626) - [@&#8203;misenhower](https://redirect.github.com/misenhower))
-- fix(web): make the Back button return to the Grafana dashboard and detect the Grafana URL despite origin-only referrers ([#&#8203;5709](https://redirect.github.com/teslamate-org/teslamate/issues/5709) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- refactor(vehicle): simplify the state machine: plain atom states, DB records moved into the state data ([#&#8203;5259](https://redirect.github.com/teslamate-org/teslamate/issues/5259) - [@&#8203;brianmay](https://redirect.github.com/brianmay), [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- feat: use Grafana 13.2.2 ([#&#8203;5744](https://redirect.github.com/teslamate-org/teslamate/issues/5744) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
-- fix(web): send the referrer and show the OpenStreetMap attribution on map tiles, so tiles load behind reverse proxies that set a stricter referrer policy such as same-origin or no-referrer and TeslaMate complies with the OSM tile usage policy ([#&#8203;5765](https://redirect.github.com/teslamate-org/teslamate/issues/5765) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(web): show VIN and trim tooltips below the car title on mobile, so they no longer get cut off at the left edge ([#&#8203;5774](https://redirect.github.com/teslamate-org/teslamate/issues/5774) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- legal: add NOTICE and state AGPL-3.0-or-later consistently ([#&#8203;5777](https://redirect.github.com/teslamate-org/teslamate/issues/5777) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- legal: rewrite the trademark policy with definitions and an exhaustive list of permitted uses ([#&#8203;5777](https://redirect.github.com/teslamate-org/teslamate/issues/5777) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(auth): no longer follow redirects when refreshing the token, so the refresh token and the fleet token are never sent to another host ([#&#8203;5781](https://redirect.github.com/teslamate-org/teslamate/issues/5781) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(auth): tell rejected tokens apart from every other refresh failure, so the sign-in page names the actual cause ([#&#8203;5781](https://redirect.github.com/teslamate-org/teslamate/issues/5781) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(web): report a sign-in that exits instead of crashing the sign-in page ([#&#8203;5781](https://redirect.github.com/teslamate-org/teslamate/issues/5781) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(auth): keep credentials out of the log, even on the debug level ([#&#8203;5782](https://redirect.github.com/teslamate-org/teslamate/issues/5782) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- feat(web): skip the modal animation when the system asks for reduced motion, with own fade and scale CSS ([#&#8203;5784](https://redirect.github.com/teslamate-org/teslamate/issues/5784) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(geocoder): fill the address fields by Nominatim's address ranks ([#&#8203;5785](https://redirect.github.com/teslamate-org/teslamate/issues/5785) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- legal: declare copyright and license of every file in REUSE.toml and check REUSE compliance in CI ([#&#8203;5789](https://redirect.github.com/teslamate-org/teslamate/issues/5789) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- legal: add the MIT notice to NOTICE for earlier contributions the relicensing does not cover ([#&#8203;5789](https://redirect.github.com/teslamate-org/teslamate/issues/5789) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- style: spell the name as TeslaMate throughout, including the creator of GPX exports ([#&#8203;5798](https://redirect.github.com/teslamate-org/teslamate/issues/5798) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(docker): start with a PostgreSQL that is reachable only through its Unix socket ([#&#8203;5800](https://redirect.github.com/teslamate-org/teslamate/issues/5800) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- feat: use Grafana 13.2.3 ([#&#8203;5803](https://redirect.github.com/teslamate-org/teslamate/issues/5803) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
+- fix(docker): install the CA certificates, so Tzdata can verify TLS and download time zone updates ([#&#8203;5808](https://redirect.github.com/teslamate-org/teslamate/issues/5808) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix: use the position's latitude when re-assigning drives and charges to geofences ([#&#8203;5820](https://redirect.github.com/teslamate-org/teslamate/issues/5820) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix: re-assign drives and charges only when a geofence's location or radius changes ([#&#8203;5823](https://redirect.github.com/teslamate-org/teslamate/issues/5823) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- perf(web): connect to the map tile server early, so maps appear sooner ([#&#8203;5826](https://redirect.github.com/teslamate-org/teslamate/issues/5826) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix(web): label cars without a name by their VIN in the settings, like the car summary ([#&#8203;5821](https://redirect.github.com/teslamate-org/teslamate/issues/5821) - [@&#8203;TUNER88](https://redirect.github.com/TUNER88))
+- fix(web): label cars without a name by their VIN on the charge cost page and in the vehicle reload hint, like the car summary ([#&#8203;5827](https://redirect.github.com/teslamate-org/teslamate/issues/5827) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix(vehicle): show the newest value of stream and poll in the car summary and on MQTT, so values such as the odometer no longer step back while driving ([#&#8203;5864](https://redirect.github.com/teslamate-org/teslamate/issues/5864) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- feat: use Grafana 13.2.4 ([#&#8203;5883](https://redirect.github.com/teslamate-org/teslamate/issues/5883) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix(web): keep the footer out of the phone's system gesture area and stop the page from scrolling past the screen on phones ([#&#8203;5884](https://redirect.github.com/teslamate-org/teslamate/issues/5884) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
 
 ##### Build, CI, internal
 
-- test: add characterization harness replaying API fixtures against persisted rows and MQTT ([#&#8203;5653](https://redirect.github.com/teslamate-org/teslamate/issues/5653) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert driving scenarios to characterization fixtures ([#&#8203;5654](https://redirect.github.com/teslamate-org/teslamate/issues/5654) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert charging scenarios to characterization fixtures ([#&#8203;5655](https://redirect.github.com/teslamate-org/teslamate/issues/5655) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert updating scenarios to characterization fixtures. Pins the update-cancel crash ([#&#8203;5656](https://redirect.github.com/teslamate-org/teslamate/issues/5656)) that mock-based tests could not see ([#&#8203;5658](https://redirect.github.com/teslamate-org/teslamate/issues/5658) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert streaming scenarios to characterization fixtures ([#&#8203;5668](https://redirect.github.com/teslamate-org/teslamate/issues/5668) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(test): give the error\_event selftest a settled terminal cycle ([#&#8203;5670](https://redirect.github.com/teslamate-org/teslamate/issues/5670) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(test): move the offline-resume scenario off the 15-minute boundary ([#&#8203;5681](https://redirect.github.com/teslamate-org/teslamate/issues/5681) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): enforce the two-call-terminal limit ([#&#8203;5683](https://redirect.github.com/teslamate-org/teslamate/issues/5683) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert suspend\_logging scenarios to characterization fixtures ([#&#8203;5687](https://redirect.github.com/teslamate-org/teslamate/issues/5687) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): run replays on a scenario clock, retire timebase ([#&#8203;5690](https://redirect.github.com/teslamate-org/teslamate/issues/5690) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin the stale-timestamp resume crash ([#&#8203;5691](https://redirect.github.com/teslamate-org/teslamate/issues/5691) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert suspend scenarios to characterization fixtures ([#&#8203;5695](https://redirect.github.com/teslamate-org/teslamate/issues/5695) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert summary scenarios to characterization fixtures ([#&#8203;5696](https://redirect.github.com/teslamate-org/teslamate/issues/5696) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert vehicle scenarios to characterization fixtures, add the update\_car\_settings call ([#&#8203;5697](https://redirect.github.com/teslamate-org/teslamate/issues/5697) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): convert the remaining vehicle scenarios — resume\_logging and summary calls, expect\_halt, seed positions, Vehicles stand-in ([#&#8203;5698](https://redirect.github.com/teslamate-org/teslamate/issues/5698) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin charge samples without charger\_power ([#&#8203;5700](https://redirect.github.com/teslamate-org/teslamate/issues/5700) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin stream connect/disconnect and the supervisor kill as golden interactions ([#&#8203;5704](https://redirect.github.com/teslamate-org/teslamate/issues/5704) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): name the scenario event behind a mismatch on a dated row ([#&#8203;5705](https://redirect.github.com/teslamate-org/teslamate/issues/5705) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(deps): bump browserslist from 4.28.2 to 4.28.9 in /website ([#&#8203;5707](https://redirect.github.com/teslamate-org/teslamate/issues/5707))
-- build(deps): bump fast-uri from 3.1.5 to 3.1.7 in /website ([#&#8203;5686](https://redirect.github.com/teslamate-org/teslamate/issues/5686))
-- build(deps): bump http-proxy-middleware from 2.0.9 to 2.0.10 in /website ([#&#8203;5708](https://redirect.github.com/teslamate-org/teslamate/issues/5708))
-- build(deps): update flake.lock ([#&#8203;5659](https://redirect.github.com/teslamate-org/teslamate/issues/5659))
-- build(deps): bump the actions-deps group across 4 directories with 8 updates ([#&#8203;5679](https://redirect.github.com/teslamate-org/teslamate/issues/5679))
-- build(deps): bump phoenix from 1.8.9 to 1.8.13 ([#&#8203;5672](https://redirect.github.com/teslamate-org/teslamate/issues/5672))
-- build(deps): bump postgrex from 0.22.3 to 0.22.4 ([#&#8203;5673](https://redirect.github.com/teslamate-org/teslamate/issues/5673))
-- build(deps-dev): bump sass from 1.102.0 to 1.103.1 in /assets ([#&#8203;5674](https://redirect.github.com/teslamate-org/teslamate/issues/5674))
-- build(deps-dev): bump esbuild from 0.28.1 to 0.28.2 in /assets ([#&#8203;5675](https://redirect.github.com/teslamate-org/teslamate/issues/5675))
-- build(deps): bump castore from 1.0.20 to 1.0.21 ([#&#8203;5676](https://redirect.github.com/teslamate-org/teslamate/issues/5676))
-- build(deps): bump srtm from 0.8.0 to 0.9.0 ([#&#8203;5677](https://redirect.github.com/teslamate-org/teslamate/issues/5677))
-- build(deps): bump phoenix\_live\_view from 1.2.8 to 1.2.11 ([#&#8203;5678](https://redirect.github.com/teslamate-org/teslamate/issues/5678))
-- test(characterization): pin the pre-online check of the streaming API ([#&#8203;5712](https://redirect.github.com/teslamate-org/teslamate/issues/5712) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin the suspended state's resume, usage and inactive-stream paths ([#&#8203;5713](https://redirect.github.com/teslamate-org/teslamate/issues/5713) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin vehicle identification — model, trim and marketing name from vehicle\_config and VIN ([#&#8203;5715](https://redirect.github.com/teslamate-org/teslamate/issues/5715) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin payload edge cases — charge defaults of the offline charge inference and stream frames against a merged or timestamp-less last response ([#&#8203;5717](https://redirect.github.com/teslamate-org/teslamate/issues/5717) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin the power-usage suspend guard and service mode across an idle suspend ([#&#8203;5719](https://redirect.github.com/teslamate-org/teslamate/issues/5719) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin generic API errors while driving, charging and on the manual suspend fetch, the asleep/offline transitions and the polling doubling after resume\_logging ([#&#8203;5723](https://redirect.github.com/teslamate-org/teslamate/issues/5723) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(deps): bump [@&#8203;swc/html](https://redirect.github.com/swc/html) from 1.15.46 to 1.16.2 in /website ([#&#8203;5720](https://redirect.github.com/teslamate-org/teslamate/issues/5720))
-- build(deps): bump colord from 2.9.3 to 2.10.0 in /website ([#&#8203;5721](https://redirect.github.com/teslamate-org/teslamate/issues/5721))
-- build(deps): bump js-yaml from 4.3.1 to 4.3.2 in /website ([#&#8203;5724](https://redirect.github.com/teslamate-org/teslamate/issues/5724))
-- build(deps): bump svgo from 3.3.4 to 3.3.5 in /website ([#&#8203;5725](https://redirect.github.com/teslamate-org/teslamate/issues/5725))
-- build(deps): bump joi from 17.13.4 to 17.13.7 in /website ([#&#8203;5726](https://redirect.github.com/teslamate-org/teslamate/issues/5726))
-- test(characterization): pin settings toggles during charging and while parked; the harness call seam serves stream connect and disconnect ([#&#8203;5727](https://redirect.github.com/teslamate-org/teslamate/issues/5727) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin a charge inside a geofence — geofence\_id, per-kWh cost and the geofence topic ([#&#8203;5736](https://redirect.github.com/teslamate-org/teslamate/issues/5736) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin a drive in import mode — no address lookup, halt on import\_complete ([#&#8203;5737](https://redirect.github.com/teslamate-org/teslamate/issues/5737) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): add the too\_many\_request error form, seed.updates and per-scenario Home Assistant discovery to the harness, with first users ([#&#8203;5740](https://redirect.github.com/teslamate-org/teslamate/issues/5740) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(characterization): pin the reconnecting stream controls and the missing stream after a service visit ([#&#8203;5743](https://redirect.github.com/teslamate-org/teslamate/issues/5743) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(vehicle): make the store-position interval configurable and lock the state-machine field lifecycle with regression tests ([#&#8203;5259](https://redirect.github.com/teslamate-org/teslamate/issues/5259) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- refactor: move the Elixir application to `elixir/`, so the repository root is prepared for the Rust core next to it; tooling, CI and docs point at the new path ([#&#8203;5745](https://redirect.github.com/teslamate-org/teslamate/issues/5745) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- chore(ci): fix the shellcheck and untrusted-input findings from actionlint ([#&#8203;5759](https://redirect.github.com/teslamate-org/teslamate/issues/5759) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(ci): apply the OCI labels to the Grafana images ([#&#8203;5761](https://redirect.github.com/teslamate-org/teslamate/issues/5761) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(ci): pass the build action inputs through env and expressions ([#&#8203;5762](https://redirect.github.com/teslamate-org/teslamate/issues/5762) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(deps): bump react and react-dom from 19.2.8 to 19.3.0 in /website ([#&#8203;5751](https://redirect.github.com/teslamate-org/teslamate/issues/5751))
-- build(deps): bump nanoid from 3.3.16 to 3.3.19 in /website (5760)
-- build(deps): bump the actions-deps group across 4 directories with 7 updates ([#&#8203;5758](https://redirect.github.com/teslamate-org/teslamate/issues/5758))
-- build(deps): bump elixir from 1.20.2-otp-29 to 1.20.3-otp-29 ([#&#8203;5747](https://redirect.github.com/teslamate-org/teslamate/issues/5747))
-- build(deps-dev): bump sass from 1.103.1 to 1.104.1 in /elixir/assets ([#&#8203;5749](https://redirect.github.com/teslamate-org/teslamate/issues/5749))
-- build(deps): bump [@&#8203;geoman-io/leaflet-geoman-free](https://redirect.github.com/geoman-io/leaflet-geoman-free) from 2.20.0 to 2.20.1 in /elixir/assets (5750)
-- build(deps-dev): bump phoenix\_live\_reload from 1.6.2 to 1.7.0 in /elixir ([#&#8203;5753](https://redirect.github.com/teslamate-org/teslamate/issues/5753))
-- build(deps-dev): bump credo from 1.7.18 to 1.7.19 in /elixir ([#&#8203;5755](https://redirect.github.com/teslamate-org/teslamate/issues/5755))
-- build(deps): bump ecto\_sql from 3.13.5 to 3.14.0 in /elixir ([#&#8203;5757](https://redirect.github.com/teslamate-org/teslamate/issues/5757))
-- build(deps): update flake.lock ([#&#8203;5728](https://redirect.github.com/teslamate-org/teslamate/issues/5728))
-- feat(rust): add the Rust core skeleton under rust/ — crate, CI with path routing, Nix package and devenv toolchain ([#&#8203;5703](https://redirect.github.com/teslamate-org/teslamate/issues/5703) - [@&#8203;brianmay](https://redirect.github.com/brianmay), [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(rust): choose Tokio as the async runtime ([#&#8203;5772](https://redirect.github.com/teslamate-org/teslamate/issues/5772) - [@&#8203;brianmay](https://redirect.github.com/brianmay))
-- build(deps): bump tzdata from 1.1.4 to 1.2.1 in /elixir ([#&#8203;5771](https://redirect.github.com/teslamate-org/teslamate/issues/5771))
-- build(deps): remove unused hackney lock entries after tzdata 1.2.1 ([#&#8203;5771](https://redirect.github.com/teslamate-org/teslamate/issues/5771) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(deps): bump tesla from 1.20.0 to 1.21.3 in /elixir ([#&#8203;5767](https://redirect.github.com/teslamate-org/teslamate/issues/5767))
-- build(deps): bump phoenix\_live\_view from 1.2.11 to 1.2.12 in /elixir ([#&#8203;5768](https://redirect.github.com/teslamate-org/teslamate/issues/5768))
-- build(deps-dev): bump dialyxir from 1.4.7 to 1.4.8 in /elixir ([#&#8203;5769](https://redirect.github.com/teslamate-org/teslamate/issues/5769))
-- build(deps): bump tortoise311 from 0.12.2 to 0.12.3 in /elixir ([#&#8203;5770](https://redirect.github.com/teslamate-org/teslamate/issues/5770))
-- fix(test): restart cars\_id\_seq at suite start so smallint cars.id never overflows across local runs ([#&#8203;5773](https://redirect.github.com/teslamate-org/teslamate/issues/5773) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build: ship NOTICE and LICENSE in both images and both Nix packages, and declare AGPL-3.0-or-later in the Nix metadata ([#&#8203;5778](https://redirect.github.com/teslamate-org/teslamate/issues/5778) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(deps): bump image-size from 2.0.2 to 2.0.4 in /website ([#&#8203;5783](https://redirect.github.com/teslamate-org/teslamate/issues/5783))
-- test(geocoder): pin which address label fills which field, and in which order ([#&#8203;5785](https://redirect.github.com/teslamate-org/teslamate/issues/5785) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- test(geocoder): pin the address fields of 19 recorded Nominatim addresses ([#&#8203;5785](https://redirect.github.com/teslamate-org/teslamate/issues/5785) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build: stop building the Grafana image for ARMv7, which is no longer supported ([#&#8203;5788](https://redirect.github.com/teslamate-org/teslamate/issues/5788) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- build(deps): update flake.lock ([#&#8203;5790](https://redirect.github.com/teslamate-org/teslamate/issues/5790))
-- feat(rust): read the configuration from environment variables and take the version from the VERSION file ([#&#8203;5776](https://redirect.github.com/teslamate-org/teslamate/issues/5776) - [@&#8203;brianmay](https://redirect.github.com/brianmay), [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(nix): trim the VERSION file for the Elixir package, so a trailing newline no longer ends up in its name ([#&#8203;5776](https://redirect.github.com/teslamate-org/teslamate/issues/5776) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- fix(test): mask TeslaMate's version in the discovery goldens, so a release no longer breaks the characterization tests ([#&#8203;5802](https://redirect.github.com/teslamate-org/teslamate/issues/5802) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix: read TeslaMate's version from one module so a VERSION bump cannot leave a stale copy ([#&#8203;5804](https://redirect.github.com/teslamate-org/teslamate/issues/5804) - [@&#8203;swiffer](https://redirect.github.com/swiffer), [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): update flake.lock ([#&#8203;5822](https://redirect.github.com/teslamate-org/teslamate/issues/5822))
+- build(deps): bump localize from 1.2.0 to 1.3.0 in /elixir ([#&#8203;5811](https://redirect.github.com/teslamate-org/teslamate/issues/5811))
+- build(deps-dev): bump sass from 1.104.1 to 1.105.0 in /elixir/assets ([#&#8203;5812](https://redirect.github.com/teslamate-org/teslamate/issues/5812))
+- build(deps): bump [@&#8203;geoman-io/leaflet-geoman-free](https://redirect.github.com/geoman-io/leaflet-geoman-free) from 2.20.1 to 2.20.2 in /elixir/assets ([#&#8203;5813](https://redirect.github.com/teslamate-org/teslamate/issues/5813))
+- build(deps): bump phoenix from 1.8.14 to 1.8.15 in /elixir ([#&#8203;5814](https://redirect.github.com/teslamate-org/teslamate/issues/5814))
+- build(deps): bump tzdata from 1.2.1 to 1.2.2 in /elixir ([#&#8203;5815](https://redirect.github.com/teslamate-org/teslamate/issues/5815))
+- build(deps-dev): bump lazy_html from 0.1.12 to 0.1.13 in /elixir ([#&#8203;5816](https://redirect.github.com/teslamate-org/teslamate/issues/5816))
+- build(deps): bump crate-ci/typos from 1.50.2 to 1.50.3 in the actions-deps group across 1 directory ([#&#8203;5817](https://redirect.github.com/teslamate-org/teslamate/issues/5817))
+- build(deps): bump fast-uri from 3.1.7 to 3.1.8 in /website ([#&#8203;5824](https://redirect.github.com/teslamate-org/teslamate/issues/5824))
+- build(deps): bump brace-expansion from 1.1.18 to 1.1.21 in /website ([#&#8203;5825](https://redirect.github.com/teslamate-org/teslamate/issues/5825))
+- build(nix): add rustc and lldb to the devenv shell, so rust-analyzer finds the sysroot in every editor and Rust can be debugged ([#&#8203;5796](https://redirect.github.com/teslamate-org/teslamate/issues/5796) - [@&#8203;brianmay](https://redirect.github.com/brianmay))
+- ci: run the Rust CI and the Nix hash check whenever one of their build inputs changes, not only rust/ and the mix files ([#&#8203;5828](https://redirect.github.com/teslamate-org/teslamate/issues/5828) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix(nix): build with Erlang without wx and fetch the mix deps with the project's Elixir, which shrinks every Nix build by about 0.5 GiB ([#&#8203;5830](https://redirect.github.com/teslamate-org/teslamate/issues/5830) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- ci: run the NixOS module test ([#&#8203;5829](https://redirect.github.com/teslamate-org/teslamate/issues/5829) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix(ci): keep the flake.lock and Nix hash workflows out of the other jobs' caches ([#&#8203;5831](https://redirect.github.com/teslamate-org/teslamate/issues/5831) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- feat(rust): add OpenTelemetry support, exporting logs, traces and metrics over OTLP ([aa563418](https://redirect.github.com/teslamate-org/teslamate/commit/aa5634188b369e4ca6402b4811c7c8a48bd658d7) - [@&#8203;brianmay](https://redirect.github.com/brianmay))
+- refactor(rust): prefix the OTLP command line options with `otlp-` ([428eb491](https://redirect.github.com/teslamate-org/teslamate/commit/428eb491eea01852dbc5f9d45f08f2c05ccbe17f) - [@&#8203;brianmay](https://redirect.github.com/brianmay))
+- fix(rust): make the OTLP configuration values optional ([a22cbcba](https://redirect.github.com/teslamate-org/teslamate/commit/a22cbcba9d7d53b297533e2f001997d0634b5ba7) - [@&#8203;brianmay](https://redirect.github.com/brianmay))
+- refactor(rust): require endpoint, username and password as soon as one OTLP value is set ([bbc95ce1](https://redirect.github.com/teslamate-org/teslamate/commit/bbc95ce1f95da17f937fda65c60d1c0860db6df0) - [@&#8203;brianmay](https://redirect.github.com/brianmay))
+- style(rust): fix the formatting ([057270c1](https://redirect.github.com/teslamate-org/teslamate/commit/057270c1938e0714164b77004ecb6e349436915a) - [@&#8203;brianmay](https://redirect.github.com/brianmay))
+- build(deps): bump the opentelemetry-rust group across 1 directory with 6 updates ([#&#8203;5833](https://redirect.github.com/teslamate-org/teslamate/issues/5833))
+- refactor(rust): configure the OTLP export only through the standard OpenTelemetry environment variables, export each signal only when its endpoint is set, and drop the unused dependencies ([#&#8203;5835](https://redirect.github.com/teslamate-org/teslamate/issues/5835) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix(db): align import_runs.car_id type with cars.id (smallint) ([#&#8203;5847](https://redirect.github.com/teslamate-org/teslamate/issues/5847) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- refactor(db): rename the range enum to preferred_range ([#&#8203;5860](https://redirect.github.com/teslamate-org/teslamate/issues/5860) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): bump finch from 0.23.0 to 0.24.0 in /elixir ([#&#8203;5832](https://redirect.github.com/teslamate-org/teslamate/issues/5832))
+- build(deps): bump anchore/sbom-action from 0.24.2 to 0.24.3 in /.github/actions/build in the actions-deps group across 1 directory ([#&#8203;5834](https://redirect.github.com/teslamate-org/teslamate/issues/5834))
+- build(deps): bump tokio from 1.53.1 to 1.53.3 in /rust ([#&#8203;5836](https://redirect.github.com/teslamate-org/teslamate/issues/5836))
+- build(deps-dev): bump sass from 1.105.0 to 1.105.1 in /elixir/assets ([#&#8203;5837](https://redirect.github.com/teslamate-org/teslamate/issues/5837))
+- build(deps): bump source-map-js from 1.2.1 to 1.2.2 in /elixir/assets ([#&#8203;5838](https://redirect.github.com/teslamate-org/teslamate/issues/5838))
+- build(deps): bump proxy-addr from 2.0.7 to 2.0.8 in /website ([#&#8203;5839](https://redirect.github.com/teslamate-org/teslamate/issues/5839))
+- build(deps): bump source-map-js from 1.2.1 to 1.2.2 in /website ([#&#8203;5840](https://redirect.github.com/teslamate-org/teslamate/issues/5840))
+- build(deps): bump compression from 1.8.1 to 1.8.2 in /website ([#&#8203;5841](https://redirect.github.com/teslamate-org/teslamate/issues/5841))
+- build(deps): bump shell-quote from 1.10.0 to 1.12.0 in /website ([#&#8203;5842](https://redirect.github.com/teslamate-org/teslamate/issues/5842))
+- build(deps): bump joi from 17.13.7 to 17.13.8 in /website ([#&#8203;5843](https://redirect.github.com/teslamate-org/teslamate/issues/5843))
+- build(nix): drop x86_64-darwin, which devenv's nixpkgs no longer supports ([#&#8203;5879](https://redirect.github.com/teslamate-org/teslamate/issues/5879) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): update flake.lock ([#&#8203;5850](https://redirect.github.com/teslamate-org/teslamate/issues/5850))
+- build(nix): regenerate treefmt.toml for the updated treefmt-nix ([#&#8203;5850](https://redirect.github.com/teslamate-org/teslamate/issues/5850) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): bump follow-redirects from 1.16.0 to 1.16.1 in /website ([#&#8203;5876](https://redirect.github.com/teslamate-org/teslamate/issues/5876))
+- build(deps): bump launch-editor from 2.14.1 to 2.14.2 in /website ([#&#8203;5878](https://redirect.github.com/teslamate-org/teslamate/issues/5878))
+- build(deps): distrust the compromised eMudhra intermediate CAs ([#&#8203;5882](https://redirect.github.com/teslamate-org/teslamate/issues/5882) - [@&#8203;marsavela](https://redirect.github.com/marsavela))
+- fix: update the gettext POT file for the moved layout lines ([06149aab](https://redirect.github.com/teslamate-org/teslamate/commit/06149aab33354102eeb53259176c3a01da99ad86) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix: update the PO file references for the moved layout lines ([68ca04be](https://redirect.github.com/teslamate-org/teslamate/commit/68ca04be658aeda4288a205e26bdf6a2f31f23b3) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- ci(typos): skip GitHub handles in Markdown, so contributor names never fail the spell check ([fbf78c1c](https://redirect.github.com/teslamate-org/teslamate/commit/fbf78c1c5e17cb219019a58d2d29afa3c7ae7e07) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- build(deps): bump react and react-dom from 19.3.0 to 19.3.1 in /website ([#&#8203;5887](https://redirect.github.com/teslamate-org/teslamate/issues/5887))
+- build(deps): bump the actions-deps group across 3 directories with 6 updates ([#&#8203;5894](https://redirect.github.com/teslamate-org/teslamate/issues/5894))
+- build(deps): bump phoenix_live_view from 1.2.12 to 1.2.13 in /elixir ([#&#8203;5888](https://redirect.github.com/teslamate-org/teslamate/issues/5888))
+- build(deps): bump tesla from 1.21.3 to 1.22.0 in /elixir ([#&#8203;5890](https://redirect.github.com/teslamate-org/teslamate/issues/5890))
+- build(deps-dev): bump sass from 1.105.1 to 1.105.2 in /elixir/assets ([#&#8203;5889](https://redirect.github.com/teslamate-org/teslamate/issues/5889))
+- build(deps): bump the opentelemetry-rust group in /rust with 5 updates ([#&#8203;5892](https://redirect.github.com/teslamate-org/teslamate/issues/5892))
 
 ##### Dashboards
 
-- feat(grafana): add `total` period to the Statistics dashboard for one aggregated row over the selected time range ([#&#8203;5680](https://redirect.github.com/teslamate-org/teslamate/issues/5680) - [@&#8203;micku7zu](https://redirect.github.com/micku7zu))
-- fix(grafana): count asleep/offline states that cross a parking boundary in the vampire drain standby time ([#&#8203;5729](https://redirect.github.com/teslamate-org/teslamate/issues/5729) - [@&#8203;rewse](https://redirect.github.com/rewse))
-- fix(grafana): fall back to the neighbourhood where an address has no city ([#&#8203;5785](https://redirect.github.com/teslamate-org/teslamate/issues/5785) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- feat(grafana): add a new dashboard showing historical temperatures ([#&#8203;5457](https://redirect.github.com/teslamate-org/teslamate/issues/5457) - [@&#8203;slayer01](https://redirect.github.com/slayer01))
+- feat(grafana): list the countries and cities each car stopped or charged in on the Visited dashboard, with a day-by-day view per city ([#&#8203;5859](https://redirect.github.com/teslamate-org/teslamate/issues/5859) - [@&#8203;jheredianet](https://redirect.github.com/jheredianet))
+- feat(grafana): replace the Temperatures dashboard's empty last-value tiles with averages over the selected range ([#&#8203;5858](https://redirect.github.com/teslamate-org/teslamate/issues/5858) - [@&#8203;jheredianet](https://redirect.github.com/jheredianet))
+- fix(grafana): classify sessions in the Charging Stats SuC Charging Cost panel by all their charges, not the last one ([#&#8203;5885](https://redirect.github.com/teslamate-org/teslamate/issues/5885) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- fix(grafana): label charger values as AC input and hide them during DC fast charging ([#&#8203;5866](https://redirect.github.com/teslamate-org/teslamate/issues/5866) - [@&#8203;SomSamantray](https://redirect.github.com/SomSamantray), [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
 
 ##### Translations
 
-- fix(i18n): translate the import page, the car summary, the car order setting and the validation errors into German ([#&#8203;5786](https://redirect.github.com/teslamate-org/teslamate/issues/5786) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- i18n(it): complete Italian web UI translations ([#&#8203;5875](https://redirect.github.com/teslamate-org/teslamate/issues/5875) - [@&#8203;SiNaPsEr0x](https://redirect.github.com/SiNaPsEr0x))
 
 ##### Documentation
 
-- docs: add AI-assisted contribution policy and Grafana dashboard notes ([#&#8203;5578](https://redirect.github.com/teslamate-org/teslamate/issues/5578) - [@&#8203;swiffer](https://redirect.github.com/swiffer))
-- docs(faq): explain how to add a car that shows up in the Tesla account after start-up and reorder the entries ([#&#8203;5766](https://redirect.github.com/teslamate-org/teslamate/issues/5766) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- docs: declare MQTT the only supported integration surface; database and web routes are internal ([#&#8203;5775](https://redirect.github.com/teslamate-org/teslamate/issues/5775) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- docs: list the web interface languages with their English fallback, and show the Trendshift ranking under Popularity ([#&#8203;5780](https://redirect.github.com/teslamate-org/teslamate/issues/5780) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- docs: state that the image SBOM lists only the Debian packages and the Erlang and Elixir runtime, and why ([#&#8203;5787](https://redirect.github.com/teslamate-org/teslamate/issues/5787) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
-- docs: remove the outdated entity relationship model from the development docs ([#&#8203;5801](https://redirect.github.com/teslamate-org/teslamate/issues/5801) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- docs(mqtt): describe the Home Assistant discovery cleanup on every start while discovery is disabled ([#&#8203;5845](https://redirect.github.com/teslamate-org/teslamate/issues/5845) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
+- docs(home-assistant): use the binary_sensor domain for the parking brake entity id ([#&#8203;5861](https://redirect.github.com/teslamate-org/teslamate/issues/5861) - [@&#8203;Bascht74](https://redirect.github.com/Bascht74))
+- docs(install): require Elixir 1.19+ on Erlang/OTP 28+ in the manual install guides, install it with mise on Debian ([#&#8203;5877](https://redirect.github.com/teslamate-org/teslamate/issues/5877) - [@&#8203;JakobLichterfeld](https://redirect.github.com/JakobLichterfeld))
 
-[complete changelog](https://redirect.github.com/teslamate-org/teslamate/compare/v4.2.0...v4.3.0)
+[complete changelog](https://redirect.github.com/teslamate-org/teslamate/compare/v4.3.0...v4.4.0)
 
 ---
 
@@ -166,7 +111,8 @@ Enjoy!
 
 
 ## What's Changed
-* Update TeslaMate to v4.3.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/155
+* Update softprops/action-gh-release action to v3.0.3 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/154
+* Update TeslaMate to v4.4.0 by @renovate[bot] in https://github.com/lildude/ha-addon-teslamate/pull/156
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v2.7.0...v2.8.0
+**Full Changelog**: https://github.com/lildude/ha-addon-teslamate/compare/v2.8.0...v2.9.0
