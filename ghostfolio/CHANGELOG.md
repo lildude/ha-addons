@@ -1,27 +1,48 @@
 ## Ghostfolio Release Notes
 
-### [`v3.94.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3940---2026-10-28)
+### [`v3.96.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3960---2026-10-31)
 
-[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.93.0...3.94.0)
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.95.0...3.96.0)
+
+##### Added
+
+- Added a blog post: *Black Weeks 2026*
 
 ##### Changed
 
-- Improved the data source filter in the historical market data table of the admin control panel to only list the data providers in use
-- Restricted the health check endpoint of the AI service (`GET api/v1/health/ai`) to administrators
-- Increased the timeout in the health check endpoint of the AI service to 30 seconds
-- Deprecated the `api/v1/access` endpoints in favor of the `api/v1/accesses` endpoints
-- Deprecated the `api/v1/account` and `api/v1/account-balance` endpoints in favor of the `api/v1/accounts` endpoints
-- Improved the performance of the code style check in the build workflow by skipping the warning-level rules of *ESLint*
-- Refreshed the cryptocurrencies list
-- Upgraded `undici` from version `8.12.2` to `8.12.3`
+- Extended the sectors mapping in the data enhancer for asset profile data via *Trackinsight*
+- Improved the logging of the `web_fetch` tool in the `FetchService`
+- Improved the validation of the `WEB_FETCH_ROUTES` setting in the `FetchService`
+- Improved the validation of the response of the `web_fetch` tool in the `FetchService`
+- Deprecated the `api/v1/admin/user`, `api/v1/user/:id` and `api/v1/user/:id/access-token` endpoints in favor of the `api/v1/users` endpoints
+- Improved the language localization for German (`de`)
+- Upgraded `chart.js` from version `4.5.1` to `4.6.1`
 
 ##### Fixed
 
-- Fixed the double submission of forms in the account detail dialog, the create or update access dialog, the historical market data editor, the import activities dialog, the coupon system and the create asset profile dialog of the admin control panel
-- Fixed an issue where the benchmarks in the markets overview were not updated after adding or deleting a benchmark
-- Fixed an issue where users could grant a private access to themselves
-- Fixed the status code of the endpoints to add and delete a benchmark if the asset profile does not exist
-- Fixed the git-hook via `husky` to lint and check the formatting of the uncommitted changes before a commit
+- Fixed the overwrite of `countries`, `holdings` and `sectors` with empty values in the data gathering of asset profiles
+- Fixed the validation of the responses in the data enhancer for asset profile data via *Trackinsight*
+
+### [`v3.95.0`](https://redirect.github.com/ghostfolio/ghostfolio/blob/HEAD/CHANGELOG.md#3950---2026-10-31)
+
+[Compare Source](https://redirect.github.com/ghostfolio/ghostfolio/compare/3.94.0...3.95.0)
+
+##### Changed
+
+- Localized the number formatting in the tooltip of the line chart, the investment chart and the benchmark comparator
+- Deprecated the `api/v1/symbol` endpoints in favor of the `api/v1/symbols` endpoints
+- Removed the redundant currency from the activities in the currency of the asset profile
+- Changed the *Redis* image from `redis:alpine` to `redis:8-alpine` in the `docker-compose` file (`docker-compose.yml`)
+- Upgraded `@internationalized/number` from version `3.6.8` to `3.6.9`
+- Upgraded `countries-and-timezones` from version `3.10.0` to `3.11.0`
+- Upgraded `envalid` from version `8.2.0` to `9.0.0`
+- Upgraded `uuid` from version `14.0.2` to `14.0.3`
+- Upgraded `yahoo-finance2` from version `4.0.2` to `4.0.5`
+
+##### Fixed
+
+- Fixed the sign-out logic which deleted all cookies of the origin and did not delete the *Bull Board* cookie on plain HTTP
+- Fixed the validation of the asset profile in the update activity endpoint
 
 ---
 
@@ -31,7 +52,7 @@
 
 
 ## What's Changed
-* Update Ghostfolio to v3.94.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/385
+* Update Ghostfolio to v3.96.0 by @renovate[bot] in https://github.com/lildude/ha-addon-ghostfolio/pull/386
 
 
-**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.229.0...v1.230.0
+**Full Changelog**: https://github.com/lildude/ha-addon-ghostfolio/compare/v1.230.0...v1.231.0
